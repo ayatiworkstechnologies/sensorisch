@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+
+/* ================== GLOBAL FONTS ================== */
+@font-face {
+  font-family: "Monsart";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---------- Root Color Tokens ---------- */
+:root {
+  --background: #ffffff;
+  --black: #171717;
+
+  /* 🎨 Brand Colors */
+  --primary: #D22422; 
+  --primary-light: #FBE9E9;
+  --primary-dark: #920d0b;
+
+  --secondary: #0000; /* Orange */
+  --secondary-light: #3a393900;
+  --secondary-dark: #000;
+}
+
+/* ---------- Theme Tokens (Tailwind inline theme) ---------- */
+@theme inline {
+  /* 🎨 Map colors to Tailwind theme tokens */
+  --color-background: var(--background);
+  --color-black: var(--black);
+
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+
+   --font-primary: "PlusJakarta", sans-serif;
+  --font-secondary: "Monsart", sans-serif;
+
+ 
+}
+
+/* ---------- Dark Mode ---------- */
+
+
+/* html, body { cursor: none; }
+a, button, .cursor-hover, input, textarea, [contenteditable] { cursor: none; } */
+
+/* ---------- Base Styles ---------- */
+body {
+  background: var(--background);
+  color: var(--black);
+  font-family: var(--font-primary);
+}
+
+
+/* ---------- Reusable Section + Typography ---------- */
+@layer components {
+  /* Spacing wrapper for any page section */
+  .section {
+    @apply py-16 md:py-24;
+  }
+  /* Narrower variant */
+  .section-tight {
+    @apply py-12 md:py-16;
+  }
+
+  /* Max-width container with side padding */
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-6;
+  }
+  /* Extra-wide option when you need bigger visuals */
+  .section-container-wide {
+    @apply mx-auto w-full max-w-[88rem] px-6;
+  }
+
+  /* Eyebrow/overline label above title (optional) */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10
+           px-4 py-1.5 text-xs font-medium text-black/70;
+  }
+
+  /* Main section title */
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold text-primary font-primary;
+  }
+
+  /* Optional subtitle right under the title */
+  .section-subtitle {
+    @apply mt-2 text-lg md:text-2xl font-primary text-black/80;
+  }
+
+  /* Body copy for narratives */
+  .section-paragraph {
+    @apply mt-4 text-base md:text-lg leading-relaxed font-secondary text-black/80;
+  }
+
+  /* Centered stack for hero/intro sections */
+  .section-center {
+    @apply text-center flex flex-col items-center;
+  }
+
+  /* A soft card for feature points */
+  .feature-card {
+    @apply rounded-2xl border border-black/5 dark:border-white/10
+           bg-white/60 dark:bg-white/5 backdrop-blur p-6 md:p-7
+           hover:shadow-md transition-shadow;
+  }
+
+  /* Optional divider */
+  .section-divider {
+    @apply my-12 h-px w-full bg-black/10 dark:bg-white/10;
+  }
+}
