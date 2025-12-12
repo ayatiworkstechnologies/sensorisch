@@ -10,6 +10,8 @@ export default function HeroComponent({ data = {} }) {
   const {
     imageMobile,   // { src, alt }
     imageDesktop,  // { src, alt }
+    title,
+    subtitle,
     primary,
     secondary,
     scrollToId,
@@ -18,119 +20,117 @@ export default function HeroComponent({ data = {} }) {
   return (
     <section
       className="
-        relative overflow-hidden
-        min-h-[600px]
-        flex items-end mt-18 
+        relative
+        min-h-[620px]
+        flex items-center
+        pt-24           /* space for header overlay */
+        overflow-hidden
       "
     >
-      {/* ===========================
-           FULL BANNER IMAGE (MOBILE)
-      ============================ */}
+      {/* ============================
+          FULL BACKGROUND (MOBILE)
+      ============================= */}
       {imageMobile?.src && (
         <div className="absolute inset-0 -z-10 md:hidden">
           <Image
             src={imageMobile.src}
-            alt={imageMobile.alt || "Banner"}
+            alt={imageMobile.alt || "Hero banner"}
             fill
             priority
             unoptimized
-            sizes="100vw"
             className="object-cover object-center"
           />
         </div>
       )}
 
-      {/* ===========================
-           FULL BANNER IMAGE (DESKTOP)
-      ============================ */}
+      {/* ============================
+          FULL BACKGROUND (DESKTOP)
+      ============================= */}
       {imageDesktop?.src && (
         <div className="absolute inset-0 -z-10 hidden md:block">
           <Image
             src={imageDesktop.src}
-            alt={imageDesktop.alt || "Banner"}
+            alt={imageDesktop.alt || "Hero banner"}
             fill
             priority
             unoptimized
-            sizes="100vw"
             className="object-cover object-center"
           />
         </div>
       )}
 
-      {/* If needed, you can re-enable this overlay: */}
-      {/* <div className="absolute inset-0 bg-black/30 -z-10" /> */}
+      {/* ============================
+          LEFT CONTENT BLOCK
+      ============================= */}
+      <div className="section-container w-full">
+        <div className="max-w-xl flex flex-col gap-4">
 
-      {/* ===========================
-            BUTTONS (BOTTOM, RESPONSIVE)
-      ============================ */}
-      <div className="section-container pb-14 md:pb-20 w-full">
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          {primary?.href && (
-            <Link
-              href={primary.href}
-              className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary/90 transition"
-            >
-              {primary.label || "Button One"}
-            </Link>
+          {title && (
+            <h1 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg">
+              {title}
+            </h1>
           )}
 
-          {secondary?.href && (
-            <Link
-              href={secondary.href}
-              className="px-6 py-3 border border-primary/40 bg-white text-primary font-semibold rounded-lg hover:bg-white hover:text-primary transition"
-            >
-              {secondary.label || "Button Two"}
-            </Link>
+          {subtitle && (
+            <p className="text-base md:text-lg text-white/90 max-w-md drop-shadow">
+              {subtitle}
+            </p>
           )}
+
+          {/* Buttons */}
+          <div className="mt-4 flex flex-wrap gap-4">
+            {primary?.href && (
+              <Link
+                href={primary.href}
+                className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition"
+              >
+                {primary.label || "Button One"}
+              </Link>
+            )}
+
+            {secondary?.href && (
+              <Link
+                href={secondary.href}
+                className="px-6 py-3 border border-white/60 bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition"
+              >
+                {secondary.label || "Button Two"}
+              </Link>
+            )}
+          </div>
+
         </div>
       </div>
 
-      {/* ===========================
-           SCROLL BUTTON (CENTER BOTTOM)
-      ============================ */}
-      {scrollToId && (
-  <motion.a
-    href={`#${scrollToId}`}
-    aria-label="Scroll to next section"
-    initial={{ opacity: 0, y: 8 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.6 }}
-    className="
-      group
-      absolute
-      left-1/2
-      -translate-x-1/2
-      bottom-0 md:bottom-6
-    "
-  >
-    <motion.span
-      animate={{ y: [0, -8, 0] }}
-      transition={{
-        duration: 1.4,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      className="
-        inline-flex 
-        h-12 w-10               /* smaller mobile size */
-        md:h-20 md:w-12        /* larger desktop size */
-        items-center justify-center
-        rounded-full 
-        bg-white/85 backdrop-blur
-        border-2 border-dotted border-primary/50
-        shadow-sm
-        group-hover:ring-4 ring-primary/20 transition
-      "
-    >
-      <FaArrowDownLong 
-        className="text-primary
-        h-5 w-4 md:h-8 md:w-5   /* smaller arrow on mobile */
-      " 
-      />
-    </motion.span>
-  </motion.a>
-)}
-
+      {/* ============================
+          SCROLL INDICATOR
+      ============================= */}
+      {/* {scrollToId && (
+        <motion.a
+          href={`#${scrollToId}`}
+          aria-label="Scroll to next section"
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="
+            absolute left-1/2 -translate-x-1/2
+            bottom-6
+          "
+        >
+          <motion.span
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            className="
+              inline-flex items-center justify-center
+              h-14 w-10 md:h-20 md:w-12
+              rounded-full bg-white/80 backdrop-blur
+              border-2 border-dotted border-primary/50
+              shadow-sm
+            "
+          >
+            <FaArrowDownLong className="text-primary h-6 w-4 md:h-8 md:w-5" />
+          </motion.span>
+        </motion.a>
+      )} */}
     </section>
   );
 }

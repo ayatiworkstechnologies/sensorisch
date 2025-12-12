@@ -1,0 +1,102 @@
+// components/Header.jsx
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const NAV = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Applications & Solutions", href: "/applications-solutions" },
+  { label: "Bespoke", href: "/bespoke" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" },
+];
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(href + "/");
+
+  // 🔥 Clean underline-only nav style
+  const pillCls = (href) =>
+    [
+      "inline-flex items-center px-2 py-1 text-sm font-medium transition-all",
+      isActive(href)
+        ? "text-primary underline underline-offset-4"
+        : "text-black/80 hover:text-primary hover:underline underline-offset-4",
+    ].join(" ");
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/70 dark:bg-background/70 backdrop-blur border-b border-black/5 dark:border-white/10">
+      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <img src="/sensorisch-logo.png" alt="Sensorisch" className="w-60" />
+        </Link>
+
+        {/* Desktop */}
+        <nav className="hidden md:flex items-center gap-4">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} className={pillCls(n.href)}>
+              {n.label}
+            </Link>
+          ))}
+
+          <Link
+            href="/contact"
+            className="ml-4 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold shadow hover:bg-primary/90 transition-colors"
+          >
+            Request Samples
+          </Link>
+        </nav>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {open && (
+        <nav className="md:hidden border-t border-black/5 dark:border-white/10 bg-background/95 backdrop-blur">
+          <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-4">
+            {NAV.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className={[
+                  "px-1 py-1 text-base transition-all font-secondary",
+                  isActive(n.href)
+                    ? "text-primary underline underline-offset-4"
+                    : "text-black/90 hover:text-primary hover:underline underline-offset-4",
+                ].join(" ")}
+                onClick={() => setOpen(false)}
+              >
+                {n.label}
+              </Link>
+            ))}
+
+            <Link
+              href="/contact"
+              className="mt-2 inline-flex items-center justify-center font-secondary rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              Request Samples
+            </Link>
+          </div>
+        </nav>
+      )}
+    </header>
+  );
+}

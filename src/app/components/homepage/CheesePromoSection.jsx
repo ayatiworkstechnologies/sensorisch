@@ -22,7 +22,7 @@ export default function PromoSection() {
       </section>
 
       {/* SECTION 2  -  OVERLAPPING CARD */}
-      <section className="relative w-full bg-gray-50 dark:bg-black">
+      <section className="relative w-full bg-gray-50">
         <div className="section-container py-10 sm:pb-24 relative">
 
           <div
@@ -35,7 +35,7 @@ export default function PromoSection() {
               className="
                 grid grid-cols-1 sm:grid-cols-12 items-stretch
                 max-w-4xl w-full sm:w-[85%] md:w-[70%]
-                rounded-lg bg-white dark:bg-white/10 
+                rounded-lg bg-white
                 shadow-2xl ring-1 ring-black/5
                 overflow-hidden
               "
