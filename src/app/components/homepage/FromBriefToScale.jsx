@@ -49,7 +49,7 @@ export default function FromBriefToScale() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                     className="mx-auto mt-6 h-[2px] bg-primary"
                   />
-          <p className="mt-2 text-sm sm:text-base text-gray-500">
+          <p className="mt-2 text-base sm:text-lg font-secondary text-gray-500">
             We align targets, prototype fast, validate in your market, then transfer SOPs for reliable production
           </p>
         </div>
@@ -75,8 +75,8 @@ export default function FromBriefToScale() {
                   <Image
                     src={s.icon}
                     alt={s.title}
-                    width={40}
-                    height={40}
+                    width={45}
+                    height={45}
                     className="object-contain"
                   />
                 </div>
@@ -88,8 +88,8 @@ export default function FromBriefToScale() {
 
                 {/* Text */}
                 <div className="mt-4 px-3">
-                  <h3 className="text-base font-semibold text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-sm text-gray-500">{s.desc}</p>
+                  <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
+                  <p className="mt-2 text-base font-secondary text-gray-500">{s.desc}</p>
                 </div>
 
               </div>

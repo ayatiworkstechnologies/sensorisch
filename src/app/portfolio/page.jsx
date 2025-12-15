@@ -5,9 +5,14 @@ import HeroComponent from "../components/Hero";
 import FlavourFamiliesGrid from "../components/portfolio/FlavourFamiliesGrid";
 import FinalCta from "../components/portfolio/FinalCta";
 import FormatsGrid from "../components/portfolio/FormatsGrid";
-import { DecorSection, DriedIngredientsSection, PremiumSpreadsSection, SystemsSection } from "../components/portfolio/PortfolioSections";
+import {
+  DecorSection,
+  DriedIngredientsSection,
+  PremiumSpreadsSection,
+  SystemsSection,
+} from "../components/portfolio/PortfolioSections";
 import NaturalColoursShowcase from "../components/portfolio/NaturalColoursShowcase";
-
+import HeroContact from "../components/HeroContact";
 
 export default function PortfolioPage() {
   return (
@@ -35,6 +40,30 @@ export default function PortfolioPage() {
       /> */}
       <HeroComponent
         data={{
+          imageMobile: {
+            src: "/banners/mob-banner.png",
+            alt: "Mobile banner image",
+          },
+          imageDesktop: {
+            src: "/banners/banner.png",
+            alt: "Desktop banner image",
+          },
+          title: "Complete Flavour Solutions",
+          subtitle:
+            "From high-impact flavours to natural colours and ready-to-use systems -discover our modular portfolio built for consistent performance across every application.",
+          primary: {
+            label: "Request Full Catalogue",
+            href: "/applications-solutions",
+          },
+          secondary: {
+            label: "Get Samples",
+            href: "/contact",
+          },
+          // scrollToId: "next-section",
+        }}
+      />
+      {/* <HeroComponent
+        data={{
           imageMobile: { src: "/banners/portfolio-mob.jpg", alt: "Mobile Banner" },
           imageDesktop: { src: "/banners/portfolio-web.jpg", alt: "Desktop Banner" },
       
@@ -50,7 +79,7 @@ export default function PortfolioPage() {
       
           scrollToId: "portfolio"
         }}
-      />
+      /> */}
       <FlavourFamiliesGrid />
       <FormatsGrid />
       <NaturalColoursShowcase />
@@ -58,7 +87,19 @@ export default function PortfolioPage() {
       <DecorSection />
       <SystemsSection />
       {/* <DriedIngredientsSection /> */}
-      <FinalCta />
+      {/* <FinalCta /> */}
+      <HeroContact
+        kicker="Get in touch"
+        title="Explore Our Complete Portfolio"
+        subtitle="From concept to completion, our comprehensive portfolio supports every stage of your product development journey."
+        primary={{
+          label: "Request Full Catalogue",
+          href: "/applications0solutions",
+        }}
+        secondary={{ label: "Schedule Tasting Session", href: "/contact" }}
+        imageSrc="/assets/get-in-touch.png"
+        imageAlt="Glass beaker with plant"
+      />
     </main>
   );
 }

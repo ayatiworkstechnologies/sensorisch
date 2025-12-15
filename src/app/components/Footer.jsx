@@ -1,4 +1,3 @@
-// components/Footer.jsx
 "use client";
 
 import Image from "next/image";
@@ -8,180 +7,97 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full text-white bg-primary">
-      {/* Main footer */}
-      <div className="border-b border-white/15">
-        <div className="max-w-6xl mx-auto px-6 py-14">
+    <footer className="relative w-full text-white bg-primary overflow-hidden">
+      
+      {/* BACKGROUND IMAGE OVERLAY */}
+      <Image
+        src="/senso.svg"
+        alt="Footer background"
+        fill
+        priority
+        className="opacity-20 mt-20"
+      />
+
+      {/* CONTENT */}
+      <div className="relative z-10">
+        
+        {/* MAIN GRID */}
+        <div className="max-w-6xl mx-auto px-6 py-14 border-b border-white/20">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
-            {/* 1) Brand + tagline */}
+            
+            {/* BRAND */}
             <div className="space-y-4">
-              <div className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2">
-                <Image
-                  src="/sensorisch-logo.png"
-                  alt="Sensorisch"
-                  width={180}
-                  height={56}
-                  className="object-contain"
-                />
-              </div>
-              <p className="text-sm sm:text-base font-medium tracking-[0.18em] uppercase text-center sm:text-left">
-                Where Science Meets Senses
+              <Image
+                src="/head-logo.svg"
+                alt="Sensorisch"
+                width={110}
+                height={36}
+                className="object-contain"
+              />
+              <p className="text-sm tracking-wide leading-relaxed">
+                Where Science<br />Meets Senses
               </p>
             </div>
 
-            {/* 2) Solutions */}
+            {/* SOLUTIONS */}
             <div>
-              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
-                Solutions
-              </h4>
-              <ul className="space-y-1 text-sm sm:text-lg">
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Senso Ranges
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/bespoke"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Bespoke Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/insights"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Flavours
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/portfolio"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Natural Colours
-                  </Link>
-                </li>
+              <h4 className="text-lg font-semibold mb-4">Solutions</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="#" className="hover:opacity-80">Senso Ranges</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Bespoke Solutions</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Flavours</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li>
               </ul>
             </div>
 
-            {/* 3) Company */}
+            {/* COMPANY */}
             <div>
-              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
-                Company
-              </h4>
-              <ul className="space-y-1 text-sm sm:text-lg">
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/careers"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/insights"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Blog & Insights
-                  </Link>
-                </li>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="#" className="hover:opacity-80">About us</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Contact</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Contact Us</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li>
               </ul>
             </div>
 
-            {/* 4) Support */}
+            {/* SUPPORT */}
             <div>
-              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
-                Support
-              </h4>
-              <ul className="space-y-1 text-sm sm:text-lg">
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:opacity-90 transition-opacity"
-                  >
-                    FAQ
-                  </Link>
-                </li>
+              <h4 className="text-lg font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="#" className="hover:opacity-80">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Terms & Conditions</Link></li>
+                <li><Link href="#" className="hover:opacity-80">FAQ</Link></li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Copyright */}
-      {/* <div className="text-center py-6 text-sm opacity-80">
-        © {year} Sensorisch. All Rights Reserved.
-      </div> */}
-      {/* Bottom Bar */}
-      <div className="border-t border-white/15">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* LEFT SIDE — COPYRIGHT */}
-            <p className="text-xs sm:text-sm text-white/80">
+        {/* BOTTOM BAR */}
+        <div className="max-w-6xl mx-auto px-6 pb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+            <p className="opacity-80">
               © {year} Sensorisch. All rights reserved.
             </p>
 
-            {/* RIGHT SIDE — AYATIWORKS CREDIT */}
-            <div className="flex items-center gap-2">
-              <Link
-                href="https://ayatiworks.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition hover:opacity-90"
-              >
-                <span className="text-xs sm:text-sm text-white">
-                  Designed &amp; Developed by
-                </span>
-                <Image
-                  src="/web_logo.png"
-                  alt="Ayatiworks"
-                  width={60}
-                  height={24}
-                  className="object-contain brightness-110"
-                />
-              </Link>
-            </div>
+            <Link
+              href="https://ayatiworks.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 opacity-90 hover:opacity-100"
+            >
+              <span>Designed & Developed by</span>
+              <Image
+                src="/web_logo.png"
+                alt="Ayatiworks"
+                width={60}
+                height={24}
+                className="object-contain"
+              />
+            </Link>
           </div>
         </div>
+
       </div>
     </footer>
   );

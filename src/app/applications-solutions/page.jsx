@@ -6,6 +6,7 @@ import SensoRangeHero from "../components/applicationpage/SensoRangeHero";
 import WhyChooseSenso from "../components/applicationpage/WhyChooseSenso";
 import HeroComponent from "../components/Hero";
 import HeroCompnonet from "../components/Hero";
+import HeroContact from "../components/HeroContact";
 import StickyFullpageSlides from "../components/StickyFullpageSlides";
 const ranges = [
   {
@@ -484,7 +485,7 @@ export default function ApplicationSolutions() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       /> */}
-      <HeroComponent
+      {/* <HeroComponent
         data={{
           imageMobile: { src: "/banners/applications-mob.jpg", alt: "Mobile Banner" },
           imageDesktop: { src: "/banners/applications-web.jpg", alt: "Desktop Banner" },
@@ -501,7 +502,31 @@ export default function ApplicationSolutions() {
       
           scrollToId: "application"
         }}
-      />
+      /> */}
+      <HeroComponent
+              data={{
+                imageMobile: {
+                  src: "/banners/mob-banner.png",
+                  alt: "Mobile banner image",
+                },
+                imageDesktop: {
+                  src: "/banners/banner.png",
+                  alt: "Desktop banner image",
+                },
+                title: "Senso Application Ranges",
+                subtitle:
+                  "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
+                primary: {
+                  label: "Start Your Project",
+                  href: "/contact",
+                },
+                secondary: {
+                  label: "View Our Portfolio",
+                  href: "/portfolio",
+                },
+                // scrollToId: "next-section",
+              }}
+            />
 
       <WhyChooseSenso />
       {/* <main className="bg-background text-black"> */}
@@ -523,11 +548,20 @@ export default function ApplicationSolutions() {
         </StickyFullpageSlides>
       {/* </main> */}
       <BespokeSolutionsSection
-        onPrimaryHref="/contact"
+        onPrimaryHref="/bespoke"
         onPrimaryLabel="Discuss Your Bespoke Needs"
-        onProcessHref="/contact"
+        onProcessHref="/bespoke"
       />
-      <ProfileCTA />
+      {/* <ProfileCTA /> */}
+       <HeroContact
+              kicker="Get in touch"
+              title="Ready to Accelerate Your Product Development?"
+              subtitle="Choose from our proven Senso ranges or partner with us for bespoke solutions tailored to your unique requirements."
+              primary={{ label: "Request Samples", href: "/contact" }}
+              secondary={{ label: "Schedule Consultation", href: "/contact" }}
+              imageSrc="/assets/get-in-touch.png"
+              imageAlt="Glass beaker with plant"
+            />
     </>
   );
 }

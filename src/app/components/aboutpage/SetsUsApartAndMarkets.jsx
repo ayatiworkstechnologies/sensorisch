@@ -28,16 +28,27 @@ export default function SetsUsApartAndMarkets() {
           viewport={{ once: true, amount: 0.35 }}
           className="text-center"
         >
-          <h2 className="section-title text-black">
-            What Sets Us <span className="text-primary">Apart</span>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              What Sets Us Apart
+            </h3>
+
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-black"
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </h2>
+          </motion.div>
+
           <p className="mt-3 section-paragraph max-w-2xl mx-auto">
             Science-led development, pre-validated systems, and rigorous quality
             – built for scale.
@@ -86,16 +97,27 @@ export default function SetsUsApartAndMarkets() {
           viewport={{ once: true, amount: 0.35 }}
           className="mt-20 md:mt-28 text-center"
         >
-          <h2 className="section-title text-black">
-            Our <span className="text-primary">Markets</span>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Our Markets
+            </h2>
+
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-black"
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </h2>
+          </motion.div>
+
           <p className="mt-3 section-paragraph max-w-2xl mx-auto">
             Serving India with GCC support today — positioned to expand with
             regulatory readiness.
@@ -136,10 +158,10 @@ function Feature({ iconSrc, title, blurb }) {
     >
       {/* icon pill */}
       <div className="relative">
-        <div className="h-18 w-18 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center dark:bg-neutral-900 dark:ring-white/10">
+        <div className="h-18 w-18 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center ">
           <img src={iconSrc} alt="" className="h-10 w-10" />
         </div>
-        <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl dark:bg-white/5" />
+        <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl" />
       </div>
 
       <h3 className="mt-4 text-base md:text-lg font-bold text-primary">
@@ -155,7 +177,7 @@ function MarketCard({ heading, blurb }) {
     <motion.article
       variants={fadeUp}
       whileHover={{ y: -4, boxShadow: "0 28px 46px -26px rgba(0,0,0,0.28)" }}
-      className="rounded-2xl bg-white/80 backdrop-blur-md shadow-[0_14px_30px_-18px_rgba(0,0,0,0.22)] ring-1 ring-black/5 p-6 md:p-8 dark:bg-neutral-900/70 dark:ring-white/10"
+      className="rounded-2xl bg-white/80 backdrop-blur-md shadow-[0_14px_30px_-18px_rgba(0,0,0,0.22)] ring-1 ring-black/5 p-6 md:p-8"
     >
       <h3 className="text-lg md:text-xl font-semibold">{heading}</h3>
       <p className="section-paragraph text-base mt-2">{blurb}</p>

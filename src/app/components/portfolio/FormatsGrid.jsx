@@ -22,11 +22,11 @@ const fadeUp = {
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
 const DEFAULT_FORMATS = [
-  { k: "Liquids",      blurb: "Easy dosing & mixing",  icon: Droplet },
-  { k: "Powders",      blurb: "Extended shelf-life",   icon: Beaker },
-  { k: "Emulsions",    blurb: "Superior stability",    icon: FlaskConical },
-  { k: "Encapsulated", blurb: "Controlled release",    icon: BadgeCheck },
-  { k: "Heat-Stable",  blurb: "Process resilient",     icon: Sparkles },
+  { k: "Liquids", blurb: "Easy dosing & mixing", icon: Droplet },
+  { k: "Powders", blurb: "Extended shelf-life", icon: Beaker },
+  { k: "Emulsions", blurb: "Superior stability", icon: FlaskConical },
+  { k: "Encapsulated", blurb: "Controlled release", icon: BadgeCheck },
+  { k: "Heat-Stable", blurb: "Process resilient", icon: Sparkles },
 ];
 
 export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
@@ -38,17 +38,19 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.35 }}
-        className="mx-auto max-w-5xl text-center"
+        className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="section-title text-black tracking-tight">
-          Available <span className="text-primary">Formats</span>
-        </h2>
+        <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+          Available Formats
+        </h3>
+
+        {/* Underline animation – centered */}
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: 128 }}
+          whileInView={{ width: 112 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="mx-auto mt-4 h-1 rounded bg-black"
+          className="mt-2 mx-auto h-[2px] bg-primary rounded"
         />
       </motion.div>
 
@@ -64,7 +66,12 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
       >
         {formats.map((f, i) => {
           const Icon = f.icon ?? Droplet;
-          const tagLabel = f.tag === "E" ? "Encapsulated" : f.tag === "H" ? "Heat-Stable" : f.tag;
+          const tagLabel =
+            f.tag === "E"
+              ? "Encapsulated"
+              : f.tag === "H"
+              ? "Heat-Stable"
+              : f.tag;
 
           return (
             <motion.li
@@ -93,21 +100,25 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
               /> */}
 
               <div className="relative p-4">
-                <div className="flex items-start gap-3">
+                <div className="flex items-center gap-3">
                   {/* icon disk with bob */}
                   <motion.span
                     aria-hidden
-                    className="relative grid h-10 w-10 place-items-center rounded-xl
-                                text-primary"
+                    className="
+    relative inline-flex items-center justify-center
+    h-10 w-10 rounded-xl
+    text-primary
+    flex-shrink-0
+  "
                     animate={{ y: [0, -2, 0] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.06 }}
+                    transition={{
+                      duration: 2.4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.06,
+                    }}
                   >
-                    <Icon className="h-7 w-7" />
-                    {/* <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-0 rounded-xl"
-                      style={{ boxShadow: "inset 0 0 14px rgba(210,36,34,0.10)" }}
-                    /> */}
+                    <Icon className="h-6 w-6" />
                   </motion.span>
 
                   {/* text block */}
@@ -115,28 +126,12 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
                     <div className="flex items-center gap-2">
                       <h3 className="font-semibold leading-none">{f.k}</h3>
                       {f.tag && (
-                        <span
-                          className="text-[10px] rounded bg-primary/10 px-1.5 py-0.5 ring-1 ring-primary/20"
-                          aria-label={tagLabel}
-                          title={tagLabel}
-                        >
+                        <span className="text-[10px] px-1.5 py-0.5 border border-primary text-black rounded">
                           {f.tag}
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-sm text-black/70 dark:text-white/70">
-                      {f.blurb}
-                    </p>
-
-                    {/* underline grows on hover */}
-                    <motion.i
-                      initial={{ width: 0 }}
-                      whileInView={{ width: 0 }}
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.35 }}
-                      className="block h-[2px] w-0 mt-2 rounded bg-gradient-to-r from-primary to-primary/40 group-hover:w-full"
-                      aria-hidden
-                    />
+                    <p className="mt-1 text-sm text-black/70">{f.blurb}</p>
                   </div>
                 </div>
               </div>

@@ -98,7 +98,6 @@ export default function SensoRangeHero({
                 variants={fadeUp}
                 className="inline-flex items-center gap-2 rounded-md bg-red-50 text-red-700 px-3 py-1 text-sm font-semibold ring-1 ring-red-200"
               >
-                
                 {badge}
               </motion.span>
 
@@ -163,10 +162,18 @@ export default function SensoRangeHero({
 
             {/* Tags */}
             <div className="pt-2 flex flex-wrap gap-3">
-              {tags.map(({ t, cls }) => (
+              {tags.map(({ t }) => (
                 <span
                   key={t}
-                  className={`inline-flex items-center rounded-md px-3 py-1.5 text-sm font-semibold ring-1 transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_12px_rgba(0,0,0,0.15)] hover:ring-2 hover:ring-offset-2 ${cls}`}
+                  className="
+        inline-flex items-center
+        rounded-md px-3 py-1.5
+        text-sm font-semibold text-black
+        border border-primary
+        bg-transparent
+        transition
+        hover:bg-primary/5
+      "
                 >
                   {t}
                 </span>

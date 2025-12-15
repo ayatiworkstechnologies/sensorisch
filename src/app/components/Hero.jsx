@@ -72,7 +72,7 @@ export default function HeroComponent({ data = {} }) {
           )}
 
           {subtitle && (
-            <p className="text-base md:text-lg text-white/90 max-w-md drop-shadow">
+            <p className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow">
               {subtitle}
             </p>
           )}

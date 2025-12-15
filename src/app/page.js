@@ -60,10 +60,10 @@ export default function Home() {
     scrollToId: "why-sensorisch"
   }}
 /> */}
- <HeroComponent
+      <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/home-mobile.jpg",
+            src: "/banners/mob-banner.png",
             alt: "Mobile banner image",
           },
           imageDesktop: {
@@ -85,7 +85,7 @@ export default function Home() {
       />
 
 
-      
+
       {/* <HeroSection /> */}
       <WhyChooseSection />
       <PromoSection />
@@ -96,7 +96,7 @@ export default function Home() {
       <QualityResponsibility />
       <ExploreCreateConfirmGrow />
       {/* <CTAWideBanner /> */}
-       <HeroContact
+      <HeroContact
         kicker="Get in touch"
         title="Expert guidance, just a message away"
         subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."

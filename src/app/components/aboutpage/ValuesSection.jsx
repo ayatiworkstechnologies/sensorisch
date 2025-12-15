@@ -45,6 +45,7 @@ export default function ValuesSection() {
     <section className="relative bg-background text-black">
       <div className="section-container">
         {/* Header */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -52,21 +53,18 @@ export default function ValuesSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
-            Our<span className="text-primary"> Values</span>
-          </h2>
-          
-          {/* underline */}
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Our Values
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-black"
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
           />
-          <p className="mt-4 section-paragraph text-center text-black">
-            The principles that guide everything we do, from initial concept to final delivery
-          </p>
         </motion.div>
 
         {/* Values grid */}
@@ -100,17 +98,15 @@ export default function ValuesSection() {
               <h3 className="text-lg md:text-xl font-semibold">{v.title}</h3>
 
               {/* animated accent line */}
-              <motion.div
+              {/* <motion.div
                 className={`h-[3px] w-16 my-3 rounded bg-black`}
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-              />
+              /> */}
 
-              <p className="section-paragraph leading-relaxed">
-                {v.desc}
-              </p>
+              <p className="section-paragraph leading-relaxed">{v.desc}</p>
 
               {/* hover micro-interaction: sheen */}
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),transparent_40%)]" />

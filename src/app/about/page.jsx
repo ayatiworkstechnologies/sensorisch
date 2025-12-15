@@ -7,6 +7,7 @@ import SetsUsApartAndMarkets from "../components/aboutpage/SetsUsApartAndMarkets
 import ValuesSection from "../components/aboutpage/ValuesSection";
 import VisionMission from "../components/aboutpage/VisionMission";
 import HeroComponent from "../components/Hero";
+import HeroContact from "../components/HeroContact";
 
 export default function AboutUS() {
   return (
@@ -33,7 +34,31 @@ export default function AboutUS() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       /> */}
-       <HeroComponent
+      <HeroComponent
+                    data={{
+                      imageMobile: {
+                        src: "/banners/mob-banner.png",
+                        alt: "Mobile banner image",
+                      },
+                      imageDesktop: {
+                        src: "/banners/banner.png",
+                        alt: "Desktop banner image",
+                      },
+                      title: "Science - Led Innovation Meets Culinary Craft",
+                      subtitle:
+                        "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
+                      primary: {
+                        label: "Start Your Project",
+                        href: "/contact",
+                      },
+                      secondary: {
+                        label: "View Our Portfolio",
+                        href: "/portfolio",
+                      },
+                      // scrollToId: "next-section",
+                    }}
+                  />
+       {/* <HeroComponent
         data={{
           imageMobile: { src: "/banners/about-mob.jpg", alt: "Mobile Banner" },
           imageDesktop: { src: "/banners/about-web.jpg", alt: "Desktop Banner" },
@@ -50,14 +75,23 @@ export default function AboutUS() {
       
           scrollToId: "our-story"
         }}
-      />
+      /> */}
       {/* <HeroSection /> */}
       <AboutSensorisch />
       <VisionMission />
       <ValuesSection />
       <CapabilitiesSection />
       <SetsUsApartAndMarkets />
-      <CompanyProfileCTA />
+      {/* <CompanyProfileCTA /> */}
+      <HeroContact
+              kicker="Get in touch"
+              title="Company Profile"
+              subtitle="Download our comprehensive company profile to learn more about our capabilities, processes, and how we can support your product development goals."
+              // primary={{ label: "Start Your Project", href: "/contact" }}
+              // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
+              imageSrc="/assets/get-in-touch.png"
+              imageAlt="Glass beaker with plant"
+            />
     </>
   );
 }

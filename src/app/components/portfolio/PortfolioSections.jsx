@@ -15,7 +15,12 @@ import {
 /* ---------- anim helpers ---------- */
 const fadeUp = {
   hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
@@ -60,43 +65,96 @@ const SPREADS = [
 ];
 
 const SPREADS_BENEFITS = [
-  { k: "Bake-Stable Formulations", sub: "Maintains texture and flavour through heating processes" },
-  { k: "Smooth Spreadability",     sub: "Consistent texture across temperature ranges" },
-  { k: "Consistent Viscosity",     sub: "Reliable performance in production environments" },
+  {
+    k: "Bake-Stable Formulations",
+    sub: "Maintains texture and flavour through heating processes",
+  },
+  {
+    k: "Smooth Spreadability",
+    sub: "Consistent texture across temperature ranges",
+  },
+  {
+    k: "Consistent Viscosity",
+    sub: "Reliable performance in production environments",
+  },
 ];
 
 /* ---------- Decor data ---------- */
 const DECOR = [
-  { k: "Cocoa Dust",         sub: "Fine cocoa powder for dusting and decoration" },
+  { k: "Cocoa Dust", sub: "Fine cocoa powder for dusting and decoration" },
   { k: "Vanilla Sugar Dust", sub: "Aromatic vanilla-infused powder" },
-  { k: "Metallic Shimmer",   sub: "Food-grade metallic finish for premium appearance" },
-  { k: "Coloured Icing Dust",sub: "Vibrant colours for creative cake decoration" },
-  { k: "Edible Glitter",     sub: "Sparkling finish for special occasions" },
-  { k: "Matcha Powder",      sub: "Premium green tea powder for Asian-inspired desserts" },
+  {
+    k: "Metallic Shimmer",
+    sub: "Food-grade metallic finish for premium appearance",
+  },
+  {
+    k: "Coloured Icing Dust",
+    sub: "Vibrant colours for creative cake decoration",
+  },
+  { k: "Edible Glitter", sub: "Sparkling finish for special occasions" },
+  {
+    k: "Matcha Powder",
+    sub: "Premium green tea powder for Asian-inspired desserts",
+  },
 ];
 
 const DECOR_BENEFITS = [
-  { k: "Even Coverage",  sub: "Uniform distribution for professional results" },
-  { k: "Low Clumping",   sub: "Free-flowing powders for easy application" },
-  { k: "Camera-Friendly",sub: "Optimized for photography and presentation" },
-  { k: "Food-Grade Safety", sub: "All materials meet strict food safety standards" },
+  { k: "Even Coverage", sub: "Uniform distribution for professional results" },
+  { k: "Low Clumping", sub: "Free-flowing powders for easy application" },
+  { k: "Camera-Friendly", sub: "Optimized for photography and presentation" },
+  {
+    k: "Food-Grade Safety",
+    sub: "All materials meet strict food safety standards",
+  },
 ];
 
 /* ---------- Systems data ---------- */
 const SYSTEMS = [
-  { k: "Taste Modulators",  sub: "Enhance sweetness, reduce bitterness, or balance acidity", icon: Wand2 },
-  { k: "Delivery Systems",  sub: "Controlled release, encapsulation, and targeted delivery", icon: PackageCheck },
-  { k: "Emulsion Systems",  sub: "Stable water-in-oil and oil-in-water formulations",       icon: FlaskConical },
-  { k: "Coating Systems",   sub: "Protective and functional coatings for various applications", icon: BadgeCheck },
-  { k: "Fermented Bases",   sub: "Natural fermentation-derived flavour enhancers",           icon: Sparkles },
-  { k: "Creamy Bases",      sub: "Dairy and plant-based creamy texture systems",            icon: Droplet },
+  {
+    k: "Taste Modulators",
+    sub: "Enhance sweetness, reduce bitterness, or balance acidity",
+    icon: Wand2,
+  },
+  {
+    k: "Delivery Systems",
+    sub: "Controlled release, encapsulation, and targeted delivery",
+    icon: PackageCheck,
+  },
+  {
+    k: "Emulsion Systems",
+    sub: "Stable water-in-oil and oil-in-water formulations",
+    icon: FlaskConical,
+  },
+  {
+    k: "Coating Systems",
+    sub: "Protective and functional coatings for various applications",
+    icon: BadgeCheck,
+  },
+  {
+    k: "Fermented Bases",
+    sub: "Natural fermentation-derived flavour enhancers",
+    icon: Sparkles,
+  },
+  {
+    k: "Creamy Bases",
+    sub: "Dairy and plant-based creamy texture systems",
+    icon: Droplet,
+  },
 ];
 
 /* ---------- Dried ingredients data ---------- */
 const DRIED = [
-  { k: "Granulates",        tag: "Consistent particle size", pill: "Uniform distribution" },
-  { k: "Flakes & Pieces",   tag: "Visual texture",           pill: "Premium positioning" },
-  { k: "Specialty Powders", tag: "Concentrated profiles",    pill: "High concentration" },
+  {
+    k: "Granulates",
+    tag: "Consistent particle size",
+    pill: "Uniform distribution",
+  },
+  { k: "Flakes & Pieces", tag: "Visual texture", pill: "Premium positioning" },
+  {
+    k: "Specialty Powders",
+    tag: "Concentrated profiles",
+    pill: "High concentration",
+  },
 ];
 
 /* =========================================================
@@ -113,18 +171,29 @@ export function PremiumSpreadsSection() {
         viewport={{ once: true, amount: 0.35 }}
         className="mx-auto max-w-4xl text-center"
       >
-        <h2 className="mt-3 section-title text-black">
-          Premium <span className="text-primary">Spreads</span>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Premium Spreads
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
+            whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
           />
-        </h2>
+        </motion.div>
         <p className="mt-2 section-paragraph text-black/70">
-          Ready-to-use spreads with exceptional taste profiles and superior functionality
+          Ready-to-use spreads with exceptional taste profiles and superior
+          functionality
         </p>
       </motion.div>
 
@@ -204,16 +273,26 @@ export function PremiumSpreadsSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <h2 className="mt-3 section-title text-black">
-            Key <span className="text-primary">Benefits</span>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Key Banefits
+            </h3>
+
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: 128 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-black"
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </h2>
+          </motion.div>
         </motion.div>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {SPREADS_BENEFITS.map((b, i) => (
@@ -250,18 +329,30 @@ export function DecorSection() {
         viewport={{ once: true, amount: 0.35 }}
         className="mx-auto max-w-4xl text-center"
       >
-        <h2 className="mt-3 section-title text-black">
-          Cake Dust & <span className="text-primary">Decor</span>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Cake Dust & Decor
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
+            whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
           />
-        </h2>
+        </motion.div>
+
         <p className="mt-2 section-paragraph text-black/70">
-          Professional-grade dusts and decorative elements for stunning visual presentations
+          Professional-grade dusts and decorative elements for stunning visual
+          presentations
         </p>
       </motion.div>
 
@@ -309,16 +400,26 @@ export function DecorSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <h2 className="mt-3 section-title text-black">
-            Professional <span className="text-primary">Benefits</span>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Professinal Benefits
+            </h3>
+
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: 128 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-black"
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </h2>
+          </motion.div>
         </motion.div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {DECOR_BENEFITS.map((b, i) => (
@@ -354,16 +455,27 @@ export function SystemsSection() {
         viewport={{ once: true, amount: 0.35 }}
         className="mx-auto max-w-4xl text-center"
       >
-        <h2 className="mt-3 section-title text-black">
-          Ingredient & <span className="text-primary">Delivery Systems</span>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Ingredient & Delivery Systems
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
+            whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
           />
-        </h2>
+        </motion.div>
+
         <p className="mt-2 section-paragraph text-black/70">
           Advanced systems to enhance functionality and performance
         </p>
@@ -416,7 +528,8 @@ export function DriedIngredientsSection() {
         className="mx-auto max-w-4xl text-center"
       >
         <h2 className="mt-3 section-title text-black">
-          Dried <span className="text-primary">Fruit &amp; Vegetable</span> Ingredients
+          Dried <span className="text-primary">Fruit &amp; Vegetable</span>{" "}
+          Ingredients
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 128 }}
@@ -426,7 +539,8 @@ export function DriedIngredientsSection() {
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
-          Premium dried ingredients available on request for specialized applications
+          Premium dried ingredients available on request for specialized
+          applications
         </p>
       </motion.div>
 

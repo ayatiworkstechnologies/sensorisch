@@ -49,32 +49,21 @@ export default function BespokeProcessSection() {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mx-auto max-w-3xl text-center"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-2xl text-center"
         >
-          <motion.h2
-            variants={fadeUp}
-            className="mt-4 section-title text-black"
-          >
-            {" "}
-            Our <span className="text-primary">Bespoke Development</span>{" "}
-            Process
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 112 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-black"
-            />
-          </motion.h2>
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Our Bespoke Development Process
+          </h3>
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-3 section-paragraph"
-          >
-            A systematic approach that transforms your vision into market-ready
-            flavour solutions
-          </motion.p>
+          {/* Underline animation – centered */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
+          />
         </motion.div>
 
         {/* Curved path backdrop + tracer */}
@@ -131,9 +120,7 @@ function StepRow({ index, k, title, blurb }) {
       </div>
 
       {/* blurb (copy only - no cards) */}
-      <p className="section-paragraph text-black/70 leading-relaxed">
-        {blurb}
-      </p>
+      <p className="section-paragraph text-black/70 leading-relaxed">{blurb}</p>
     </motion.li>
   );
 }

@@ -24,34 +24,31 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 export default function PartnerSection() {
   return (
-    <section id="bespoke" className="relative section-container overflow-hidden">
+    <section
+      id="bespoke"
+      className="relative section-container overflow-hidden"
+    >
       <div className="section-container py-14 md:py-20">
         {/* Header */}
         <motion.div
-          variants={list}
+          variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="mx-auto max-w-3xl text-center"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-2xl text-center"
         >
-          <motion.h2
-            variants={fadeUp}
-            className="mt-4 section-title text-black"
-          >
-            <span className="text-primary"> We Partner</span> With You To
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 112 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-black"
-            />
-          </motion.h2>
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            We Partner With You To
+          </h3>
 
-          <motion.p variants={fadeUp} className="mt-3 section-paragraph ">
-            Deliver precision-crafted solutions that give your brand a
-            competitive edge  -  built on trust and innovation.
-          </motion.p>
+          {/* Underline animation – centered */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
+          />
         </motion.div>
 
         {/* Cards */}

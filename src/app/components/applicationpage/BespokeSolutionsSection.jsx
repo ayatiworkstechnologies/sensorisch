@@ -37,7 +37,11 @@ const STEPS = [
     n: 1,
     title: "Discover",
     desc: "Market scan, sensory mapping, and technical feasibility assessment",
-    bullets: ["Consumer insights", "Technical constraints", "Market positioning"],
+    bullets: [
+      "Consumer insights",
+      "Technical constraints",
+      "Market positioning",
+    ],
     icon: Sparkles,
   },
   {
@@ -51,7 +55,11 @@ const STEPS = [
     n: 3,
     title: "Validate",
     desc: "Bench-to-pilot tests, sensory validation, and stability assessment",
-    bullets: ["Consumer testing", "Stability studies", "Performance validation"],
+    bullets: [
+      "Consumer testing",
+      "Stability studies",
+      "Performance validation",
+    ],
     icon: FlaskConical,
   },
   {
@@ -69,7 +77,7 @@ const STEPS = [
 export function BespokeSolutionsIntro({
   onPrimaryHref = "/contact",
   onPrimaryLabel = "Discuss Your Bespoke Needs",
-  onProcessHref = "#process",
+  onProcessHref = "/bespoke",
 }) {
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
@@ -88,20 +96,26 @@ export function BespokeSolutionsIntro({
           viewport={{ once: true, amount: 0.25 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <motion.h2
+          <motion.div
             variants={fadeUp}
-            className="relative mt-3 section-title text-black"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
           >
-            <span className="text-primary">Tailored</span> to Your Needs
-            <motion.span
-              aria-hidden
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Tailored to Your Needs
+            </h3>
+
+            {/* Underline animation – centered */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className="block h-1 w-36 md:w-48 bg-primary rounded-full mt-3 mx-auto origin-left"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </motion.h2>
+          </motion.div>
 
           <motion.p variants={fadeUp} className="mt-5 section-paragraph">
             At Sensorisch, we know that every brand has a unique identity, and
@@ -125,7 +139,7 @@ export function BespokeSolutionsIntro({
               variants={fadeUp}
               whileHover={{ y: -3 }}
               className="group relative flex items-start gap-3 rounded-xl border border-black/10
-                         bg-white/60 dark:bg-neutral-900/60 backdrop-blur px-4 py-3 shadow-sm
+                         bg-white/60  backdrop-blur px-4 py-3 shadow-sm
                          max-w-xl w-full"
             >
               <div className="grid size-8 place-items-center rounded-full text-primary shrink-0 mt-0.5">
@@ -199,17 +213,27 @@ export function DevelopmentProcessSection() {
       <div className="section-container py-18 md:py-28">
         {/* Heading */}
         <div className="mb-10 md:mb-12 max-w-3xl mx-auto text-center">
-          <h2 className="section-title text-black">
-            Our Development <span className="text-primary">Process</span>
-            <motion.span
-              aria-hidden
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+           <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+               Our Development Process
+            </h3>
+
+            {/* Underline animation – centered */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className="block h-1 w-36 md:w-48 bg-primary rounded-full mt-3 mx-auto origin-left"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </h2>
+          </motion.div>
+
           <p className="mt-5 section-paragraph">
             From concept to scale, our structured approach ensures consistent
             results and reduces time-to-market.
@@ -283,7 +307,7 @@ export function DevelopmentProcessSection() {
                         damping: 22,
                       }}
                       className="relative group rounded-2xl border border-black/10
-                                 bg-white/60 dark:bg-neutral-900/60 backdrop-blur p-5 md:p-6
+                                 bg-white/60 backdrop-blur p-5 md:p-6
                                  shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
                     >
                       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)] ring-1 ring-transparent group-hover:ring-primary/20" />

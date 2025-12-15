@@ -95,25 +95,17 @@ export default function AboutSensorisch() {
             className="space-y-6"
           >
             {/* Title with word-by-word rise */}
-            <motion.h2 className="section-title text-black flex flex-wrap gap-2">
-              {words.map((w, i) => (
-                <motion.span
-                  key={w + i}
-                  variants={fadeUp}
-                  className={w === "Story" ? "text-primary" : ""}
-                >
-                  {w}
-                </motion.span>
-              ))}
-            </motion.h2>
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Our Story
+            </h3>
 
-            {/* Accent bar grow */}
+            {/* Underline animation */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="h-1 rounded bg-black"
+              className=" h-[2px] bg-primary rounded"
             />
 
             {/* Paragraphs (staggered) */}

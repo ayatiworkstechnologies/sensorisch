@@ -33,8 +33,32 @@ export default function ContactUs() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       /> */}
-
       <HeroComponent
+              data={{
+                imageMobile: {
+                  src: "/banners/mob-banner.png",
+                  alt: "Mobile banner image",
+                },
+                imageDesktop: {
+                  src: "/banners/banner.png",
+                  alt: "Desktop banner image",
+                },
+                title: "Let's Create Something Extraordinary",
+                subtitle:
+                  "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
+                // primary: {
+                //   label: "Request Full Catalogue",
+                //   href: "/applications-solutions",
+                // },
+                // secondary: {
+                //   label: "Get Samples",
+                //   href: "/contact",
+                // },
+                // scrollToId: "next-section",
+              }}
+            />
+
+      {/* <HeroComponent
         data={{
           imageMobile: { src: "/banners/contact-mob.jpg", alt: "Mobile Banner" },
           imageDesktop: { src: "/banners/contact-web.jpg", alt: "Desktop Banner" },
@@ -51,7 +75,7 @@ export default function ContactUs() {
       
           scrollToId: "contact"
         }}
-      />
+      /> */}
       {/* <ContactPage /> */}
       <MethodsSection />
       <FormSection />

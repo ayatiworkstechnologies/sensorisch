@@ -38,7 +38,10 @@ const FEATURES = [
 
 export default function WhyChooseSenso() {
   return (
-    <section id="application" className="relative overflow-hidden bg-background text-black py-10">
+    <section
+      id="application"
+      className="relative overflow-hidden bg-background text-black py-10"
+    >
       <div className="section-container">
         {/* Header */}
         <motion.div
@@ -48,33 +51,31 @@ export default function WhyChooseSenso() {
           viewport={{ once: true, amount: 0.25 }}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* <motion.span
+          <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-black/5 px-3 py-1 text-xs font-semibold"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
           >
-            Why Choose Senso Ranges?
-          </motion.span> */}
+            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+              Why Choose Senso Ranges?
+            </h3>
 
-          <motion.h2
-            variants={fadeUp}
-            className="mt-3 section-title text-black"
-          >
-            Why Choose <span className="text-primary">Senso </span> Ranges?
-            <motion.span
-              aria-hidden
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+            {/* Underline animation – centered */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className="block h-1 w-40 md:w-52 bg-black rounded-full mt-3 mx-auto origin-left"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </motion.h2>
+          </motion.div>
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 section-paragraph"
-          >
-           Each Senso family combines deep application knowledge with market-proven formulations, delivering consistent results that scale from pilot to production.
+          <motion.p variants={fadeUp} className="mt-4 section-paragraph">
+            Each Senso family combines deep application knowledge with
+            market-proven formulations, delivering consistent results that scale
+            from pilot to production.
           </motion.p>
         </motion.div>
 
@@ -93,7 +94,7 @@ export default function WhyChooseSenso() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="group relative flex max-w-sm w-full flex-col items-center text-center rounded-2xl border border-black/10 bg-white/60 dark:bg-neutral-900/60 backdrop-blur p-5 md:p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
+              className="group relative flex max-w-sm w-full flex-col items-center text-center rounded-2xl border border-black/10 bg-white/60 backdrop-blur p-5 md:p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
             >
               {/* Glow ring on hover */}
               <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-primary/20 transition" />
@@ -106,9 +107,7 @@ export default function WhyChooseSenso() {
                 <h3 className="text-lg md:text-xl font-semibold leading-tight">
                   {f.title}
                 </h3>
-                <p className="mt-2 section-paragraph">
-                  {f.blurb}
-                </p>
+                <p className="mt-2 section-paragraph">{f.blurb}</p>
               </div>
             </motion.article>
           ))}

@@ -51,28 +51,48 @@ const GROUPS = [
     desc: "Advanced facilities for developing flavours, fragrance accords, extracts, emulsions, and taste modulators.",
     icon: "/icons/icon-13.png",
     accent: "from-amber-500 to-amber-400",
-    chips: ["Flavour Development", "Fragrance Accords", "Natural Extracts", "Emulsion Systems"],
+    chips: [
+      "Flavour Development",
+      "Fragrance Accords",
+      "Natural Extracts",
+      "Emulsion Systems",
+    ],
   },
   {
     title: "Application Labs",
     desc: "Specialized testing environments including bakery ovens, beverage benches, dairy pilots, and confectionery lines.",
     icon: "/icons/icon-14.png",
     accent: "from-primary to-primary/60 ",
-    chips: ["Bakery Testing", "Beverage Benches", "Dairy Pilots", "Confectionery Lines"],
+    chips: [
+      "Bakery Testing",
+      "Beverage Benches",
+      "Dairy Pilots",
+      "Confectionery Lines",
+    ],
   },
   {
     title: "Sensory & Consumer Science",
     desc: "Comprehensive testing including triangle tests, hedonic panels, and Jobs-to-be-Done insights.",
     icon: "/icons/icon-15.png",
     accent: "from-emerald-500 to-emerald-400",
-    chips: ["Triangle Testing", "Hedonic Panels", "Consumer Insights", "Sensory Mapping"],
+    chips: [
+      "Triangle Testing",
+      "Hedonic Panels",
+      "Consumer Insights",
+      "Sensory Mapping",
+    ],
   },
   {
     title: "Quality & Compliance",
     desc: "Clean-label guidance, regional regulatory support, and comprehensive documentation.",
     icon: "/icons/icon-11.png",
     accent: "from-sky-500 to-sky-400",
-    chips: ["Clean-label Guidance", "Regional Compliance", "COAs & Specifications", "Documentation"],
+    chips: [
+      "Clean-label Guidance",
+      "Regional Compliance",
+      "COAs & Specifications",
+      "Documentation",
+    ],
   },
 ];
 
@@ -81,23 +101,25 @@ export default function CapabilitiesSection() {
     <section className="relative bg-background text-black">
       <div className="section-container py-16 md:py-24">
         {/* Heading */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
-          className="mx-auto max-w-4xl text-center"
+          className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="mt-4 section-title text-black">
-            Comprehensive facilities & expertise to{" "}
-            <span className="text-primary">bring your vision to life</span>
-          </h2>
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+            Comprehensive facilities & expertise to bring your vision to life
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
+            whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
           />
         </motion.div>
 
@@ -132,46 +154,42 @@ export default function CapabilitiesSection() {
               {/* title */}
               <h3 className="section-subtitle">{g.title}</h3>
               {/* animated accent line */}
-              <motion.div
+              {/* <motion.div
                 className={`h-[3px] w-0 my-3 rounded bg-black`}
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-              />
+              /> */}
 
               {/* description */}
               <p className="section-paragraph leading-relaxed">{g.desc}</p>
 
               {/* chips with different colors */}
+              {/* SIMPLE CHIPS */}
               <motion.ul
                 variants={list}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.5 }}
-                className="mt-4 flex flex-wrap gap-2.5"
+                className="mt-4 flex flex-wrap gap-2"
               >
-                {g.chips.map((chip, i) => {
-                  const tone = CHIP_STYLES[i % CHIP_STYLES.length];
-                  return (
-                    <motion.li
-                      key={chip}
-                      variants={fadeUp}
-                      whileHover={{ y: -2, scale: 1.02 }}
-                      className={[
-                        "rounded-md px-3 py-1.5 text-xs md:text-sm font-medium",
-                        "ring-1 shadow-sm transition-all",
-                        "border border-black/0 dark:border-white/0", // keep edges clean
-                        tone.light,
-                        tone.dark,
-                      ].join(" ")}
-                    >
-                      {/* small dot for visual anchor */}
-                      <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-current/70 align-middle" />
-                      {chip}
-                    </motion.li>
-                  );
-                })}
+                {g.chips.map((chip) => (
+                  <motion.li
+                    key={chip}
+                    variants={fadeUp}
+                    whileHover={{ y: -1 }}
+                    className="
+        rounded-md px-3 py-1.5
+        text-xs md:text-sm font-medium text-black
+        border border-primary
+        bg-transparent
+        transition
+      "
+                  >
+                    {chip}
+                  </motion.li>
+                ))}
               </motion.ul>
 
               {/* sheen on hover */}

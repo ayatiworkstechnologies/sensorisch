@@ -8,18 +8,84 @@ import { motion } from "framer-motion";
 /* animations */
 const fadeUp = {
   hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0)", transition: { duration: 0.45, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0)",
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
 };
-const pop = { whileHover: { y: -6, scale: 1.01, transition: { type: "spring", stiffness: 260, damping: 22 } } };
+const pop = {
+  whileHover: {
+    y: -6,
+    scale: 1.01,
+    transition: { type: "spring", stiffness: 260, damping: 22 },
+  },
+};
 
 /* data */
 const FALLBACK = [
-  { title: "Citrus", blurb: "Bright, zesty profiles from lemon and lime to exotic yuzu and bergamot.", items: ["Lemon","Orange","Lime","Grapefruit","Yuzu","Bergamot"], image: "/assets/img-1.png" },
-  { title: "Fruity", blurb: "From tropical mangoes to berry medleys, capturing nature's sweetness.", items: ["Strawberry","Mango","Apple","Peach","Mixed Berry","Tropical Blend"], image: "/assets/img-2.png"},
-  { title: "Tea & Coffee", blurb: "Rich, aromatic profiles from delicate green tea to robust espresso.", items: ["Earl Grey","Green Tea","Espresso","Vanilla Latte","Chai Spice","Matcha"], image: "/assets/img-3.png" },
-  { title: "Botanicals", blurb: "Herbal and floral essences that add complexity and sophistication.", items: ["Lavender","Rose","Mint","Basil","Rosemary","Chamomile"], image: "/assets/img-4.png" },
-  { title: "Brown & White", blurb: "Comfort flavours from vanilla and caramel to rich chocolate notes.", items: ["Vanilla","Caramel","Chocolate","Butterscotch","Toffee","Coconut"], image: "/assets/img-5.png" },
-  { title: "Savoury", blurb: "Complex umami profiles and spice blends for sophisticated applications.", items: ["Garlic","Onion","Pepper","Herb Blend","Mushroom","Smoked"], image: "/assets/img-6.png" },
+  {
+    title: "Citrus",
+    blurb:
+      "Bright, zesty profiles from lemon and lime to exotic yuzu and bergamot.",
+    items: ["Lemon", "Orange", "Lime", "Grapefruit", "Yuzu", "Bergamot"],
+    image: "/assets/img-1.png",
+  },
+  {
+    title: "Fruity",
+    blurb:
+      "From tropical mangoes to berry medleys, capturing nature's sweetness.",
+    items: [
+      "Strawberry",
+      "Mango",
+      "Apple",
+      "Peach",
+      "Mixed Berry",
+      "Tropical Blend",
+    ],
+    image: "/assets/img-2.png",
+  },
+  {
+    title: "Tea & Coffee",
+    blurb:
+      "Rich, aromatic profiles from delicate green tea to robust espresso.",
+    items: [
+      "Earl Grey",
+      "Green Tea",
+      "Espresso",
+      "Vanilla Latte",
+      "Chai Spice",
+      "Matcha",
+    ],
+    image: "/assets/img-3.png",
+  },
+  {
+    title: "Botanicals",
+    blurb: "Herbal and floral essences that add complexity and sophistication.",
+    items: ["Lavender", "Rose", "Mint", "Basil", "Rosemary", "Chamomile"],
+    image: "/assets/img-4.png",
+  },
+  {
+    title: "Brown & White",
+    blurb: "Comfort flavours from vanilla and caramel to rich chocolate notes.",
+    items: [
+      "Vanilla",
+      "Caramel",
+      "Chocolate",
+      "Butterscotch",
+      "Toffee",
+      "Coconut",
+    ],
+    image: "/assets/img-5.png",
+  },
+  {
+    title: "Savoury",
+    blurb:
+      "Complex umami profiles and spice blends for sophisticated applications.",
+    items: ["Garlic", "Onion", "Pepper", "Herb Blend", "Mushroom", "Smoked"],
+    image: "/assets/img-6.png",
+  },
 ];
 
 /* chip palette (multicolor) */
@@ -53,21 +119,20 @@ export default function FlavourFamiliesGrid({ families }) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.35 }}
-        className="mx-auto max-w-5xl text-center"
+        className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="mt-3 section-title text-black tracking-tight">
-          Natural Taste & <span className="text-primary">Flavour Solutions</span>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: 128 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
-          />
-        </h2>
-        <p className="mt-2 section-paragraph text-black/70">
-          Comprehensive flavour families available in multiple formats—from core notes to complex modulators.
-        </p>
+        <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+          Natural Taste & Flavour Solutions
+        </h3>
+
+        {/* Underline animation – centered */}
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: 112 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="mt-2 mx-auto h-[2px] bg-primary rounded"
+        />
       </motion.div>
 
       {/* cards (2-col grid overall) */}
@@ -98,22 +163,23 @@ export default function FlavourFamiliesGrid({ families }) {
               <div className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2">
                 {/* text (50%) */}
                 <div className="sm:pr-2">
-                  <h3 className="section-subtitle">
-                    {f.title}
-                    <motion.i
-                      initial={{ width: 40 }}
-                      whileHover={{ width: 90 }}
-                      className="block h-[3px] rounded bg-black"
-                    />
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-black/70 line-clamp-3">{f.blurb}</p>
+                  <h3 className="section-subtitle">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-black/70 line-clamp-3">
+                    {f.blurb}
+                  </p>
 
                   {/* chips */}
                   <div className="mt-3 flex flex-wrap gap-2">
                     {preview.map((it, i) => (
                       <span
                         key={it}
-                        className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ring-1 ${chipColors[i % chipColors.length]}`}
+                        className="
+    inline-flex items-center
+    rounded-full px-3 py-1
+    text-xs font-semibold text-black
+    border border-primary
+    bg-transparent
+  "
                       >
                         {it}
                       </span>
@@ -122,7 +188,15 @@ export default function FlavourFamiliesGrid({ families }) {
                       <button
                         type="button"
                         onClick={() => toggleExpanded(idx)}
-                        className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-white/70 ring-1 ring-black/10 hover:bg-white transition"
+                        className="
+    inline-flex items-center
+    rounded-full px-3 py-1
+    text-xs font-semibold text-black
+    border border-primary
+    bg-transparent
+    hover:bg-primary/5
+    transition
+  "
                       >
                         +{moreCount} more
                       </button>
@@ -142,8 +216,14 @@ export default function FlavourFamiliesGrid({ families }) {
                         {rest.map((it, i) => (
                           <motion.span
                             key={it}
-                            whileHover={{ y: -1, scale: 1.03 }}
-                            className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ring-1 ${chipColors[i % chipColors.length]}`}
+                            whileHover={{ y: -1 }}
+                            className="
+    inline-flex items-center
+    rounded-full px-3 py-1
+    text-xs font-semibold text-black
+    border border-primary
+    bg-transparent
+  "
                           >
                             {it}
                           </motion.span>
@@ -151,7 +231,15 @@ export default function FlavourFamiliesGrid({ families }) {
                         <button
                           type="button"
                           onClick={() => toggleExpanded(idx)}
-                          className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-white/70 ring-1 ring-black/10 hover:bg-white transition"
+                          className="
+    inline-flex items-center
+    rounded-full px-3 py-1
+    text-xs font-semibold text-black
+    border border-primary
+    bg-transparent
+    hover:bg-primary/5
+    transition
+  "
                         >
                           Show less
                         </button>

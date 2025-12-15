@@ -45,7 +45,7 @@
   --color-secondary-light: var(--secondary-light);
   --color-secondary-dark: var(--secondary-dark);
 
-   --font-primary: "PlusJakarta", sans-serif;
+  --font-primary: "PlusJakarta", sans-serif;
   --font-secondary: "Monsart", sans-serif;
 
  
@@ -121,5 +121,25 @@ body {
   /* Optional divider */
   .section-divider {
     @apply my-12 h-px w-full bg-black/10 dark:bg-white/10;
+  }
+}
+
+.sensorisch-footer-text {
+  font-family: "Montserrat", "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  font-size: 140px;
+}
+
+@media (max-width: 1024px) {
+  .sensorisch-footer-text {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sensorisch-footer-text {
+    font-size: 72px;
+    letter-spacing: 0.16em;
   }
 }
