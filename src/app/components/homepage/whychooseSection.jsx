@@ -10,22 +10,19 @@ const FEATURES = [
     iconSrc: "/icons/icon-1.png",
     iconAlt: "Innovation icon",
     title: "Multi-Sensory Innovation",
-    desc:
-      "Science-led creativity combining data-driven R&D with culinary craft for distinctive taste experiences.",
+    desc: "Science-led creativity combining data-driven R&D with culinary craft for distinctive taste experiences.",
   },
   {
     iconSrc: "/icons/icon-2.png",
     iconAlt: "Nutrition & Wellness icon",
     title: "Nutrition & Wellness",
-    desc:
-      "Specialized solutions for health-focused applications with effective masking and enhanced palatability.",
+    desc: "Specialized solutions for health-focused applications with effective masking and enhanced palatability.",
   },
   {
     iconSrc: "/icons/icon-3.png",
     iconAlt: "Sustainability icon",
     title: "Sustainability Focus",
-    desc:
-      "Responsible sourcing and waste-aware processes for clean-label and environmentally conscious solutions.",
+    desc: "Responsible sourcing and waste-aware processes for clean-label and environmentally conscious solutions.",
   },
 ];
 
@@ -41,19 +38,31 @@ export default function WhyChooseSection() {
   const [openIdx, setOpenIdx] = useState(null);
 
   return (
-    <section id="why-sensorisch" className="section relative overflow-hidden bg-background">
-
+    <section
+      id="why-sensorisch"
+      className="section relative overflow-hidden bg-background"
+    >
       <div className="section-container">
         {/* Title */}
-        <motion.div {...fadeUp(0)} className="mx-auto max-w-3xl text-center">
-          <h2 className="section-title text-black  mt-4">Why Choose <span className="text-primary">Sensorisch</span>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-2xl text-center"
+        >
+          <h3 className="section-title font-semibold text-gray-900 leading-tight">
+            Why Choose Sensorisch
+          </h3>
+
+          {/* Underline animation – centered */}
           <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: 112 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                              className="mx-auto mt-6 h-1 rounded bg-black"
-                            /></h2>
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
+          />
         </motion.div>
 
         {/* Features */}
@@ -103,10 +112,14 @@ export default function WhyChooseSection() {
                     "mt-2 overflow-hidden transition-all duration-300 ease-out",
                     "group-hover:max-h-40 group-hover:opacity-100 group-hover:translate-y-0",
                     "focus-within:max-h-40 focus-within:opacity-100 focus-within:translate-y-0",
-                    isOpen ? "max-h-40 opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-1",
+                    isOpen
+                      ? "max-h-40 opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 translate-y-1",
                   ].join(" ")}
                 >
-                  <p className="section-paragraph text-center leading-relaxed">{f.desc}</p>
+                  <p className="section-paragraph text-center leading-relaxed">
+                    {f.desc}
+                  </p>
                 </div>
 
                 {/* underline + chevron indicator */}

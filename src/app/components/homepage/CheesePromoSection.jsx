@@ -1,6 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.6, delay },
+});
 
 export default function PromoSection() {
   return (
@@ -55,9 +64,27 @@ export default function PromoSection() {
 
               {/* RIGHT: CONTENT */}
               <div className="sm:col-span-8 p-6 sm:p-8 flex flex-col justify-center text-center sm:text-left">
-                <h2 className="section-title text-black">
-                  Explore the <span className="text-primary">Senso</span> Ranges
-                </h2>
+                 <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
+              Explore the Senso Ranges
+
+            </h3>
+
+            {/* Underline animation – centered */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
+            />
+          </motion.div>
 
                 <p className="section-paragraph mb-3">
                   Behind every great flavour is great science. Senso brings
