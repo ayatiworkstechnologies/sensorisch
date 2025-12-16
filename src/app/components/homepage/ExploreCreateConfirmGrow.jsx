@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -16,18 +17,18 @@ const titleAnim = {
   },
 };
 
-// Cards wrapper (controls stagger)
+// Cards wrapper (stagger control)
 const cardsWrap = {
   hidden: {},
   show: {
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.3, // starts after title
+      delayChildren: 0.3,
     },
   },
 };
 
-// Individual card: LEFT → RIGHT
+// Individual card animation (left → right)
 const cardAnim = {
   hidden: { opacity: 0, x: -32 },
   show: {
@@ -44,29 +45,32 @@ export default function ExploreCreateConfirmGrow() {
       icon: "/icons/5.svg",
       title: "Inspiration",
       desc: "Showcase Smart Innovation",
+      href: "#",
     },
     {
       key: "insight",
       icon: "/icons/6.svg",
       title: "Insight",
       desc: "Stay Ahead of the Curve",
+      href: "/insights",
     },
     {
       key: "innovation",
       icon: "/icons/7.svg",
       title: "Innovation",
       desc: "Shaping the next wave of innovation",
+      href: "#",
     },
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-start gap-12">
+        <div className="flex flex-col lg:flex-row gap-14 items-start">
 
           {/* LEFT TITLE */}
           <motion.div
-            className="lg:w-2/3 w-full"
+            className="lg:w-1/3 w-full"
             variants={titleAnim}
             initial="hidden"
             whileInView="show"
@@ -76,13 +80,13 @@ export default function ExploreCreateConfirmGrow() {
               Explore Create Confirm Grow
             </h3>
 
-            {/* underline */}
+            {/* Underline */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-              className="mt-4 h-[2px] bg-primary rounded"
+              className="mt-5 h-[2px] bg-primary rounded"
             />
           </motion.div>
 
@@ -94,38 +98,49 @@ export default function ExploreCreateConfirmGrow() {
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((f) => (
-                <motion.article
-                  key={f.key}
-                  variants={cardAnim}
-                  className="
-                    bg-white
-                    border border-gray-200
-                    p-6
-                    transition
-                    hover:border-primary
-                  "
-                >
-                  {/* Icon */}
-                  <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                    <Image
-                      src={f.icon}
-                      alt={f.title}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                  </div>
+                <motion.div key={f.key} variants={cardAnim}>
+                  <Link
+                    href={f.href}
+                    className="
+                      group
+                      flex
+                      flex-col
+                      items-center
+                      justify-center
+                      min-h-[300px]
+                      rounded-2xl
+                      bg-white
+                      border border-gray-200
+                      px-8 py-10
+                      text-center
+                      transition-all duration-300
+                      hover:border-primary
+                      hover:shadow-xl
+                      hover:-translate-y-1
+                    "
+                  >
+                    {/* Icon */}
+                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gray-50 transition group-hover:bg-primary/10">
+                      <Image
+                        src={f.icon}
+                        alt={f.title}
+                        width={44}
+                        height={44}
+                        className="object-contain"
+                      />
+                    </div>
 
-                  <h4 className="text-lg font-semibold text-black">
-                    {f.title}
-                  </h4>
+                    <h4 className="text-xl font-semibold text-gray-900">
+                      {f.title}
+                    </h4>
 
-                  <p className="mt-2 text-sm text-black/70 leading-relaxed">
-                    {f.desc}
-                  </p>
-                </motion.article>
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed max-w-[240px]">
+                      {f.desc}
+                    </p>
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>

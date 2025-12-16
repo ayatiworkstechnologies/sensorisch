@@ -461,48 +461,6 @@ const ranges = [
 export default function ApplicationSolutions() {
   return (
     <>
-      {/* <HeroCompnonet
-        data={{
-          eyebrow: "Applications & Solutions",
-          title: "Senso ",
-          highlight: "Application Ranges",
-          blurb:
-            "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
-          image: { src: "/banners/application.png", alt: "Lab and product banner" },
-          primary: { href: "/application-solutions", label: "Explore Solutions" },
-          secondary: { href: "/contact", label: "Request Samples" },
-
-          scrollToId: "application",
-
-          // toggles
-          enableTilt: true,
-          showUnderline: true,
-          showShimmer: true,
-          showHalo: true,
-
-          // layout
-          className: "bg-background",
-          containerClassName: "section-container py-16 md:py-24",
-        }}
-      /> */}
-      {/* <HeroComponent
-        data={{
-          imageMobile: { src: "/banners/applications-mob.jpg", alt: "Mobile Banner" },
-          imageDesktop: { src: "/banners/applications-web.jpg", alt: "Desktop Banner" },
-      
-          primary: {
-            href: "/applications-solutions",
-            label: "Explore Solutions"
-          },
-      
-          secondary: {
-            href: "/contact",
-            label: "Request Samples"
-          },
-      
-          scrollToId: "application"
-        }}
-      /> */}
       <HeroComponent
         data={{
           imageMobile: {
@@ -543,6 +501,8 @@ export default function ApplicationSolutions() {
             imageAlt={`${r.title} hero`}
             benefits={r.benefits}
             tags={r.tags}
+            primaryLabel={r.primaryLabel}
+            secondaryLabel={r.secondaryLabel}
           />
         ))}
       </StickyFullpageSlides>

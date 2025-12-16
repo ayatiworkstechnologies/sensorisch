@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ScrollButton from "./components/ScrollButton";
 import SplashLoader from "./components/SplashLoader";
 import AnimatedCursor from "./components/AnimatedCursor";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+                <Toaster position="top-right" />
+
           <SplashLoader ms={3000} />
         {/* <AnimatedCursor /> */}
         <Header />
