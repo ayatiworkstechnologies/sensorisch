@@ -25,23 +25,27 @@ export default function FAQSection() {
   return (
     <section className="section">
       <div className="section-container">
-        <motion.h3
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="text-center text-black section-title"
-        >
-          Frequently <span className="text-primary"> Asked Questions</span>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: 160 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-black"
-            aria-hidden
-          />
-        </motion.h3>
+       <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+              <h3 className="section-title font-semibold text-gray-900 leading-tight">
+                Frequently Asked Questions
+
+              </h3>
+
+              {/* Underline animation – centered */}
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 112 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className="mt-2 mx-auto h-[2px] bg-primary rounded"
+              />
+            </motion.div>
 
         <div className="mx-auto mt-6 max-w-3xl">
           {FAQ.map((f, i) => {

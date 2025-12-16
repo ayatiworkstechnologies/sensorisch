@@ -53,7 +53,7 @@ export default function ValuesSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+           <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Our Values
           </h3>
 

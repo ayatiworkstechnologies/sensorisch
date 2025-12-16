@@ -95,7 +95,7 @@ export default function AboutSensorisch() {
             className="space-y-6"
           >
             {/* Title with word-by-word rise */}
-            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+             <h3 className="section-title font-semibold text-gray-900 leading-tight">
               Our Story
             </h3>
 

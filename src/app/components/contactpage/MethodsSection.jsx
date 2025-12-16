@@ -54,17 +54,26 @@ export default function MethodsSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="text-center"
         >
-          <motion.h2 variants={fadeUp} className="section-title text-black">
-            How Can We <span className="text-primary">Help You?</span>{" "}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+             <h3 className="section-title font-semibold text-gray-900 leading-tight">
+              How Can We Help You?
+            </h3>
+
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: 160 }}
+              whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-black"
-              aria-hidden
+              className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
-          </motion.h2>
+          </motion.div>
           <motion.p variants={fadeUp} className="section-paragraph mt-2">
             Choose the best way to connect with our team based on your needs
           </motion.p>

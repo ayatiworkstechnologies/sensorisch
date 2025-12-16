@@ -78,50 +78,49 @@ export default function FormSection() {
     setFiles(limited);
   };
 
- const onSubmit = async (data) => {
-  setSubmitting(true);
-  setServerError("");
-  setSent(false);
+  const onSubmit = async (data) => {
+    setSubmitting(true);
+    setServerError("");
+    setSent(false);
 
-  try {
-    // Prepare template params
-    const templateParams = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      phone: data.phone,
-      company: data.company,
-      roleTitle: data.roleTitle,
-      inquiryType: data.inquiryType,
-      application: data.application,
-      projectDetails: data.projectDetails,
-      additionalInfo: data.additionalInfo,
-    };
+    try {
+      // Prepare template params
+      const templateParams = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        roleTitle: data.roleTitle,
+        inquiryType: data.inquiryType,
+        application: data.application,
+        projectDetails: data.projectDetails,
+        additionalInfo: data.additionalInfo,
+      };
 
-    // --- Replace these with your own EmailJS keys ---
-    const SERVICE_ID = "service_658qu6f";
-    const TEMPLATE_ID = "template_9l9fhel";
-    const PUBLIC_KEY = "3HrWnx7n23xp9zGfl";
+      // --- Replace these with your own EmailJS keys ---
+      const SERVICE_ID = "service_658qu6f";
+      const TEMPLATE_ID = "template_9l9fhel";
+      const PUBLIC_KEY = "3HrWnx7n23xp9zGfl";
 
-    const result = await emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      templateParams,
-      PUBLIC_KEY
-    );
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
 
-    console.log("EmailJS result:", result.text);
-    setSent(true);
-    reset();
-    setFiles([]);
-  } catch (error) {
-    console.error("EmailJS error:", error);
-    setServerError("Failed to send message. Please try again later.");
-  } finally {
-    setSubmitting(false);
-  }
-};
-
+      console.log("EmailJS result:", result.text);
+      setSent(true);
+      reset();
+      setFiles([]);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setServerError("Failed to send message. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact-form" className="section-container">
@@ -136,19 +135,29 @@ export default function FormSection() {
           className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6 md:p-8"
         >
           <div className="text-center">
-            <motion.h3 variants={fadeUp} className="section-title text-black">
-              Get in <span className="text-primary">Touch</span>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+               <h3 className="section-title font-semibold text-gray-900 leading-tight">
+                Get in Touch
+              </h3>
+
+              {/* Underline animation – centered */}
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: 160 }}
+                whileInView={{ width: 112 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mx-auto mt-4 h-1 rounded bg-black"
-                aria-hidden
+                className="mt-2 mx-auto h-[2px] bg-primary rounded"
               />
-            </motion.h3>
+            </motion.div>
             <motion.p variants={fadeUp} className="section-paragraph mt-1">
-              Tell us about your project and we’ll get back to you within 24 hours.
+              Tell us about your project and we’ll get back to you within 24
+              hours.
             </motion.p>
           </div>
 
@@ -259,9 +268,16 @@ export default function FormSection() {
 
           {/* upload */}
           <motion.div variants={fadeUp} className="mt-4">
-            <label className="text-sm font-medium">Attach Files (Max 10MB)</label>
+            <label className="text-sm font-medium">
+              Attach Files (Max 10MB)
+            </label>
             <label className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-black/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
-              <input type="file" className="hidden" multiple onChange={onPickFiles} />
+              <input
+                type="file"
+                className="hidden"
+                multiple
+                onChange={onPickFiles}
+              />
               <div className="flex items-center justify-between gap-3">
                 <span className="inline-flex items-center gap-2">
                   <UploadCloud className="h-4 w-4" /> Drop files here or browse
@@ -322,7 +338,8 @@ export default function FormSection() {
                 exit={{ opacity: 0 }}
                 className="mt-3 text-xs text-emerald-600 inline-flex items-center gap-1"
               >
-                <CheckCircle2 className="h-4 w-4" /> Thanks! Your message has been sent.
+                <CheckCircle2 className="h-4 w-4" /> Thanks! Your message has
+                been sent.
               </motion.div>
             )}
           </AnimatePresence>
@@ -337,14 +354,7 @@ export default function FormSection() {
 }
 
 /* ------- Small UI bits (updated for RHF) ------- */
-function Field({
-  name,
-  label,
-  icon: Icon,
-  error,
-  className = "",
-  children,
-}) {
+function Field({ name, label, icon: Icon, error, className = "", children }) {
   // ensure the control gets left padding when an icon exists, and link label->input
   const onlyChild = Children.only(children);
   const enhanced = cloneElement(onlyChild, {

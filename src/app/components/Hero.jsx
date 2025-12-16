@@ -21,9 +21,8 @@ export default function HeroComponent({ data = {} }) {
     <section
       className="
         relative
-        min-h-[620px]
+        min-h-[650px]
         flex items-center
-        pt-24           /* space for header overlay */
         overflow-hidden
       "
     >

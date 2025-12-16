@@ -178,7 +178,7 @@ export function PremiumSpreadsSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+           <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Premium Spreads
           </h3>
 
@@ -280,7 +280,7 @@ export function PremiumSpreadsSection() {
             viewport={{ once: true, amount: 0.35 }}
             className="mx-auto max-w-3xl text-center"
           >
-            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+             <h3 className="section-title font-semibold text-gray-900 leading-tight">
               Key Banefits
             </h3>
 
@@ -336,7 +336,7 @@ export function DecorSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+           <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Cake Dust & Decor
           </h3>
 
@@ -407,7 +407,7 @@ export function DecorSection() {
             viewport={{ once: true, amount: 0.35 }}
             className="mx-auto max-w-3xl text-center"
           >
-            <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+             <h3 className="section-title font-semibold text-gray-900 leading-tight">
               Professinal Benefits
             </h3>
 
@@ -462,7 +462,7 @@ export function SystemsSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight">
+           <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Ingredient & Delivery Systems
           </h3>
 
