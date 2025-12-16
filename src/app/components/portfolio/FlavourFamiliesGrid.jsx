@@ -151,7 +151,7 @@ export default function FlavourFamiliesGrid({ families }) {
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
               {...pop}
-              className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 shadow-lg"
+              className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 "
             >
               {/* glow */}
               {/* <div

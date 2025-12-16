@@ -2,7 +2,13 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useMotionValue, useTransform, useScroll, useSpring } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import Link from "next/link";
 
 const fadeUp = {
@@ -17,15 +23,26 @@ export default function AboutSensorisch() {
   const cardRef = useRef(null);
 
   // ---- Scroll progress for the section (thin bar on top)
-  const { scrollYProgress } = useScroll({ target: cardRef, offset: ["start 65%", "end 10%"] });
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.3 });
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start 65%", "end 10%"],
+  });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 20,
+    mass: 0.3,
+  });
 
   // ---- Parallax/tilt for image
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const rotX = useTransform(my, [-60, 60], [6, -6]);
   const rotY = useTransform(mx, [-60, 60], [-6, 6]);
-  const glow = useTransform(mx, [-60, 60], ["rgba(210,36,34,0.15)", "rgba(210,36,34,0.35)"]);
+  const glow = useTransform(
+    mx,
+    [-60, 60],
+    ["rgba(210,36,34,0.15)", "rgba(210,36,34,0.35)"]
+  );
 
   const onMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -35,8 +52,6 @@ export default function AboutSensorisch() {
 
   return (
     <section id="our-story" className="relative bg-background">
-      
-
       <div ref={cardRef} className="section-container">
         {/* Story + Image */}
         <div className="mt-12 md:mt-16 grid gap-8 md:grid-cols-2 items-start">
@@ -50,11 +65,14 @@ export default function AboutSensorisch() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
-            className="relative overflow-hidden rounded-xl border border-black/5 dark:border-white/10 shadow-xl"
+            className="relative overflow-hidden rounded-xl border border-black/5"
           >
             {/* reveal mask sweep */}
             <motion.div
-              initial={{ clipPath: "inset(0 100% 0 0 round 12px)", opacity: 0.6 }}
+              initial={{
+                clipPath: "inset(0 100% 0 0 round 12px)",
+                opacity: 0.6,
+              }}
               whileInView={{
                 clipPath: "inset(0 0% 0 0 round 12px)",
                 opacity: 1,
@@ -92,10 +110,10 @@ export default function AboutSensorisch() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
-            className="space-y-6"
+            className="space-y-2"
           >
             {/* Title with word-by-word rise */}
-             <h3 className="section-title font-semibold text-gray-900 leading-tight">
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
               Our Story
             </h3>
 
@@ -111,23 +129,31 @@ export default function AboutSensorisch() {
             {/* Paragraphs (staggered) */}
             <motion.p
               variants={fadeUp}
-              className="section-paragraph leading-relaxed text-black/80"
+              className="section-paragraph mt-5 leading-relaxed text-black/80"
             >
-              sensorisch is a specialist b2b formulation house designed exclusively for the institutional food and beverage sector. our
-              precision ingredients serve the bakery, confectionery, beverage, dairy, hospitality, and emerging nutraceutical industries,
-              with a strict focus on performance, stability, and clean-label integrity. at the intersection of science and sensory delight,
-              we craft flavours that don't just taste good they perform.
+              sensorisch is a specialist b2b formulation house designed
+              exclusively for the institutional food and beverage sector. our
+              precision ingredients serve the bakery, confectionery, beverage,
+              dairy, hospitality, and emerging nutraceutical industries, with a
+              strict focus on performance, stability, and clean-label integrity.
+              at the intersection of science and sensory delight, we craft
+              flavours that don't just taste good they perform.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="section-paragraph leading-relaxed text-black/80"
             >
-              we specialise in the research, development, and manufacture of advanced flavour systems tailored to a wide spectrum of
-              applications, from bakery and beverages to pharmaceuticals and personal care. driven by innovation, supported by robust
-              technical expertise, and aligned with global regulatory frameworks, our solutions are engineered to meet the highest standards
-              of safety, stability, and sensory performance. with a focus on customisation, application-specific functionality, and
-              clean-label compatibility, we partner with brands to translate consumer insights into flavourful experiences.
+              we specialise in the research, development, and manufacture of
+              advanced flavour systems tailored to a wide spectrum of
+              applications, from bakery and beverages to pharmaceuticals and
+              personal care. driven by innovation, supported by robust technical
+              expertise, and aligned with global regulatory frameworks, our
+              solutions are engineered to meet the highest standards of safety,
+              stability, and sensory performance. with a focus on customisation,
+              application-specific functionality, and clean-label compatibility,
+              we partner with brands to translate consumer insights into
+              flavourful experiences.
             </motion.p>
 
             {/* CTA with sheen */}

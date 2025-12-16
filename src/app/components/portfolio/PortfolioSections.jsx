@@ -210,7 +210,7 @@ export function PremiumSpreadsSection() {
             key={s.name}
             variants={fadeUp}
             whileHover={{ y: -6 }}
-            className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 shadow-sm"
+            className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5"
           >
             {/* sheen + halo */}
             {/* <motion.span
@@ -369,7 +369,7 @@ export function DecorSection() {
             key={d.k}
             variants={fadeUp}
             whileHover={{ y: -4 }}
-            className="relative overflow-hidden rounded-2xl bg-white/60 dark:bg-white/[0.06] backdrop-blur ring-1 ring-black/5 dark:ring-white/10 px-5 py-4"
+            className="relative overflow-hidden rounded-2xl bg-white/60 border border-black/10 px-5 py-4"
           >
             <motion.span
               aria-hidden
@@ -379,7 +379,7 @@ export function DecorSection() {
               className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 skew-x-12 bg-white/20"
             />
             <div>
-              <h4 className="section-subtitle">{d.k}</h4>
+              <h4 className="section-subtitle text-primary">{d.k}</h4>
               <p className="section-paragraph">{d.sub}</p>
             </div>
             {/* <div className="mt-3 flex justify-end">
@@ -430,9 +430,9 @@ export function DecorSection() {
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.04 }}
-              className="rounded-xl bg-white/60 text-center dark:bg-white/[0.06] backdrop-blur ring-1 ring-black/5 dark:ring-white/10 px-4 py-3"
+              className="rounded-xl bg-white/60 text-center border border-black/10 px-4 py-3"
             >
-              <div className="section-subtitle">{b.k}</div>
+              <div className="section-subtitle text-primary">{b.k}</div>
               <p className="section-paragraph">{b.sub}</p>
             </motion.div>
           ))}
@@ -495,7 +495,7 @@ export function SystemsSection() {
               key={s.k}
               variants={fadeUp}
               whileHover={{ y: -3 }}
-              className="rounded-2xl bg-white/60 dark:bg-white/[0.06] backdrop-blur ring-1 ring-black/5 dark:ring-white/10 p-5"
+              className="rounded-2xl bg-white/60 border border-black/10 p-5"
             >
               <div className="flex items-start gap-3">
                 <span className="grid place-items-center size-10 rounded-xl  mt-3 text-primary ">

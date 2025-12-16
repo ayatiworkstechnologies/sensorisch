@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 const FEATURES = [
   {
@@ -26,23 +24,19 @@ const FEATURES = [
   },
 ];
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, delay },
-});
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 export default function WhyChooseSection() {
-  // JS version: no <number | null> type here
-  const [openIdx, setOpenIdx] = useState(null);
-
   return (
-    <section
-      id="why-sensorisch"
-      className="section relative overflow-hidden bg-background"
-    >
-      <div className="section-container">
+    <section id="why-sensorisch" className="bg-background">
+      <div className="section-container py-12">
         {/* Title */}
         <motion.div
           variants={fadeUp}
@@ -51,11 +45,10 @@ export default function WhyChooseSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h3 className="section-title font-semibold text-gray-900 leading-tight">
+          <h3 className="section-title font-semibold text-black">
             Why Choose Sensorisch
           </h3>
 
-          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
@@ -65,77 +58,45 @@ export default function WhyChooseSection() {
           />
         </motion.div>
 
-        {/* Features */}
-        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-3">
-          {FEATURES.map((f, i) => {
-            const isOpen = openIdx === i;
+        {/* Cards */}
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {FEATURES.map((f, i) => (
+            <motion.article
+              key={f.title}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              className="
+                border border-black/30
+                rounded
+                p-6
+                text-center
+              "
+            >
+              {/* Icon */}
+              <div className="flex justify-center">
+                <Image
+                  src={f.iconSrc}
+                  alt={f.iconAlt}
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                  priority={i === 0}
+                />
+              </div>
 
-            return (
-              <motion.article
-                key={f.title}
-                {...fadeUp(0.08 * i)}
-                className="group feature-card cursor-pointer select-none"
-                aria-label={f.title}
-                onClick={() => setOpenIdx(isOpen ? null : i)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setOpenIdx(isOpen ? null : i);
-                  }
-                }}
-                role="button"
-                tabIndex={0}
-              >
-                {/* Icon on top (PNG) */}
-                <div className="flex flex-col items-center text-center">
-                  <div
-                    className="grid h-14 w-14 place-items-center rounded-2xl  text-primary
-                               transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3"
-                  >
-                    <Image
-                      src={f.iconSrc}
-                      alt={f.iconAlt}
-                      width={20}
-                      height={20}
-                      className="h-8 w-8 object-contain"
-                      priority={i === 0}
-                    />
-                  </div>
+              {/* Title */}
+              <h3 className="mt-4 text-2xl font-semibold text-black">
+                {f.title}
+              </h3>
 
-                  {/* Heading next line */}
-                  <h3 className="mt-4 section-subtitle">{f.title}</h3>
-                </div>
-
-                {/* Hidden paragraph reveals on hover/focus/expand */}
-                <div
-                  className={[
-                    "mt-2 overflow-hidden transition-all duration-300 ease-out",
-                    "group-hover:max-h-40 group-hover:opacity-100 group-hover:translate-y-0",
-                    "focus-within:max-h-40 focus-within:opacity-100 focus-within:translate-y-0",
-                    isOpen
-                      ? "max-h-40 opacity-100 translate-y-0"
-                      : "max-h-0 opacity-0 translate-y-1",
-                  ].join(" ")}
-                >
-                  <p className="section-paragraph text-center leading-relaxed">
-                    {f.desc}
-                  </p>
-                </div>
-
-                {/* underline + chevron indicator */}
-                <div className="mt-5 flex items-center justify-center gap-2">
-                  <div className="h-px w-0 bg-primary/40 transition-all duration-300 group-hover:w-20" />
-                  <ChevronDown
-                    className={`h-4 w-4 text-primary/70 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : "rotate-0"
-                    }`}
-                    aria-hidden="true"
-                  />
-                  <div className="h-px w-0 bg-primary/40 transition-all duration-300 group-hover:w-20" />
-                </div>
-              </motion.article>
-            );
-          })}
+              {/* Description – always visible */}
+              <p className="mt-5 text-lg font-secondary text-black/70 leading-relaxed">
+                {f.desc}
+              </p>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

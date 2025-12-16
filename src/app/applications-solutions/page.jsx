@@ -504,48 +504,48 @@ export default function ApplicationSolutions() {
         }}
       /> */}
       <HeroComponent
-              data={{
-                imageMobile: {
-                  src: "/banners/mob-banner.png",
-                  alt: "Mobile banner image",
-                },
-                imageDesktop: {
-                  src: "/banners/banner.png",
-                  alt: "Desktop banner image",
-                },
-                title: "Senso Application Ranges",
-                subtitle:
-                  "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
-                primary: {
-                  label: "Start Your Project",
-                  href: "/contact",
-                },
-                secondary: {
-                  label: "View Our Portfolio",
-                  href: "/portfolio",
-                },
-                // scrollToId: "next-section",
-              }}
-            />
+        data={{
+          imageMobile: {
+            src: "/banners/mob-banner.png",
+            alt: "Mobile banner image",
+          },
+          imageDesktop: {
+            src: "/banners/banner.png",
+            alt: "Desktop banner image",
+          },
+          title: "Senso Application Ranges",
+          subtitle:
+            "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
+          primary: {
+            label: "Start Your Project",
+            href: "/contact",
+          },
+          secondary: {
+            label: "View Our Portfolio",
+            href: "/portfolio",
+          },
+          // scrollToId: "next-section",
+        }}
+      />
 
       <WhyChooseSenso />
       {/* <main className="bg-background text-black"> */}
-        <StickyFullpageSlides fade translate heightMultiplier={1}>
-          {ranges.map((r, i) => (
-            <SensoRangeHero
-              key={r.title + i}
-              reverse={r.reverse}
-              badge={r.badge}
-              title={r.title}
-              blurb={r.blurb}
-              imageSrc={r.imageSrc}
-              iconSrc={r.iconSrc}
-              imageAlt={`${r.title} hero`}
-              benefits={r.benefits}
-              tags={r.tags}
-            />
-          ))}
-        </StickyFullpageSlides>
+      <StickyFullpageSlides fade translate heightMultiplier={1}>
+        {ranges.map((r, i) => (
+          <SensoRangeHero
+            key={r.title + i}
+            reverse={r.reverse}
+            badge={r.badge}
+            title={r.title}
+            blurb={r.blurb}
+            imageSrc={r.imageSrc}
+            iconSrc={r.iconSrc}
+            imageAlt={`${r.title} hero`}
+            benefits={r.benefits}
+            tags={r.tags}
+          />
+        ))}
+      </StickyFullpageSlides>
       {/* </main> */}
       <BespokeSolutionsSection
         onPrimaryHref="/bespoke"
@@ -553,15 +553,15 @@ export default function ApplicationSolutions() {
         onProcessHref="/bespoke"
       />
       {/* <ProfileCTA /> */}
-       <HeroContact
-              kicker="Get in touch"
-              title="Ready to Accelerate Your Product Development?"
-              subtitle="Choose from our proven Senso ranges or partner with us for bespoke solutions tailored to your unique requirements."
-              primary={{ label: "Request Samples", href: "/contact" }}
-              secondary={{ label: "Schedule Consultation", href: "/contact" }}
-              imageSrc="/assets/get-in-touch.png"
-              imageAlt="Glass beaker with plant"
-            />
+      <HeroContact
+        kicker="Get in touch"
+        title="Ready to Accelerate Your Product Development?"
+        subtitle="Choose from our proven Senso ranges or partner with us for bespoke solutions tailored to your unique requirements."
+        primary={{ label: "Request Samples", href: "/contact" }}
+        secondary={{ label: "Schedule Consultation", href: "/contact" }}
+        imageSrc="/assets/get-in-touch.png"
+        imageAlt="Glass beaker with plant"
+      />
     </>
   );
 }

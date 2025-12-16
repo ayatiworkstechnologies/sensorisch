@@ -57,7 +57,7 @@ export default function ExploreCreateConfirmGrow() {
                   className="bg-white border border-gray-200 p-6 hover:shadow-md transition-all"
                 >
                   {/* ICON BOX */}
-                  <div className="w-14 h-14 mb-4 border border-gray-200 rounded-md flex items-center justify-center bg-white">
+                  <div className="w-16 h-16 mb-4 flex items-center justify-center bg-white">
                     <Image
                       src={f.icon}
                       alt={f.title}
@@ -67,10 +67,10 @@ export default function ExploreCreateConfirmGrow() {
                     />
                   </div>
 
-                  <h4 className="text-base font-semibold text-gray-900">
+                  <h4 className="text-xl font-primary font-semibold text-black/90">
                     {f.title}
                   </h4>
-                  <p className="text-sm text-gray-500 mt-1">{f.desc}</p>
+                  <p className="text-lg textblack/70 font-secondary mt-4">{f.desc}</p>
                 </article>
               ))}
 

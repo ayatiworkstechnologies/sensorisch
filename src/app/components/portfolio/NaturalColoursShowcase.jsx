@@ -129,7 +129,7 @@ function ColourCard({ name, blurb, hex = "#e5e7eb" }) {
     <motion.article
       variants={fadeUp}
       whileHover={{ y: -4 }}
-      className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 shadow-sm transition"
+      className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 transition"
     >
       {/* Colour block */}
       <div className="aspect-[2/1] w-full overflow-hidden rounded-t-2xl">

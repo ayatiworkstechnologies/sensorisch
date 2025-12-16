@@ -9,7 +9,7 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 export default function LocationsPanel() {
   return (
-    <section className="section">
+    <section className="">
       <div className="section-container">
         <motion.div
           variants={fadeUp}
@@ -21,26 +21,25 @@ export default function LocationsPanel() {
           {/* LEFT CONTENT */}
           <div className="space-y-6">
             <motion.div
-                                variants={fadeUp}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true, amount: 0.35 }}
-                                className="mx-auto max-w-3xl text-left"
-                              >
-                                 <h3 className="section-title font-semibold text-gray-900 leading-tight">
-                                 Our Location
-            
-                                </h3>
-                      
-                                {/* Underline animation – centered */}
-                                <motion.div
-                                  initial={{ width: 0 }}
-                                  whileInView={{ width: 112 }}
-                                  viewport={{ once: true }}
-                                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                                  className="mt-2  h-[2px] bg-primary rounded"
-                                />
-                              </motion.div>
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+              className="mx-auto max-w-3xl text-left"
+            >
+              <h3 className="section-title font-semibold text-gray-900 leading-tight">
+                Our Location
+              </h3>
+
+              {/* Underline animation – centered */}
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 112 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className="mt-2  h-[2px] bg-primary rounded"
+              />
+            </motion.div>
 
             <motion.article
               variants={fadeUp}
@@ -111,7 +110,7 @@ export default function LocationsPanel() {
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-sm font-medium shadow hover:bg-primary/90 transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-sm font-medium  hover:bg-primary/90 transition"
                 >
                   <MapPin className="h-4 w-4" />
                   Get Directions
@@ -141,7 +140,7 @@ export default function LocationsPanel() {
           {/* RIGHT SIDE — MAP IFRAME */}
           <motion.div
             variants={fadeUp}
-            className="w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white"
+            className="w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white"
           >
             <iframe
               title="Sensorisch Location Map"

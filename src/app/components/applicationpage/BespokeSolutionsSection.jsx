@@ -139,7 +139,7 @@ export function BespokeSolutionsIntro({
               variants={fadeUp}
               whileHover={{ y: -3 }}
               className="group relative flex items-start gap-3 rounded-xl border border-black/10
-                         bg-white/60  backdrop-blur px-4 py-3 shadow-sm
+                         bg-white/60  backdrop-blur px-4 py-3 
                          max-w-xl w-full"
             >
               <div className="grid size-8 place-items-center rounded-full text-primary shrink-0 mt-0.5">
@@ -163,7 +163,7 @@ export function BespokeSolutionsIntro({
             href={onPrimaryHref}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold shadow hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             {onPrimaryLabel}
             <ArrowRight className="h-4 w-4" />
@@ -249,7 +249,7 @@ export function DevelopmentProcessSection() {
             {/* Progress line */}
             <motion.div
               style={{ scaleY: lineScale }}
-              className="origin-top absolute left-1/2 -translate-x-1/2 top-0 w-[3px] bg-gradient-to-b from-primary via-fuchsia-500 to-emerald-500 rounded-full"
+              className="origin-top absolute left-1/2 -translate-x-1/2 top-0 w-[3px] rounded-full"
             />
           </div>
 
@@ -307,10 +307,9 @@ export function DevelopmentProcessSection() {
                         damping: 22,
                       }}
                       className="relative group rounded-2xl border border-black/10
-                                 bg-white/60 backdrop-blur p-5 md:p-6
-                                 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
+                                 bg-white/60 backdrop-blur p-5 md:p-6"
                     >
-                      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)] ring-1 ring-transparent group-hover:ring-primary/20" />
+                      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition ring-1 ring-transparent group-hover:ring-black/20" />
 
                       <div className="flex items-start gap-4">
                         <div className="grid size-11 place-items-center rounded-xl text-primary shrink-0">

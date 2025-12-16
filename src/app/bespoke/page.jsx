@@ -89,14 +89,17 @@ export default function bespoke() {
       <QualityComplianceSection />
       {/* <CTA /> */}
       <HeroContact
-              kicker="Get in touch"
-              title="Ready to Create Your Signature Flavour?"
-              subtitle="Partner with Sensorisch for bespoke flavour solutions that differentiate your brand and delight your customers. Let's build something extraordinary together."
-              primary={{ label: "Start Your Custom Project", href: "/applications-solutions" }}
-              secondary={{ label: "Explore Our Capabilities", href: "/contact" }}
-              imageSrc="/assets/get-in-touch.png"
-              imageAlt="Glass beaker with plant"
-            />
+        kicker="Get in touch"
+        title="Ready to Create Your Signature Flavour?"
+        subtitle="Partner with Sensorisch for bespoke flavour solutions that differentiate your brand and delight your customers. Let's build something extraordinary together."
+        primary={{
+          label: "Start Your Custom Project",
+          href: "/applications-solutions",
+        }}
+        secondary={{ label: "Explore Our Capabilities", href: "/contact" }}
+        imageSrc="/assets/get-in-touch.png"
+        imageAlt="Glass beaker with plant"
+      />
     </>
   );
 }

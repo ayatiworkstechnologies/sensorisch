@@ -178,7 +178,7 @@ export default function NewsTrends() {
             </button>
 
             {showFilters && (
-              <div className="absolute right-0 mt-2 w-40 rounded-md border bg-white shadow-md p-2 z-20">
+              <div className="absolute right-0 mt-2 w-40 rounded-md border bg-white p-2 z-20">
                 {SORTS.map((s) => (
                   <button
                     key={s}
@@ -206,7 +206,7 @@ export default function NewsTrends() {
           {paginatedPosts.map((post) => (
             <article
               key={post.id}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition"
+              className="border border-gray-200 rounded-lg overflow-hidden transition"
             >
               <div className="relative h-48">
                 <Image

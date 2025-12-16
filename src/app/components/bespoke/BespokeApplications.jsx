@@ -57,7 +57,7 @@ export default function BespokeApplicationsAlt() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-black leading-tight">
+          <h3 className="section-title font-semibold text-black leading-tight">
             Bespoke Applications
           </h3>
 
@@ -122,7 +122,7 @@ function RibbonRow({ index, title, blurb }) {
 
       {/* CARD */}
       <div
-        className={`relative group rounded-xl border border-primary/30
+        className={`relative group rounded-xl border border-black/10
         w-full max-w-xl md:max-w-none
         text-center
         ${left ? "md:order-2" : "md:order-1"}
@@ -140,7 +140,7 @@ function RibbonRow({ index, title, blurb }) {
       text-black
       border border-primary
       bg-transparent
-      px-4 py-1.5 rounded-full
+      px-4 py-1.5 rounded-lg
       transition hover:bg-primary/5
     "
             initial={{ opacity: 0, y: 4 }}

@@ -60,7 +60,7 @@ export default function CompetitiveEdgeSection() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.35 }}
-              className="mx-auto max-w-2xl text-center"
+              className="mx-auto max-w-3xl text-center"
             >
                <h3 className="section-title font-semibold text-gray-900 leading-tight">
                 Your Competitive Edge
@@ -74,15 +74,16 @@ export default function CompetitiveEdgeSection() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="mt-2 mx-auto h-[2px] bg-primary rounded"
               />
-            </motion.div>
-
-            <motion.p
+              <motion.p
               variants={fadeUp}
               className="mt-3 text-center section-paragraph text-black/70"
             >
               With Sensorisch, your brand gets more than flavour - it gets a
               competitive advantage built on precision and trust
             </motion.p>
+            </motion.div>
+
+            
           </div>
 
           {/* Right: features grid */}
@@ -114,7 +115,7 @@ function FeatureItem({ i, Icon, label }) {
         initial={{ x: "-120%" }}
         whileHover={{ x: "120%" }}
         transition={{ duration: 1.2, ease: "easeInOut" }}
-        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/25"
+        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 "
       />
       {/* left accent bar */}
       {/* <span
@@ -122,7 +123,7 @@ function FeatureItem({ i, Icon, label }) {
         className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-primary via-amber-400 to-rose-500"
       /> */}
 
-      <div className="flex items-start gap-3">
+      <div className="flex items-start border border-black/10 p-4 rounded-lg gap-3">
         <span className="mt-0.5 grid place-items-center size-7 rounded-md  text-primary ">
           <Icon className="h-6 w-6" />
         </span>

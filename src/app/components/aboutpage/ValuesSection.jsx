@@ -81,8 +81,8 @@ export default function ValuesSection() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               className="group relative overflow-hidden rounded-2xl p-6 md:p-7
-                         bg-white/70 dark:bg-white/5 backdrop-blur
-                         ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+                         bg-white/70 backdrop-blur
+                         ring-1 ring-black/5"
             >
               {/* ambient hue */}
               {/* <div

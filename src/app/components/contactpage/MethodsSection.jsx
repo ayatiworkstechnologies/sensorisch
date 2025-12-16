@@ -92,7 +92,7 @@ export default function MethodsSection() {
               variants={fadeUp}
               whileHover={{ y: -6, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/[0.06] backdrop-blur p-6 ring-1 ring-black/5 dark:ring-white/10 shadow-lg"
+              className="group relative overflow-hidden rounded-2xl bg-white/70 border border-gray-200 p-6 "
             >
               {/* {m.tag && (
                 <span className="absolute right-3 top-3 rounded-full bg-primary/10 text-primary text-[10px] font-semibold px-2 py-1">
@@ -102,7 +102,7 @@ export default function MethodsSection() {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl  text-primary ">
                 <m.icon className="h-8 w-8" />
               </div>
-              <h3 className="mt-3 section--subtitle">{m.title}</h3>
+              <h3 className="mt-3 section-subtitle">{m.title}</h3>
               <p className="mt-1 section-paragraph">{m.blurb}</p>
 
               <Link

@@ -107,7 +107,7 @@ export default function CapabilitiesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-4xl text-center"
         >
            <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Comprehensive facilities & expertise to bring your vision to life
@@ -138,7 +138,7 @@ export default function CapabilitiesSection() {
               whileHover={{ y: -6 }}
               className="group relative overflow-hidden rounded-2xl p-6 md:p-7
                          bg-white/70 dark:bg-white/5 backdrop-blur
-                         ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+                         ring-1 ring-black/5"
             >
               {/* ambient hue */}
               {/* <div

@@ -33,7 +33,7 @@ export default function FromBriefToScale() {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-5 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Heading */}
@@ -71,7 +71,7 @@ export default function FromBriefToScale() {
               >
 
                 {/* Icon circle */}
-                <div className="z-10 bg-white rounded-full w-20 h-20 flex items-center justify-center shadow-md border border-gray-200">
+                <div className="z-10 bg-white rounded-full w-20 h-20 flex items-center justify-center border border-gray-200">
                   <Image
                     src={s.icon}
                     alt={s.title}

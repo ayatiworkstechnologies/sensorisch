@@ -158,7 +158,7 @@ function Feature({ iconSrc, title, blurb }) {
     >
       {/* icon pill */}
       <div className="relative">
-        <div className="h-18 w-18 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center ">
+        <div className="h-18 w-18 rounded-full bg-white ring-1 ring-black/5 grid place-items-center ">
           <img src={iconSrc} alt="" className="h-10 w-10" />
         </div>
         <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl" />
@@ -176,8 +176,8 @@ function MarketCard({ heading, blurb }) {
   return (
     <motion.article
       variants={fadeUp}
-      whileHover={{ y: -4, boxShadow: "0 28px 46px -26px rgba(0,0,0,0.28)" }}
-      className="rounded-2xl bg-white/80 backdrop-blur-md shadow-[0_14px_30px_-18px_rgba(0,0,0,0.22)] ring-1 ring-black/5 p-6 md:p-8"
+      
+      className="rounded-2xl bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-6 md:p-8"
     >
       <h3 className="text-lg md:text-xl font-semibold">{heading}</h3>
       <p className="section-paragraph text-base mt-2">{blurb}</p>

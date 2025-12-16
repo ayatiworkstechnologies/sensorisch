@@ -25,8 +25,8 @@ export default function QualityComplianceSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-semibold text-black leading-tight">
-            Quality &amp; Compliance Assurance
+          <h3 className="section-title font-semibold text-black leading-tight">
+            Quality & Compliance Assurance
           </h3>
 
           <motion.div
@@ -76,7 +76,7 @@ function Feature({ Icon, title, points }) {
       className="
         relative rounded-2xl
         bg-white
-        border border-primary/30
+        border border-black/10
         p-5 md:p-6
       "
     >
@@ -107,11 +107,11 @@ function Feature({ Icon, title, points }) {
               text-black
               border border-primary
               bg-transparent
-              px-4 py-1.5 rounded-full
+              px-4 py-1.5 rounded-lg
               transition hover:bg-primary/5
             "
           >
-            View SOPs &gt;
+            View SOPs
           </motion.button>
         </div>
       </div>

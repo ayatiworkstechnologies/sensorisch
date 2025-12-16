@@ -120,7 +120,7 @@ function StepRow({ index, k, title, blurb }) {
       </div>
 
       {/* blurb (copy only - no cards) */}
-      <p className="section-paragraph text-black/70 leading-relaxed">{blurb}</p>
+      <p className="section-paragraph border border-black/10 p-4 rounded -mt-5 text-black/70 leading-relaxed">{blurb}</p>
     </motion.li>
   );
 }

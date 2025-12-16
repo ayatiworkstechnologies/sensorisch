@@ -94,10 +94,10 @@ export default function WhyChooseSenso() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="group relative flex max-w-sm w-full flex-col items-center text-center rounded-2xl border border-black/10 bg-white/60 backdrop-blur p-5 md:p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
+              className="group relative flex max-w-sm w-full flex-col items-center text-center rounded-2xl border border-black/10 bg-white/60 backdrop-blur p-5 md:p-6 "
             >
               {/* Glow ring on hover */}
-              <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-primary/20 transition" />
+              <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-black/20 transition" />
 
               <div className="flex flex-col items-center gap-3">
                 <div className="grid place-items-center rounded-xl  text-primary p-3">

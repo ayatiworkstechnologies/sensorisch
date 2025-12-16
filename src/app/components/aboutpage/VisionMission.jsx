@@ -96,7 +96,7 @@ export default function VisionMission() {
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
             whileHover={{ y: -4 }}
-            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5"
           >
             <h3 className="section-subtitle text-primary">Our Vision</h3>
             <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">
@@ -114,7 +114,7 @@ export default function VisionMission() {
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
             whileHover={{ y: -4 }}
-            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5"
           >
             <h3 className="section-subtitle text-primary">Our Mission</h3>
             <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">

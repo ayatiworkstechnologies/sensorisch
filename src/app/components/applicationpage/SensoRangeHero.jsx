@@ -96,7 +96,7 @@ export default function SensoRangeHero({
               {/* Badge with icon (single pill) */}
               <motion.span
                 variants={fadeUp}
-                className="inline-flex items-center gap-2 rounded-md bg-red-50 text-red-700 px-3 py-1 text-sm font-semibold ring-1 ring-red-200"
+                className="inline-flex items-center gap-2 rounded-md bg-primary/10 text-primary px-3 py-1 text-lg font-semibold"
               >
                 {badge}
               </motion.span>
@@ -144,7 +144,7 @@ export default function SensoRangeHero({
                       className="group relative flex items-center gap-3"
                     >
                       <div
-                        className={`grid h-15 w-15 place-items-center rounded-full shadow-md`}
+                        className={`grid h-15 w-15 place-items-center rounded-full `}
                       >
                         <BenefitIcon
                           icon={icon}
@@ -184,7 +184,7 @@ export default function SensoRangeHero({
             <div className="pt-4 flex flex-wrap gap-4">
               <Link
                 href={primaryHref}
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-semibold shadow hover:bg-primary/90 transition"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-semibold  hover:bg-primary/90 transition"
               >
                 {primaryLabel}
               </Link>
@@ -215,7 +215,7 @@ export default function SensoRangeHero({
               {blurb}
             </motion.p>
 
-            <div className="aspect-[16/11] w-full rounded-sm ring-1 ring-black/5 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.35)] overflow-hidden relative bg-muted">
+            <div className="aspect-[16/11] w-full overflow-hidden relative">
               <img
                 src={imageSrc}
                 alt={imageAlt}

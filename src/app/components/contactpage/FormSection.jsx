@@ -5,7 +5,6 @@ import { useMemo, useState, Children, cloneElement } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { fadeUp, list } from "./motionHelpers";
 import {
   Mail,
   Phone,
@@ -17,9 +16,7 @@ import {
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
-const MAX_FILES = 8;
-const MAX_TOTAL_MB = 10;
-
+/* ---------------- Schema ---------------- */
 const FormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
@@ -46,18 +43,6 @@ export default function FormSection() {
     reset,
   } = useForm({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      roleTitle: "",
-      inquiryType: "General",
-      application: "Bakery",
-      projectDetails: "",
-      additionalInfo: "",
-    },
   });
 
   const totalSizeMB = useMemo(
@@ -67,15 +52,7 @@ export default function FormSection() {
   );
 
   const onPickFiles = (e) => {
-    const picked = Array.from(e.target.files || []);
-    const limited = picked.slice(0, MAX_FILES);
-    const totalMB =
-      limited.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024);
-    if (totalMB > MAX_TOTAL_MB) {
-      alert("Total file size exceeds 10MB");
-      return;
-    }
-    setFiles(limited);
+    setFiles(Array.from(e.target.files || []));
   };
 
   const onSubmit = async (data) => {
@@ -84,312 +61,225 @@ export default function FormSection() {
     setSent(false);
 
     try {
-      // Prepare template params
-      const templateParams = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        email: data.email,
-        phone: data.phone,
-        company: data.company,
-        roleTitle: data.roleTitle,
-        inquiryType: data.inquiryType,
-        application: data.application,
-        projectDetails: data.projectDetails,
-        additionalInfo: data.additionalInfo,
-      };
-
-      // --- Replace these with your own EmailJS keys ---
-      const SERVICE_ID = "service_658qu6f";
-      const TEMPLATE_ID = "template_9l9fhel";
-      const PUBLIC_KEY = "3HrWnx7n23xp9zGfl";
-
-      const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        templateParams,
-        PUBLIC_KEY
+      await emailjs.send(
+        "service_658qu6f",
+        "template_9l9fhel",
+        data,
+        "3HrWnx7n23xp9zGfl"
       );
-
-      console.log("EmailJS result:", result.text);
       setSent(true);
       reset();
       setFiles([]);
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      setServerError("Failed to send message. Please try again later.");
+    } catch {
+      setServerError("Failed to send message. Please try again.");
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <section id="contact-form" className="section-container">
-      <div className="grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
-        <motion.form
-          variants={list}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          onSubmit={handleSubmit(onSubmit)}
-          encType="multipart/form-data"
-          className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6 md:p-8"
-        >
-          <div className="text-center">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
-              className="mx-auto max-w-3xl text-center"
-            >
-               <h3 className="section-title font-semibold text-gray-900 leading-tight">
-                Get in Touch
-              </h3>
+    <section id="contact-form" className="section-container py-12">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="rounded-xl border border-black/10 bg-white p-6 md:p-8"
+      >
+        {/* Header */}
+        <div className="text-center">
+          <h3 className="section-title font-semibold text-black">
+            Get in Touch
+          </h3>
+          <div className="mx-auto mt-2 h-[2px] w-28 bg-primary rounded" />
+          <p className="mt-2 text-sm text-black/70">
+            Tell us about your project and we’ll get back within 24 hours.
+          </p>
+        </div>
 
-              {/* Underline animation – centered */}
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 112 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mt-2 mx-auto h-[2px] bg-primary rounded"
-              />
-            </motion.div>
-            <motion.p variants={fadeUp} className="section-paragraph mt-1">
-              Tell us about your project and we’ll get back to you within 24
-              hours.
-            </motion.p>
-          </div>
+        {/* Names */}
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <Field label="First Name" error={errors.firstName?.message}>
+            <Input placeholder="Enter your first name" {...register("firstName")} />
+          </Field>
+          <Field label="Last Name" error={errors.lastName?.message}>
+            <Input placeholder="Enter your last name" {...register("lastName")} />
+          </Field>
+        </div>
 
-          {/* names */}
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <Field
-              name="firstName"
-              label="First Name"
-              placeholder="John"
-              error={errors.firstName?.message}
-            >
-              <Input {...register("firstName")} />
-            </Field>
-            <Field
-              name="lastName"
-              label="Last Name"
-              placeholder="Smith"
-              error={errors.lastName?.message}
-            >
-              <Input {...register("lastName")} />
-            </Field>
-          </div>
-
-          {/* contact */}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <Field
-              name="email"
-              label="Email"
-              placeholder="john@company.com"
-              icon={Mail}
-              error={errors.email?.message}
-            >
-              <Input {...register("email")} />
-            </Field>
-            <Field
-              name="phone"
-              label="Phone"
-              placeholder="+91 98765 43210"
-              icon={Phone}
-              error={errors.phone?.message}
-            >
-              <Input {...register("phone")} />
-            </Field>
-          </div>
-
-          {/* company + role */}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <Field
-              name="company"
-              label="Company"
-              placeholder="Your Company Ltd."
-              icon={MapPin}
-              error={errors.company?.message}
-            >
-              <Input {...register("company")} />
-            </Field>
-            <Field
-              name="roleTitle"
-              label="Role / Title"
-              placeholder="R&D Manager"
-              error={errors.roleTitle?.message}
-            >
-              <Input {...register("roleTitle")} />
-            </Field>
-          </div>
-
-          {/* selects */}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <Field name="inquiryType" label="Inquiry Type">
-              <Select
-                {...register("inquiryType")}
-                options={[
-                  "General",
-                  "Samples",
-                  "Bespoke Project",
-                  "Technical Consultation",
-                ]}
-              />
-            </Field>
-            <Field name="application" label="Application Area">
-              <Select
-                {...register("application")}
-                options={[
-                  "Bakery",
-                  "Beverages",
-                  "Dairy",
-                  "Confectionery",
-                  "Health & Wellness",
-                ]}
-              />
-            </Field>
-          </div>
-
-          {/* details */}
-          <Field
-            name="projectDetails"
-            className="mt-4"
-            label="Project Details"
-            icon={HelpCircle}
-            error={errors.projectDetails?.message}
-          >
-            <TextArea
-              rows={6}
-              placeholder="Describe requirements, target flavour profiles, specs, timeline, and challenges..."
-              {...register("projectDetails")}
+        {/* Contact */}
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <Field label="Email" icon={Mail} error={errors.email?.message}>
+            <Input
+              placeholder="Enter your email address"
+              {...register("email")}
             />
           </Field>
-
-          {/* upload */}
-          <motion.div variants={fadeUp} className="mt-4">
-            <label className="text-sm font-medium">
-              Attach Files (Max 10MB)
-            </label>
-            <label className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-black/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
-              <input
-                type="file"
-                className="hidden"
-                multiple
-                onChange={onPickFiles}
-              />
-              <div className="flex items-center justify-between gap-3">
-                <span className="inline-flex items-center gap-2">
-                  <UploadCloud className="h-4 w-4" /> Drop files here or browse
-                </span>
-                <span className="rounded-md bg-primary/10 text-primary px-2 py-1 text-xs font-semibold">
-                  Upload
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-black/60">
-                {files.length
-                  ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
-                  : "Support for specifications, references, or product briefs"}
-              </p>
-            </label>
-          </motion.div>
-
-          {/* extra */}
-          <Field
-            name="additionalInfo"
-            className="mt-4"
-            label="Additional Information"
-            error={errors.additionalInfo?.message}
-          >
-            <TextArea rows={3} {...register("additionalInfo")} />
+          <Field label="Phone" icon={Phone}>
+            <Input
+              placeholder="Enter your phone number"
+              {...register("phone")}
+            />
           </Field>
+        </div>
 
-          <motion.div
-            variants={fadeUp}
-            className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3"
+        {/* Company */}
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <Field label="Company" icon={MapPin}>
+            <Input
+              placeholder="Enter your company name"
+              {...register("company")}
+            />
+          </Field>
+          <Field label="Role / Title">
+            <Input
+              placeholder="Enter your role or designation"
+              {...register("roleTitle")}
+            />
+          </Field>
+        </div>
+
+        {/* Selects */}
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <Field label="Inquiry Type">
+            <Select
+              {...register("inquiryType")}
+              placeholder="Select inquiry type"
+              options={[
+                "General",
+                "Samples",
+                "Bespoke Project",
+                "Technical Consultation",
+              ]}
+            />
+          </Field>
+          <Field label="Application Area">
+            <Select
+              {...register("application")}
+              placeholder="Select application area"
+              options={[
+                "Bakery",
+                "Beverages",
+                "Dairy",
+                "Confectionery",
+                "Health & Wellness",
+              ]}
+            />
+          </Field>
+        </div>
+
+        {/* Project details */}
+        <Field className="mt-4" label="Project Details" icon={HelpCircle}>
+          <TextArea
+            rows={5}
+            placeholder="Describe your requirements, targets, timeline, or challenges"
+            {...register("projectDetails")}
+          />
+        </Field>
+
+        {/* Upload */}
+        <div className="mt-4">
+          <label className="text-sm font-medium">Attach Files</label>
+          <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-sm">
+            <input type="file" multiple className="hidden" onChange={onPickFiles} />
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-2 text-black/70">
+                <UploadCloud className="h-4 w-4" />
+                Upload supporting files
+              </span>
+              <span className="text-xs border border-primary px-2 py-1 rounded">
+                Browse
+              </span>
+            </div>
+            <p className="mt-1 text-xs text-black/60">
+              {files.length
+                ? `${files.length} file(s) • ${totalSizeMB} MB`
+                : "Optional specifications, briefs, or references"}
+            </p>
+          </label>
+        </div>
+
+        {/* Additional info */}
+        <Field className="mt-4" label="Additional Information">
+          <TextArea
+            rows={3}
+            placeholder="Any additional notes or information"
+            {...register("additionalInfo")}
+          />
+        </Field>
+
+        {/* Submit */}
+        <div className="mt-6 flex items-center gap-3">
+          <button
+            type="submit"
+            disabled={submitting}
+            className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary/90 disabled:opacity-60"
           >
-            <button
-              type="submit"
-              disabled={submitting}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors disabled:opacity-60"
+            {submitting ? "Sending…" : "Send Message"}
+            <ArrowRight className="h-4 w-4" />
+          </button>
+          <span className="text-xs text-black/60">
+            Response within 24 hours
+          </span>
+        </div>
+
+        <AnimatePresence>
+          {sent && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-3 text-xs text-emerald-600 flex items-center gap-1"
             >
-              {submitting ? (
-                <span className="inline-flex items-center gap-2">
-                  <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
-                  Sending…
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-2">
-                  Send Message <ArrowRight className="h-4 w-4" />
-                </span>
-              )}
-            </button>
-            <span className="text-xs text-black/60">
-              We’ll respond within 24 hours during business days
-            </span>
-          </motion.div>
-
-          <AnimatePresence>
-            {sent && !submitting && (
-              <motion.div
-                key="ok"
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="mt-3 text-xs text-emerald-600 inline-flex items-center gap-1"
-              >
-                <CheckCircle2 className="h-4 w-4" /> Thanks! Your message has
-                been sent.
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {serverError && (
-            <p className="mt-3 text-xs text-red-600">{serverError}</p>
+              <CheckCircle2 className="h-4 w-4" />
+              Message sent successfully
+            </motion.p>
           )}
-        </motion.form>
-      </div>
+        </AnimatePresence>
+
+        {serverError && (
+          <p className="mt-3 text-xs text-red-600">{serverError}</p>
+        )}
+      </form>
     </section>
   );
 }
 
-/* ------- Small UI bits (updated for RHF) ------- */
-function Field({ name, label, icon: Icon, error, className = "", children }) {
-  // ensure the control gets left padding when an icon exists, and link label->input
-  const onlyChild = Children.only(children);
-  const enhanced = cloneElement(onlyChild, {
-    id: onlyChild.props.id || name,
+/* ---------- UI Primitives ---------- */
+
+function Field({ label, icon: Icon, error, className = "", children }) {
+  const hasIcon = Boolean(Icon);
+
+  const input = cloneElement(Children.only(children), {
     className: [
-      "w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30",
-      Icon ? "pl-9" : "",
-      onlyChild.props.className || "",
-    ]
-      .filter(Boolean)
-      .join(" "),
+      "w-full rounded-md border border-black/20 bg-transparent py-2 text-sm outline-none",
+      "focus:border-primary focus:ring-1 focus:ring-primary/30",
+      "placeholder:text-black/40",
+      hasIcon ? "pl-10 pr-3" : "px-3",
+    ].join(" "),
   });
 
   return (
-    <motion.div variants={fadeUp} className={`space-y-1 ${className}`}>
-      {label && (
-        <label className="text-sm font-medium" htmlFor={name}>
-          {label}
-        </label>
-      )}
+    <div className={`space-y-1 ${className}`}>
+      <label className="text-sm font-medium text-black">{label}</label>
       <div className="relative">
         {Icon && (
-          <Icon className="absolute left-3 top-[10px] h-4 w-4 text-black/40 pointer-events-none" />
+          <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black/40 pointer-events-none" />
         )}
-        {enhanced}
+        {input}
       </div>
-      {error ? <p className="text-xs text-red-600">{error}</p> : null}
-    </motion.div>
+      {error && <p className="text-xs text-red-600">{error}</p>}
+    </div>
   );
 }
 
 const Input = (props) => <input {...props} />;
 
-const Select = ({ options = [], ...rest }) => (
-  <select {...rest}>
+const Select = ({ options, placeholder, ...props }) => (
+  <select
+    {...props}
+    defaultValue=""
+    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-sm text-black"
+  >
+    <option value="" disabled>
+      {placeholder}
+    </option>
     {options.map((o) => (
       <option key={o} value={o}>
         {o}
@@ -398,4 +288,9 @@ const Select = ({ options = [], ...rest }) => (
   </select>
 );
 
-const TextArea = ({ rows = 4, ...rest }) => <textarea rows={rows} {...rest} />;
+const TextArea = (props) => (
+  <textarea
+    {...props}
+    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-sm placeholder:text-black/40"
+  />
+);

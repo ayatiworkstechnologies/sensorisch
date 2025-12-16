@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
@@ -33,7 +32,6 @@ export default function PromoSection() {
       {/* SECTION 2  -  OVERLAPPING CARD */}
       <section className="relative w-full bg-gray-50">
         <div className="section-container py-10 sm:pb-24 relative">
-
           <div
             className="
               mt-6 sm:mt-0 w-full flex justify-center px-0
@@ -44,8 +42,7 @@ export default function PromoSection() {
               className="
                 grid grid-cols-1 sm:grid-cols-12 items-stretch
                 max-w-4xl w-full sm:w-[85%] md:w-[70%]
-                rounded-lg bg-white
-                shadow-2xl ring-1 ring-black/5
+                rounded-lg bg-white border border-black/10
                 overflow-hidden
               "
             >
@@ -64,27 +61,17 @@ export default function PromoSection() {
 
               {/* RIGHT: CONTENT */}
               <div className="sm:col-span-8 p-6 sm:p-8 flex flex-col justify-center text-center sm:text-left">
-                 <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h3 className="section-title font-semibold text-gray-900 leading-tight">
-              Explore the Senso Ranges
-
-            </h3>
-
-            {/* Underline animation – centered */}
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 112 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mt-2 mx-auto h-[2px] bg-primary rounded"
-            />
-          </motion.div>
+                <motion.div
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.35 }}
+                  className="mx-auto max-w-2xl text-left"
+                >
+                  <h3 className="section-title font-semibold text-gray-900 leading-tight">
+                    Explore the Senso Ranges
+                  </h3>
+                </motion.div>
 
                 <p className="section-paragraph mb-3">
                   Behind every great flavour is great science. Senso brings
@@ -103,7 +90,6 @@ export default function PromoSection() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </main>
