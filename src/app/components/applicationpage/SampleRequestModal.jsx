@@ -84,7 +84,7 @@ export default function SampleRequestModal({
               type="text"
               placeholder="Name"
               {...register("name", { required: "Name is required" })}
-              className="w-full border rounded-md px-4 py-3"
+              className="w-full border  border-black/10 rounded-md px-4 py-3"
             />
             {errors.name && (
               <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -101,7 +101,7 @@ export default function SampleRequestModal({
                   message: "Invalid email address",
                 },
               })}
-              className="w-full border rounded-md px-4 py-3"
+              className="w-full border  border-black/10 rounded-md px-4 py-3"
             />
             {errors.email && (
               <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -118,7 +118,7 @@ export default function SampleRequestModal({
                   message: "Enter valid mobile number",
                 },
               })}
-              className="w-full border rounded-md px-4 py-3"
+              className="w-full border  border-black/10 rounded-md px-4 py-3"
             />
             {errors.mobile && (
               <p className="text-sm text-red-500">{errors.mobile.message}</p>
@@ -129,7 +129,7 @@ export default function SampleRequestModal({
               rows={4}
               placeholder="Message"
               {...register("message")}
-              className="w-full border rounded-md px-4 py-3"
+              className="w-full border  border-black/10 rounded-md px-4 py-3"
             />
 
             <button
