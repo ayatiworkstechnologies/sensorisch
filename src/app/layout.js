@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <SplashLoader ms={2400} />
+          <SplashLoader ms={3000} />
         {/* <AnimatedCursor /> */}
         <Header />
         <ScrollButton />
