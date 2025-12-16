@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="relative z-10">
         
         {/* MAIN GRID */}
-        <div className="max-w-6xl mx-auto px-6 py-14 border-b border-white/20">
+        <div className="max-w-6xl mx-auto px-6 py-24  border-b border-white/20">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
             
             {/* BRAND */}

@@ -4,6 +4,39 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
+/* ---------------- Animations ---------------- */
+
+// Title animation
+const titleAnim = {
+  hidden: { opacity: 0, y: 18 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+// Cards wrapper (controls stagger)
+const cardsWrap = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3, // starts after title
+    },
+  },
+};
+
+// Individual card: LEFT → RIGHT
+const cardAnim = {
+  hidden: { opacity: 0, x: -32 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
+
 export default function ExploreCreateConfirmGrow() {
   const features = [
     {
@@ -22,7 +55,7 @@ export default function ExploreCreateConfirmGrow() {
       key: "innovation",
       icon: "/icons/7.svg",
       title: "Innovation",
-      desc: "I’m shaping the next wave of innovation",
+      desc: "Shaping the next wave of innovation",
     },
   ];
 
@@ -30,34 +63,52 @@ export default function ExploreCreateConfirmGrow() {
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-start gap-12">
-          
-          {/* LEFT HEADING — 1/3 WIDTH */}
-          <div className="lg:w-2/3 w-full">
-             <h3 className="section-title font-semibold text-gray-900 leading-tight">
-              Explore <span className="text-primary">Create</span> Confirm Grow
+
+          {/* LEFT TITLE */}
+          <motion.div
+            className="lg:w-2/3 w-full"
+            variants={titleAnim}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
+              Explore Create Confirm Grow
             </h3>
 
-            {/* Underline animation */}
+            {/* underline */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
               className="mt-4 h-[2px] bg-primary rounded"
             />
-          </div>
+          </motion.div>
 
-          {/* RIGHT CARDS — 2/3 WIDTH */}
-          <div className="lg:w-2/3 w-full">
+          {/* RIGHT CARDS */}
+          <motion.div
+            className="lg:w-2/3 w-full"
+            variants={cardsWrap}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              
               {features.map((f) => (
-                <article
+                <motion.article
                   key={f.key}
-                  className="bg-white border border-gray-200 p-6 hover:shadow-md transition-all"
+                  variants={cardAnim}
+                  className="
+                    bg-white
+                    border border-gray-200
+                    p-6
+                    transition
+                    hover:border-primary
+                  "
                 >
-                  {/* ICON BOX */}
-                  <div className="w-16 h-16 mb-4 flex items-center justify-center bg-white">
+                  {/* Icon */}
+                  <div className="w-16 h-16 mb-4 flex items-center justify-center">
                     <Image
                       src={f.icon}
                       alt={f.title}
@@ -67,15 +118,17 @@ export default function ExploreCreateConfirmGrow() {
                     />
                   </div>
 
-                  <h4 className="text-xl font-primary font-semibold text-black/90">
+                  <h4 className="text-lg font-semibold text-black">
                     {f.title}
                   </h4>
-                  <p className="text-lg textblack/70 font-secondary mt-4">{f.desc}</p>
-                </article>
-              ))}
 
+                  <p className="mt-2 text-sm text-black/70 leading-relaxed">
+                    {f.desc}
+                  </p>
+                </motion.article>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
