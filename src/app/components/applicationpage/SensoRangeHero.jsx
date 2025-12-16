@@ -138,7 +138,7 @@ export default function SensoRangeHero({
                   {primaryLabel}
                 </button>
 
-                <button
+                {/* <button
                   onClick={() => {
                     setModalSubject(`Technical Sheet – ${title}`);
                     setModalOpen(true);
@@ -146,7 +146,7 @@ export default function SensoRangeHero({
                   className="inline-flex items-center justify-center rounded-md border-2 border-primary/30 px-6 py-3 text-primary font-semibold bg-white hover:bg-primary/5 transition"
                 >
                   {secondaryLabel}
-                </button>
+                </button> */}
               </div>
             </div>
 
