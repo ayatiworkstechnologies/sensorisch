@@ -20,7 +20,7 @@ export default function HeroComponent({ data = {} }) {
     titleColor = "text-white",
   } = data;
 
-  const titleClass = `text-5xl md:text-6xl font-extrabold drop-shadow-lg ${titleColor}`;
+  const titleClass = `text-5xl md:text-6xl font-extrabold ${titleColor}`;
 
   return (
     <section className="relative min-h-[650px] flex items-center overflow-hidden">
