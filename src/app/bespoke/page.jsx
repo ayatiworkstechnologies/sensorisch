@@ -25,8 +25,8 @@ export default function bespoke() {
             alt: "Desktop banner image",
           },
           title: "Tailored to Your Unique Needs",
-          subtitle:
-            "At Sensorisch, we know that every brand has a unique identity, and so should its flavours. Our bespoke solutions are designed to deliver exactly what your product requires from taste profile to technical format.",
+          // subtitle:
+          //   "At Sensorisch, we know that every brand has a unique identity, and so should its flavours. Our bespoke solutions are designed to deliver exactly what your product requires from taste profile to technical format.",
           primary: {
             label: "Start Your Project",
             href: "/applications-solutions",

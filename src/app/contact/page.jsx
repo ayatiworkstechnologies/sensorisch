@@ -22,8 +22,8 @@ export default function ContactUs() {
           },
           titleColor : "text-primary",
           title: "Let's Create Something Extraordinary",
-          subtitle:
-            "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
+          // subtitle:
+          //   "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
           // primary: {
           //   label: "Request Full Catalogue",
           //   href: "/applications-solutions",

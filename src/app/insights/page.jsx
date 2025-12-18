@@ -86,7 +86,7 @@ export default function Insights() {
       <HeroContact
         kicker="Get in touch"
         title="Expert guidance, just a message away"
-        subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
+        // subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
         primary={{ label: "Start Your Project", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
         imageSrc="/assets/get-in-touch.png"

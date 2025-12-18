@@ -178,7 +178,7 @@ export default function NewsTrends() {
             </button>
 
             {showFilters && (
-              <div className="absolute right-0 mt-2 w-40 font-secondary text-lg rounded-md border bg-white p-2 z-20">
+              <div className="absolute right-0 mt-2 w-40 font-secondary text-lg rounded-md bg-white p-2 z-20">
                 {SORTS.map((s) => (
                   <button
                     key={s}
@@ -206,7 +206,7 @@ export default function NewsTrends() {
           {paginatedPosts.map((post) => (
             <article
               key={post.id}
-              className="border border-gray-200 rounded-lg overflow-hidden transition"
+              className=" rounded-lg overflow-hidden transition"
             >
               <div className="relative h-48">
                 <Image
@@ -255,7 +255,7 @@ export default function NewsTrends() {
             <button
               disabled={page === 1}
               onClick={() => setPage(page - 1)}
-              className="px-3 py-1 border rounded disabled:opacity-40"
+              className="px-3 py-1  cursor-pointer rounded disabled:opacity-40"
             >
               Prev
             </button>
@@ -264,10 +264,10 @@ export default function NewsTrends() {
               <button
                 key={i}
                 onClick={() => setPage(i + 1)}
-                className={`px-3 py-1 rounded border ${
+                className={`px-3 py-1 rounded  cursor-pointer  ${
                   page === i + 1
-                    ? "bg-primary text-white border-primary"
-                    : "border-gray-300 hover:border-primary"
+                    ? "bg-primary text-white "
+                    : "  cursor-pointer "
                 }`}
               >
                 {i + 1}
@@ -277,7 +277,7 @@ export default function NewsTrends() {
             <button
               disabled={page === totalPages}
               onClick={() => setPage(page + 1)}
-              className="px-3 py-1 border rounded disabled:opacity-40"
+              className="px-3 py-1 cursor-pointer rounded disabled:opacity-40"
             >
               Next
             </button>
