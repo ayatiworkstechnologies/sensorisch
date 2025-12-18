@@ -104,7 +104,7 @@ export default function Header() {
               ? "backdrop-blur-md bg-black/40 border-b border-black/10"
               : "bg-transparent border-b border-transparent"
             : scrolled
-            ? "bg-white border-b border-black/10"
+            ? "bg-white/80 border-b border-black/10"
             : "bg-white/80 border-b border-black/10"
         }
 
