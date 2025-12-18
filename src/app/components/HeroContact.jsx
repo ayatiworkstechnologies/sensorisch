@@ -16,8 +16,8 @@ export default function HeroContact({
     if (!action) return null;
 
     const className = primaryStyle
-      ? "inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-primary text-white text-base font-semibold shadow hover:bg-white hover:text-primary border border-primary transition"
-      : "inline-flex items-center justify-center px-4 py-2.5 rounded-md border border-primary/60 text-base font-semibold text-primary hover:bg-primary hover:text-white transition";
+      ? "inline-flex items-center justify-center font-secondary px-5 py-2.5 rounded-md bg-primary text-white text-lg font-semibold shadow hover:bg-white hover:text-primary border border-primary transition"
+      : "inline-flex items-center justify-center font-secondary px-4 py-2.5 rounded-md border border-primary/60 text-lg font-semibold text-primary hover:bg-primary hover:text-white transition";
 
     if (action.onClick) {
       return (
@@ -60,7 +60,7 @@ export default function HeroContact({
               {title}
             </h1>
 
-            <p className="mt-4 text-base font-secondary font-semibold sm:text-lg text-black/90">
+            <p className="mt-4 text-base font-secondary sm:text-lg text-black/90">
               {subtitle}
             </p>
 

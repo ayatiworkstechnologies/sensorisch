@@ -10,19 +10,19 @@ export default function Footer() {
     <footer className="relative w-full text-white bg-primary overflow-hidden">
       
       {/* BACKGROUND IMAGE OVERLAY */}
-      <Image
+      {/* <Image
         src="/senso.svg"
         alt="Footer background"
         fill
         priority
         className="opacity-20 mt-20"
-      />
+      /> */}
 
       {/* CONTENT */}
       <div className="relative z-10">
         
         {/* MAIN GRID */}
-        <div className="max-w-6xl mx-auto px-6 py-24  border-b border-white/20">
+        <div className="max-w-6xl mx-auto px-6 py-15  border-b border-white/20">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
             
             {/* BRAND */}
@@ -34,15 +34,15 @@ export default function Footer() {
                 height={36}
                 className="object-contain"
               />
-              <p className="text-sm tracking-wide leading-relaxed">
+              <p className="text-2xl tracking-wide leading-relaxed">
                 Where Science<br />Meets Senses
               </p>
             </div>
 
             {/* SOLUTIONS */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="text-2xl  mb-6">Solutions</h4>
+              <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="#" className="hover:opacity-80">Senso Ranges</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Bespoke Solutions</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Flavours</Link></li>
@@ -52,8 +52,8 @@ export default function Footer() {
 
             {/* COMPANY */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="text-2xl mb-6">Company</h4>
+              <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="#" className="hover:opacity-80">About us</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Contact</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Contact Us</Link></li>
@@ -63,8 +63,8 @@ export default function Footer() {
 
             {/* SUPPORT */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="text-2xl mb-6">Support</h4>
+              <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="#" className="hover:opacity-80">Privacy Policy</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Terms & Conditions</Link></li>
                 <li><Link href="#" className="hover:opacity-80">FAQ</Link></li>
@@ -75,7 +75,7 @@ export default function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="max-w-6xl mx-auto px-6 pb-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+          <div className="flex flex-col sm:flex-row items-center font-secondary text-xl justify-between gap-4">
             <p className="opacity-80">
               © {year} Sensorisch. All rights reserved.
             </p>
@@ -84,7 +84,7 @@ export default function Footer() {
               href="https://ayatiworks.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 opacity-90 hover:opacity-100"
+              className="flex items-center gap-2 font-secondary text-xl opacity-90 hover:opacity-100"
             >
               <span>Designed & Developed by</span>
               <Image

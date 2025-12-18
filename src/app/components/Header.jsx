@@ -12,13 +12,15 @@ const NAV = [
   { label: "About", href: "/about" },
   { label: "Applications & Solutions", href: "/applications-solutions" },
   { label: "Bespoke", href: "/bespoke" },
-  { label: "Portfolio", href: "/portfolio" },
+  // { label: "Portfolio", href: "/portfolio" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [open, setOpen] = useState(false);
 
   // hide on scroll down, show on scroll up
@@ -33,7 +35,10 @@ export default function Header() {
     function setHeaderHeight() {
       if (!ref.current) return;
       const h = ref.current.getBoundingClientRect().height;
-      document.documentElement.style.setProperty("--site-header-height", `${Math.ceil(h)}px`);
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${Math.ceil(h)}px`
+      );
     }
     setHeaderHeight();
     window.addEventListener("resize", setHeaderHeight);
@@ -77,29 +82,44 @@ export default function Header() {
       ? pathname === "/"
       : pathname === href || pathname?.startsWith(href + "/");
 
-  const pillCls = (href) =>
-    [
-      "inline-flex items-center px-2 py-1 text-sm font-medium transition-all",
+  const pillCls = (href) => {
+    const baseColor = isHome ? "text-white/90" : "text-black/90";
+
+    return [
+      "inline-flex items-center px-2 font-secondary py-1 text-lg font-medium transition-all",
       isActive(href)
         ? "text-primary underline underline-offset-4"
-        : "text-white/90 hover:text-primary/90 hover:underline underline-offset-4",
+        : `${baseColor} hover:text-primary hover:underline underline-offset-4`,
     ].join(" ");
+  };
 
   return (
     <header
       ref={ref}
-      className={`fixed inset-x-0 top-0 z-50 transform transition-transform duration-300 ease-out
+      className={`fixed inset-x-0 top-0 z-50  transform transition-transform duration-300 ease-out
         ${hidden ? "-translate-y-[110%]" : "translate-y-0"}
-        ${scrolled ? "backdrop-blur-md bg-black/80 border-b border-black/5" : "bg-transparent border-b border-transparent"}
+        ${
+          isHome
+            ? scrolled
+              ? "backdrop-blur-md bg-black/40 border-b border-black/10"
+              : "bg-transparent border-b border-transparent"
+            : scrolled
+            ? "bg-white border-b border-black/10"
+            : "bg-white/80 border-b border-black/10"
+        }
+
       `}
       role="banner"
-      style={{ WebkitBackdropFilter: scrolled ? "blur(6px)" : "none", backdropFilter: scrolled ? "blur(6px)" : "none" }}
+      style={{
+        WebkitBackdropFilter: isHome && scrolled ? "blur(6px)" : "none",
+        backdropFilter: isHome && scrolled ? "blur(6px)" : "none",
+      }}
     >
       <div className="mx-auto max-w-7xl px-6 h-30 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="relative w-56 h-30">
             <Image
-              src="/head-logo.svg"
+              src="/head-logo-1.png"
               alt="Sensorisch"
               fill
               style={{ objectFit: "contain" }}
@@ -123,7 +143,7 @@ export default function Header() {
             className="p-2 rounded-md hover:bg-white/10"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            style={{ color: scrolled ? "" : "white" }}
+            style={{ color: isHome && !scrolled ? "white" : "black" }}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -134,7 +154,7 @@ export default function Header() {
       <div
         className={`md:hidden transition-max-h duration-300 ease-out overflow-hidden ${
           open ? "max-h-[500px]" : "max-h-0"
-        } border-t border-white/10 bg-black/80`}
+        } border-t border-black/10 ${isHome ? "bg-black/80" : "bg-white"}`}
       >
         <div className="mx-auto max-w-7xl px-6 flex flex-col gap-4">
           {NAV.map((n) => (
@@ -143,10 +163,12 @@ export default function Header() {
               href={n.href}
               onClick={() => setOpen(false)}
               className={[
-                "px-1 py-1 text-base transition-all font-secondary",
+                "px-1 py-1 text-lg transition-all font-secondary",
                 isActive(n.href)
                   ? "text-primary underline underline-offset-4"
-                  : "text-white/90 hover:text-primary hover:underline underline-offset-4",
+                  : `${
+                      isHome ? "text-white/90" : "text-black/90"
+                    } hover:text-primary hover:underline underline-offset-4`,
               ].join(" ")}
             >
               {n.label}

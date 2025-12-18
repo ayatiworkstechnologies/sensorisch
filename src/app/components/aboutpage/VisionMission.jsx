@@ -98,8 +98,8 @@ export default function VisionMission() {
             whileHover={{ y: -4 }}
             className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5"
           >
-            <h3 className="section-subtitle text-primary">Our Vision</h3>
-            <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">
+            <h3 className="section-subtitle text-3xl text-primary">Our Vision</h3>
+            <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
               to be the most trusted global partner for sensory innovation,
               delivering precision driven flavours, colours, and ingredient
               solutions that inspire product excellence and emotional consumer
@@ -116,8 +116,8 @@ export default function VisionMission() {
             whileHover={{ y: -4 }}
             className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5"
           >
-            <h3 className="section-subtitle text-primary">Our Mission</h3>
-            <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">
+            <h3 className="section-subtitle text-4xl text-primary">Our Mission</h3>
+            <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
               sensorisch is committed to empowering creators in the bakery,
               beverage, dairy,culinary, and wellness industries by co-developing
               sensory solutions that are scientifically advanced, creatively
@@ -146,7 +146,7 @@ export default function VisionMission() {
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                 <Counter value={x.value} suffix={x.suffix} />
               </div>
-              <div className="mt-1 text-xs sm:text-sm md:text-base font-medium text-black/80">
+              <div className="mt-1 text-lg sm:text-lg md:text-xl font-secondary font-medium text-black/80">
                 {x.label}
               </div>
             </motion.li>

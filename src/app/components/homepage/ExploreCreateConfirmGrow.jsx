@@ -64,7 +64,10 @@ export default function ExploreCreateConfirmGrow() {
   ];
 
   return (
+    <>
+    <div className="border-t border-t-primary" />
     <section className="py-16 bg-white">
+      
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-14 items-start">
 
@@ -132,11 +135,11 @@ export default function ExploreCreateConfirmGrow() {
                       />
                     </div>
 
-                    <h4 className="text-xl font-semibold text-gray-900">
+                    <h4 className="text-2xl font-semibold text-gray-900">
                       {f.title}
                     </h4>
 
-                    <p className="mt-3 text-sm text-gray-600 leading-relaxed max-w-[240px]">
+                    <p className="mt-3 text-lg font-secondary text-gray-600 leading-relaxed max-w-[240px]">
                       {f.desc}
                     </p>
                   </Link>
@@ -148,5 +151,7 @@ export default function ExploreCreateConfirmGrow() {
         </div>
       </div>
     </section>
+    <div className="border-t border-t-primary" />
+    </>
   );
 }

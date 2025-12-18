@@ -127,7 +127,7 @@ function FeatureItem({ i, Icon, label }) {
         <span className="mt-0.5 grid place-items-center size-7 rounded-md  text-primary ">
           <Icon className="h-6 w-6" />
         </span>
-        <p className="text-sm md:text-base text-black/80 leading-relaxed">
+        <p className="text-lg md:text-xl font-secondary text-black/80 leading-relaxed">
           {label}
         </p>
       </div>

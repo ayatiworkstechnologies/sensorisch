@@ -43,7 +43,7 @@ export default function QualityResponsibility() {
   useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.3 }); // kept for potential use
 
   return (
-    <section ref={sectionRef} className="py-15 relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 md: mt-10 relative overflow-hidden">
       <motion.div
         variants={container}
         initial="hidden"
@@ -68,7 +68,7 @@ export default function QualityResponsibility() {
           className="mx-auto mt-6 h-[2px] bg-primary"
         />
 
-        <p className="section-paragraph max-w-3xl mx-auto">
+        <p className="section-paragraph text-lg max-w-3xl mx-auto">
           Clean-label guidance, regional compliance, batch consistency, and
           responsible sourcing built into every solution we deliver.
         </p>
@@ -87,8 +87,8 @@ export default function QualityResponsibility() {
                 whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.98 }}
                 className={`
-                  inline-flex items-center rounded-lg 
-                  px-4 py-2 text-xs sm:text-sm font-semibold 
+                  inline-flex items-center font-secondary rounded-lg 
+                  px-4 py-2 text-lg sm:text-base
                   bg-white text-black ring-1 ring-primary/50 
                   transition-transform
                 `}

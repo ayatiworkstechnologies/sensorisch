@@ -11,6 +11,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import Link from "next/link";
 
 /* ---------- Motion ---------- */
 const fadeUp = {
@@ -77,6 +78,7 @@ const STEPS = [
 export function BespokeSolutionsIntro({
   onPrimaryHref = "/contact",
   onPrimaryLabel = "Discuss Your Bespoke Needs",
+  onProcessLabel = "",
   onProcessHref = "/bespoke",
 }) {
   const { scrollYProgress } = useScroll();
@@ -103,7 +105,7 @@ export function BespokeSolutionsIntro({
             viewport={{ once: true, amount: 0.35 }}
             className="mx-auto max-w-2xl text-center"
           >
-             <h3 className="section-title font-semibold text-gray-900 leading-tight">
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
               Tailored to Your Needs
             </h3>
 
@@ -145,8 +147,8 @@ export function BespokeSolutionsIntro({
               <div className="grid size-8 place-items-center rounded-full text-primary shrink-0 mt-0.5">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
-              <span className="text-sm md:text-base">{p}</span>
-              <span className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition group-hover:opacity-100 ring-2 ring-primary/10" />
+              <span className="text-lg font-secondary md:text-xl">{p}</span>
+              {/* <span className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition group-hover:opacity-100 ring-2 ring-primary/10" /> */}
             </motion.li>
           ))}
         </motion.ul>
@@ -159,24 +161,26 @@ export function BespokeSolutionsIntro({
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
-          <motion.a
-            href={onPrimaryHref}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-          >
-            {onPrimaryLabel}
-            <ArrowRight className="h-4 w-4" />
-          </motion.a>
+          <Link href={onPrimaryHref}>
+            <motion.span
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary font-secondary text-lg px-5 py-3 text-white font-semibold hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              {onPrimaryLabel}
+              {/* <ArrowRight className="h-4 w-4" /> */}
+            </motion.span>
+          </Link>
 
-          <motion.a
-            href={onProcessHref}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center text-primary gap-2 rounded-lg border border-black/15 px-5 py-3 hover:bg-primary hover:text-white font-semibold"
-          >
-            Our Development Process
-          </motion.a>
+          <Link href={onProcessHref}>
+            <motion.span
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center text-primary gap-2 rounded-lg font-secondary text-lg border border-black/15 px-5 py-3 hover:bg-primary hover:text-white font-semibold"
+            >
+              {onProcessLabel}
+            </motion.span>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -213,15 +217,15 @@ export function DevelopmentProcessSection() {
       <div className="section-container py-18 md:py-28">
         {/* Heading */}
         <div className="mb-10 md:mb-12 max-w-3xl mx-auto text-center">
-           <motion.div
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
             className="mx-auto max-w-2xl text-center"
           >
-             <h3 className="section-title font-semibold text-gray-900 leading-tight">
-               Our Development Process
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
+              Our Development Process
             </h3>
 
             {/* Underline animation – centered */}
@@ -242,7 +246,7 @@ export function DevelopmentProcessSection() {
 
         {/* Timeline */}
         <div ref={containerRef} className="relative mx-auto max-w-5xl">
-          {/* Base line & progress line — DESKTOP ONLY */}
+          {/* Base line & progress line - DESKTOP ONLY */}
           <div className="hidden md:block">
             {/* Base line */}
             <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-black/10" />
@@ -269,7 +273,7 @@ export function DevelopmentProcessSection() {
                   {/* spacer for two-column alignment (desktop only) */}
                   <div className="hidden md:block md:col-start-1" />
 
-                  {/* Center dot + glow — DESKTOP ONLY */}
+                  {/* Center dot + glow - DESKTOP ONLY */}
                   <div
                     className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 z-10"
                     aria-hidden
@@ -317,7 +321,7 @@ export function DevelopmentProcessSection() {
                         </div>
 
                         <div>
-                          <h3 className="section-subtitle text-primary">
+                          <h3 className="section-subtitle text-2xl text-primary">
                             {s.title}
                           </h3>
                           <p className="mt-1 section-paragraph">{s.desc}</p>
@@ -326,7 +330,7 @@ export function DevelopmentProcessSection() {
                             {s.bullets.map((b) => (
                               <li
                                 key={b}
-                                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-background px-3 py-1 text-xs md:text-sm"
+                                className="inline-flex text-lg font-secondary items-center gap-2 rounded-full border border-black/10 bg-background px-3 py-1"
                               >
                                 <span className="size-1.5 rounded-full bg-primary" />{" "}
                                 {b}

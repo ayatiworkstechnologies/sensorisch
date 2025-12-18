@@ -107,7 +107,7 @@ export default function MethodsSection() {
 
               <Link
                 href={m.href}
-                className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
+                className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary font-secondary px-3.5 py-1 text-lg text-white shadow hover:bg-primary/90 transition-colors"
               >
                 {m.cta}
                 <ArrowRight className="h-4 w-4" />

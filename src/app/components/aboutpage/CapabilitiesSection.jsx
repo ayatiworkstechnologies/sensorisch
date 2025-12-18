@@ -152,7 +152,7 @@ export default function CapabilitiesSection() {
               </div>
 
               {/* title */}
-              <h3 className="section-subtitle">{g.title}</h3>
+              <h3 className="section-subtitle text-4xl">{g.title}</h3>
               {/* animated accent line */}
               {/* <motion.div
                 className={`h-[3px] w-0 my-3 rounded bg-black`}
@@ -163,7 +163,7 @@ export default function CapabilitiesSection() {
               /> */}
 
               {/* description */}
-              <p className="section-paragraph leading-relaxed">{g.desc}</p>
+              <p className="section-paragraph text-xl leading-relaxed">{g.desc}</p>
 
               {/* chips with different colors */}
               {/* SIMPLE CHIPS */}
@@ -180,9 +180,9 @@ export default function CapabilitiesSection() {
                     variants={fadeUp}
                     whileHover={{ y: -1 }}
                     className="
-        rounded-md px-3 py-1.5
-        text-xs md:text-sm font-medium text-black
-        border border-primary
+        rounded-md px-3 py-1
+        text-lg md:text-lg font-medium text-black
+        border border-primary font-secondary 
         bg-transparent
         transition
       "

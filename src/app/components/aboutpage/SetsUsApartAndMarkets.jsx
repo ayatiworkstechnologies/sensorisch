@@ -49,7 +49,7 @@ export default function SetsUsApartAndMarkets() {
             />
           </motion.div>
 
-          <p className="mt-3 section-paragraph max-w-2xl mx-auto">
+          <p className="mt-3 section-paragraph text-xl max-w-2xl mx-auto">
             Science-led development, pre-validated systems, and rigorous quality
             – built for scale.
           </p>
@@ -118,8 +118,8 @@ export default function SetsUsApartAndMarkets() {
             />
           </motion.div>
 
-          <p className="mt-3 section-paragraph max-w-2xl mx-auto">
-            Serving India with GCC support today — positioned to expand with
+          <p className="mt-3 section-paragraph  text-xl max-w-2xl mx-auto">
+            Serving India with GCC support today - positioned to expand with
             regulatory readiness.
           </p>
         </motion.div>
@@ -164,7 +164,7 @@ function Feature({ iconSrc, title, blurb }) {
         <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl" />
       </div>
 
-      <h3 className="mt-4 text-base md:text-lg font-bold text-primary">
+      <h3 className="mt-4 text-lg md:text-2xl font-semibold text-primary">
         {title}
       </h3>
       <p className="mt-2 section-paragraph max-w-[26rem]">{blurb}</p>
@@ -179,8 +179,8 @@ function MarketCard({ heading, blurb }) {
       
       className="rounded-2xl bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-6 md:p-8"
     >
-      <h3 className="text-lg md:text-xl font-semibold">{heading}</h3>
-      <p className="section-paragraph text-base mt-2">{blurb}</p>
+      <h3 className="text-lg md:text-2xl font-semibold">{heading}</h3>
+      <p className="section-paragraph text-lg mt-2">{blurb}</p>
     </motion.article>
   );
 }

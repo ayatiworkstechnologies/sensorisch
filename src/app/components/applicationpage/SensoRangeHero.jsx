@@ -69,7 +69,7 @@ export default function SensoRangeHero({
               >
                 <motion.span
                   variants={fadeUp}
-                  className="inline-flex items-center rounded-md bg-primary/10 text-primary px-3 py-1 text-lg font-semibold"
+                  className="inline-flex items-center rounded-md bg-primary/10 text-primary px-3 py-1 text-lg font-secondary"
                 >
                   {badge}
                 </motion.span>
@@ -89,7 +89,7 @@ export default function SensoRangeHero({
 
               {/* Benefits */}
               <motion.div variants={list} initial="hidden" whileInView="show">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4">
+                <h3 className="text-xl md:text-2xl font-secondary font-semibold mb-4">
                   Key Benefits:
                 </h3>
 
@@ -107,7 +107,7 @@ export default function SensoRangeHero({
                         <div className="grid h-14 w-14 place-items-center rounded-full">
                           <BenefitIcon />
                         </div>
-                        <p className="font-medium">{text}</p>
+                        <p className="font-medium font-secondary text-lg">{text}</p>
                       </motion.div>
                     );
                   })}
@@ -119,7 +119,7 @@ export default function SensoRangeHero({
                 {tags.map(({ t }) => (
                   <span
                     key={t}
-                    className="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-semibold border border-primary hover:bg-primary/5"
+                    className="inline-flex items-center rounded-md font-secondary px-3 py-1.5 text-lg border border-primary hover:bg-primary/5"
                   >
                     {t}
                   </span>
@@ -133,7 +133,7 @@ export default function SensoRangeHero({
                     setModalSubject(`Request Sample – ${title}`);
                     setModalOpen(true);
                   }}
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-semibold hover:bg-primary/90 transition"
+                  className="inline-flex items-center font-secondary text-lg justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90 transition"
                 >
                   {primaryLabel}
                 </button>
@@ -158,7 +158,7 @@ export default function SensoRangeHero({
               transition={{ duration: 0.6 }}
               className={`relative ${imageOrder}`}
             >
-              <p className="mb-4 max-w-xl">{blurb}</p>
+              <p className="mb-4 font-secondary text-xl max-w-xl">{blurb}</p>
               <div className="aspect-[16/11] overflow-hidden">
                 <img
                   src={imageSrc}

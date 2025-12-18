@@ -123,23 +123,23 @@ export default function NewsTrends() {
       <div className="max-w-7xl mx-auto px-6">
         {/* BREADCRUMB */}
         <nav aria-label="Breadcrumb" className="mb-2">
-          <ol className="flex items-center gap-1 text-xs text-gray-400">
+          <ol className="flex items-center gap-1 text-lg font-secondary text-gray-400">
             <li>
-              <Link href="/" className="hover:text-primary transition">
+              <Link href="/" className="hover:text-primary  transition">
                 Home
               </Link>
             </li>
 
             <li className="opacity-60">/</li>
 
-            <li className="text-gray-600 font-medium">News &amp; Trends</li>
+            <li className="text-gray-600 fon font-medium">News & Trends</li>
           </ol>
         </nav>
 
         {/* HEADER */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-            News &amp; Trends
+          <h1 className="section-title font-extrabold text-priamry">
+            News & Trends
           </h1>
           <div className="mt-2 flex justify-center">
             <span className="w-12 h-0.5 bg-primary" />
@@ -157,7 +157,7 @@ export default function NewsTrends() {
                   setActiveTab(tab);
                   setPage(1);
                 }}
-                className={`relative pb-1 transition ${
+                className={`relative pb-1 font-secondary text-lg transition ${
                   activeTab === tab
                     ? "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary"
                     : "text-gray-600 hover:text-primary"
@@ -172,13 +172,13 @@ export default function NewsTrends() {
           <div className="relative">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="text-sm text-gray-600 hover:text-primary flex items-center gap-1"
+              className=" text-gray-600 hover:text-primary font-secondary text-lg flex items-center gap-1"
             >
-              Show Filters <span className="text-xs">▼</span>
+              Show Filters <span className="text-base">▼</span>
             </button>
 
             {showFilters && (
-              <div className="absolute right-0 mt-2 w-40 rounded-md border bg-white p-2 z-20">
+              <div className="absolute right-0 mt-2 w-40 font-secondary text-lg rounded-md border bg-white p-2 z-20">
                 {SORTS.map((s) => (
                   <button
                     key={s}
@@ -187,7 +187,7 @@ export default function NewsTrends() {
                       setPage(1);
                       setShowFilters(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 text-sm rounded hover:bg-gray-100 ${
+                    className={`block w-full text-left px-3 py-2 rounded hover:bg-gray-100 ${
                       sortBy === s
                         ? "text-primary font-semibold"
                         : "text-gray-700"
@@ -226,17 +226,17 @@ export default function NewsTrends() {
                   <time>{new Date(post.date).toLocaleDateString()}</time>
                 </div>
 
-                <h3 className="mt-2 text-lg font-bold text-gray-900 leading-snug">
+                <h3 className="mt-2 text-xl mt-4 font-bold text-gray-900 leading-snug">
                   {post.title}
                 </h3>
 
-                <p className="mt-2 text-base font-secondary text-gray-600">
+                <p className="mt-2 text-lg font-secondary text-gray-600">
                   {post.excerpt}
                 </p>
 
                 <Link
                   href={post.href}
-                  className="group inline-flex items-center gap-1 mt-4 text-lg font-primary font-semibold text-black hover:underline"
+                  className="group inline-flex items-center gap-1 mt-4 text-xl font-secondary font-semibold text-black hover:underline"
                 >
                   Read more
                   <FiChevronRight
@@ -251,7 +251,7 @@ export default function NewsTrends() {
 
         {/* PAGINATION */}
         {totalPages > 1 && (
-          <div className="mt-12 flex justify-center items-center gap-2 text-sm">
+          <div className="mt-12 flex justify-center font-secondary items-center gap-2 text-lg">
             <button
               disabled={page === 1}
               onClick={() => setPage(page - 1)}

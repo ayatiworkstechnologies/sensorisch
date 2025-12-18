@@ -10,53 +10,31 @@ import HeroComponent from "../components/Hero";
 export default function ContactUs() {
   return (
     <>
-      {/* <HeroCompnonet
-        data={{
-          eyebrow: "Contact Us",
-          title: "Let's Create Something ",
-          highlight: "Extraordinary",
-          blurb:
-            "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
-          image: { src: "/banners/contact.png", alt: "Lab and product banner" },
-         
-
-          scrollToId: "contact",
-
-          // toggles
-          enableTilt: true,
-          showUnderline: true,
-          showShimmer: true,
-          showHalo: true,
-
-          // layout
-          className: "bg-background",
-          containerClassName: "section-container py-16 md:py-24",
-        }}
-      /> */}
       <HeroComponent
-              data={{
-                imageMobile: {
-                  src: "/banners/mob-banner.png",
-                  alt: "Mobile banner image",
-                },
-                imageDesktop: {
-                  src: "/banners/banner.png",
-                  alt: "Desktop banner image",
-                },
-                title: "Let's Create Something Extraordinary",
-                subtitle:
-                  "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
-                // primary: {
-                //   label: "Request Full Catalogue",
-                //   href: "/applications-solutions",
-                // },
-                // secondary: {
-                //   label: "Get Samples",
-                //   href: "/contact",
-                // },
-                // scrollToId: "next-section",
-              }}
-            />
+        data={{
+          imageMobile: {
+            src: "/banners/contact-mob.png",
+            alt: "Mobile banner image",
+          },
+          imageDesktop: {
+            src: "/banners/contact-web.png",
+            alt: "Desktop banner image",
+          },
+          titleColor : "text-primary",
+          title: "Let's Create Something Extraordinary",
+          subtitle:
+            "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
+          // primary: {
+          //   label: "Request Full Catalogue",
+          //   href: "/applications-solutions",
+          // },
+          // secondary: {
+          //   label: "Get Samples",
+          //   href: "/contact",
+          // },
+          // scrollToId: "next-section",
+        }}
+      />
 
       {/* <HeroComponent
         data={{

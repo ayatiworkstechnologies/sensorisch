@@ -68,7 +68,7 @@ export default function PromoSection() {
                   viewport={{ once: true, amount: 0.35 }}
                   className="mx-auto max-w-2xl text-left"
                 >
-                  <h3 className="section-title font-semibold text-gray-900 leading-tight">
+                  <h3 className="section-title text-left font-semibold text-gray-900 leading-tight">
                     Explore the Senso Ranges
                   </h3>
                 </motion.div>
@@ -82,7 +82,7 @@ export default function PromoSection() {
                 <div className="flex justify-center sm:justify-start">
                   <Link
                     href="/applications-solutions"
-                    className="px-6 py-3 rounded-sm bg-primary text-white font-semibold hover:bg-primary/90 transition"
+                    className="px-6 py-3 rounded-lg font-secondary text-lg bg-primary text-white font-semibold hover:bg-primary/90 transition"
                   >
                     Start Production
                   </Link>

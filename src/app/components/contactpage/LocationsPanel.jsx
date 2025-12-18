@@ -9,7 +9,7 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 export default function LocationsPanel() {
   return (
-    <section className="">
+    <section className="font-secondary">
       <div className="section-container">
         <motion.div
           variants={fadeUp}
@@ -49,13 +49,13 @@ export default function LocationsPanel() {
                 Sensorisch Formulation Lab (P) Ltd
               </h3>
 
-              <p className="text-sm md:text-base text-black/70 mt-2 leading-relaxed text-center md:text-left">
-                B9, 1st Floor, SIDCO Industrial Estate, Villivakkam, Chennai —
+              <p className="text-lg md:text-xl text-black/70 mt-2 leading-relaxed text-center md:text-left">
+                B9, 1st Floor, SIDCO Industrial Estate, Villivakkam, Chennai -
                 600 049
               </p>
 
               {/* CONTACT LIST */}
-              <ul className="mt-4 space-y-2 text-sm md:text-[15px] text-center md:text-left">
+              <ul className="mt-4 space-y-2 text-lg md:text-xl text-center md:text-left">
                 <li>
                   <Link
                     href="tel:+917397397037"
@@ -110,7 +110,7 @@ export default function LocationsPanel() {
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-sm font-medium  hover:bg-primary/90 transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-xl font-medium  hover:bg-primary/90 transition"
                 >
                   <MapPin className="h-4 w-4" />
                   Get Directions
@@ -119,7 +119,7 @@ export default function LocationsPanel() {
                 {/* Call */}
                 <Link
                   href="tel:+917397397037"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary bg-white dark:bg-white/10 px-3 py-2 text-xl font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Phone className="h-4 w-4" />
                   Call
@@ -128,7 +128,7 @@ export default function LocationsPanel() {
                 {/* Email */}
                 <Link
                   href="mailto:info@sensorisch.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary border border-primary dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary border border-primary dark:bg-white/10 px-3 py-2 text-xl font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Mail className="h-4 w-4" />
                   Email
@@ -137,7 +137,7 @@ export default function LocationsPanel() {
             </motion.article>
           </div>
 
-          {/* RIGHT SIDE — MAP IFRAME */}
+          {/* RIGHT SIDE - MAP IFRAME */}
           <motion.div
             variants={fadeUp}
             className="w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white"

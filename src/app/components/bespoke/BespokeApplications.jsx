@@ -115,7 +115,7 @@ function RibbonRow({ index, title, blurb }) {
         `}
         />
 
-        <h3 className="inline-block text-xl md:text-2xl font-semibold text-black">
+        <h3 className="inline-block text-xl md:text-3xl font-semibold text-black">
           {title}
         </h3>
       </div>
@@ -128,14 +128,14 @@ function RibbonRow({ index, title, blurb }) {
         ${left ? "md:order-2" : "md:order-1"}
       `}
       >
-        <p className="p-4 sm:p-5 md:p-6 text-black/75 leading-relaxed">
+        <p className="p-4 sm:p-5 md:p-6 font-secondary text-xl text-black/75 leading-relaxed">
           {blurb}
         </p>
 
         <div className="mb-2 flex justify-center">
           <motion.button
             className="
-      group inline-flex items-center gap-1.5
+      group inline-flex items-center font-secondary text-lg gap-1.5
       text-[11px] uppercase tracking-wider font-semibold
       text-black
       border border-primary

@@ -78,7 +78,7 @@ export default function FormSection() {
   };
 
   return (
-    <section id="contact-form" className="section-container py-12">
+    <section id="contact-form" className="section-container font-secondary text-lg py-12">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="rounded-xl border border-black/10 bg-white p-6 md:p-8"
@@ -89,7 +89,7 @@ export default function FormSection() {
             Get in Touch
           </h3>
           <div className="mx-auto mt-2 h-[2px] w-28 bg-primary rounded" />
-          <p className="mt-2 text-sm text-black/70">
+          <p className="mt-2 text-xl text-black/70">
             Tell us about your project and we’ll get back within 24 hours.
           </p>
         </div>
@@ -176,8 +176,8 @@ export default function FormSection() {
 
         {/* Upload */}
         <div className="mt-4">
-          <label className="text-sm font-medium">Attach Files</label>
-          <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-sm">
+          <label className="text-lg font-medium">Attach Files</label>
+          <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-lg">
             <input type="file" multiple className="hidden" onChange={onPickFiles} />
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-black/70">
@@ -210,12 +210,12 @@ export default function FormSection() {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary/90 disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-5 py-2.5 text-lg font-semibold text-white hover:bg-primary/90 disabled:opacity-60"
           >
             {submitting ? "Sending…" : "Send Message"}
             <ArrowRight className="h-4 w-4" />
           </button>
-          <span className="text-xs text-black/60">
+          <span className="text-lg text-black/60">
             Response within 24 hours
           </span>
         </div>
@@ -248,7 +248,7 @@ function Field({ label, icon: Icon, error, className = "", children }) {
 
   const input = cloneElement(Children.only(children), {
     className: [
-      "w-full rounded-md border border-black/20 bg-transparent py-2 text-sm outline-none",
+      "w-full rounded-md border border-black/20 bg-transparent py-2 text-lg outline-none",
       "focus:border-primary focus:ring-1 focus:ring-primary/30",
       "placeholder:text-black/40",
       hasIcon ? "pl-10 pr-3" : "px-3",
@@ -257,7 +257,7 @@ function Field({ label, icon: Icon, error, className = "", children }) {
 
   return (
     <div className={`space-y-1 ${className}`}>
-      <label className="text-sm font-medium text-black">{label}</label>
+      <label className="text-lg font-medium text-black">{label}</label>
       <div className="relative">
         {Icon && (
           <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black/40 pointer-events-none" />
@@ -275,7 +275,7 @@ const Select = ({ options, placeholder, ...props }) => (
   <select
     {...props}
     defaultValue=""
-    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-sm text-black"
+    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-lg text-black"
   >
     <option value="" disabled>
       {placeholder}
@@ -291,6 +291,6 @@ const Select = ({ options, placeholder, ...props }) => (
 const TextArea = (props) => (
   <textarea
     {...props}
-    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-sm placeholder:text-black/40"
+    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-lg placeholder:text-black/40"
   />
 );

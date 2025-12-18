@@ -129,7 +129,7 @@ export default function AboutSensorisch() {
             {/* Paragraphs (staggered) */}
             <motion.p
               variants={fadeUp}
-              className="section-paragraph mt-5 leading-relaxed text-black/80"
+              className="section-paragraph mt-5 leading-relaxed text-xl text-black/80"
             >
               sensorisch is a specialist b2b formulation house designed
               exclusively for the institutional food and beverage sector. our
@@ -142,7 +142,7 @@ export default function AboutSensorisch() {
 
             <motion.p
               variants={fadeUp}
-              className="section-paragraph leading-relaxed text-black/80"
+              className="section-paragraph leading-relaxed text-xl  text-black/80"
             >
               we specialise in the research, development, and manufacture of
               advanced flavour systems tailored to a wide spectrum of
@@ -160,7 +160,7 @@ export default function AboutSensorisch() {
             <motion.div variants={fadeUp} className="mt-6">
               <Link
                 href="/applications-solutions"
-                className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-6 py-3 font-semibold text-white shadow hover:bg-primary/90 transition active:scale-[0.99]"
+                className="relative inline-flex items-center font-secondary text-lg  justify-center gap-2 overflow-hidden rounded-lg bg-primary px-6 py-3 font-semibold text-white shadow hover:bg-primary/90 transition active:scale-[0.99]"
               >
                 <span>Explore Our Solutions</span>
                 {/* sheen */}

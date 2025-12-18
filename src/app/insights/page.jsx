@@ -55,11 +55,11 @@ export default function Insights() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/mob-banner.png",
+            src: "/banners/insights-mob.png",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/banner.png",
+            src: "/banners/insights-web.png",
             alt: "Desktop banner image",
           },
           title: "Industry Insights & Updates",
@@ -73,6 +73,7 @@ export default function Insights() {
             label: "Get Samples",
             href: "/contact",
           },
+          titleColor : "text-primary",
           // scrollToId: "next-section",
         }}
       />
@@ -87,7 +88,7 @@ export default function Insights() {
         title="Expert guidance, just a message away"
         subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
         primary={{ label: "Start Your Project", href: "/contact" }}
-        secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
+        // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
         imageSrc="/assets/get-in-touch.png"
         imageAlt="Glass beaker with plant"
       />

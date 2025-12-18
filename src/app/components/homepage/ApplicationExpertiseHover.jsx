@@ -69,7 +69,7 @@ export default function ApplicationExpertiseCarousel() {
             transition={{ duration: 0.6 }}
             className="mt-4 h-[2px] bg-primary"
           />
-          <p className="mt-4 max-w-xl text-black/80">
+          <p className="mt-4 max-w-xl font-secondary text-lg text-black/80">
             Specialized solutions across industries with deep application knowledge
             and market-ready systems.
           </p>
@@ -128,7 +128,7 @@ export default function ApplicationExpertiseCarousel() {
                   {/* HEADER */}
                   <div className="flex items-start justify-between px-5 pt-5">
                     <div>
-                      <p className="font-primary text-lg font-semibold text-black">
+                      <p className="font-primary text-2xl font-semibold text-black">
                         {c.title}
                       </p>
                       <span className="mt-2 block h-[2px] w-15 rounded bg-primary" />

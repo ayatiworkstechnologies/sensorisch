@@ -89,7 +89,7 @@ function Feature({ Icon, title, points }) {
         <div className="min-w-0">
           <h3 className="text-lg font-semibold text-black">{title}</h3>
 
-          <ul className="mt-2 space-y-1.5 text-sm text-black/75">
+          <ul className="mt-2 space-y-1.5 font-secondary text-xl text-black/75">
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2">
                 <span className="size-1.5 rounded-full bg-primary" />
@@ -102,12 +102,12 @@ function Feature({ Icon, title, points }) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="
-              mt-4 inline-flex items-center
-              text-[11px] uppercase tracking-wider font-semibold
+              mt-4 inline-flex items-center font-secondary
+              text-lg tracking-wider 
               text-black
               border border-primary
               bg-transparent
-              px-4 py-1.5 rounded-lg
+              px-4 py-1 rounded-lg
               transition hover:bg-primary/5
             "
           >

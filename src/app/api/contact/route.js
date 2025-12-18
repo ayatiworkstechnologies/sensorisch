@@ -60,7 +60,7 @@ function renderEmailTemplate(values, filesMeta, insertId) {
 <head>
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>${esc(COMPANY_NAME)} — New Inquiry</title>
+  <title>${esc(COMPANY_NAME)} - New Inquiry</title>
 </head>
 <body style="margin:0;padding:0;background:#0f172a;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#0b1220;">
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#0f172a;padding:28px 12px;">
@@ -336,7 +336,7 @@ export async function POST(req) {
         })`,
         html,
         text: `
-${COMPANY_NAME} — New Website Inquiry
+${COMPANY_NAME} - New Website Inquiry
 
 Name: ${values.firstName} ${values.lastName}
 Email: ${values.email}

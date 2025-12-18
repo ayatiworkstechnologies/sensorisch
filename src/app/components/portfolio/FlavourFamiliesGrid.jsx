@@ -159,7 +159,7 @@ export default function FlavourFamiliesGrid({ families }) {
                 className="pointer-events-none absolute -top-16 -right-12 h-44 w-44 rounded-full bg-gradient-to-br from-primary to-primary/50 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               /> */}
 
-              {/* content row — 50/50 split on sm+ */}
+              {/* content row - 50/50 split on sm+ */}
               <div className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2">
                 {/* text (50%) */}
                 <div className="sm:pr-2">

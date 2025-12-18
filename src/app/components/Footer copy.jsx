@@ -155,12 +155,12 @@ export default function Footer() {
       <div className="border-t border-white/15">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* LEFT SIDE — COPYRIGHT */}
+            {/* LEFT SIDE - COPYRIGHT */}
             <p className="text-xs sm:text-sm text-white/80">
               © {year} Sensorisch. All rights reserved.
             </p>
 
-            {/* RIGHT SIDE — AYATIWORKS CREDIT */}
+            {/* RIGHT SIDE - AYATIWORKS CREDIT */}
             <div className="flex items-center gap-2">
               <Link
                 href="https://ayatiworks.com"

@@ -35,30 +35,31 @@ export default function AboutUS() {
         }}
       /> */}
       <HeroComponent
-                    data={{
-                      imageMobile: {
-                        src: "/banners/mob-banner.png",
-                        alt: "Mobile banner image",
-                      },
-                      imageDesktop: {
-                        src: "/banners/banner.png",
-                        alt: "Desktop banner image",
-                      },
-                      title: "Science - Led Innovation Meets Culinary Craft",
-                      subtitle:
-                        "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
-                      primary: {
-                        label: "Start Your Project",
-                        href: "/contact",
-                      },
-                      secondary: {
-                        label: "View Our Portfolio",
-                        href: "/portfolio",
-                      },
-                      // scrollToId: "next-section",
-                    }}
-                  />
-       {/* <HeroComponent
+        data={{
+          imageMobile: {
+            src: "/banners/about-mob.png",
+            alt: "Mobile banner image",
+          },
+          imageDesktop: {
+            src: "/banners/about-web.png",
+            alt: "Desktop banner image",
+          },
+          title: "Science - Led Innovation Meets Culinary Craft",
+          // subtitle:
+          //   "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
+          primary: {
+            label: "Start Your Project",
+            href: "/contact",
+          },
+          titleColor : "text-primary",
+          // secondary: {
+          //   label: "View Our Portfolio",
+          //   href: "/portfolio",
+          // },
+          // scrollToId: "next-section",
+        }}
+      />
+      {/* <HeroComponent
         data={{
           imageMobile: { src: "/banners/about-mob.jpg", alt: "Mobile Banner" },
           imageDesktop: { src: "/banners/about-web.jpg", alt: "Desktop Banner" },
@@ -84,14 +85,14 @@ export default function AboutUS() {
       <SetsUsApartAndMarkets />
       {/* <CompanyProfileCTA /> */}
       <HeroContact
-              kicker="Get in touch"
-              title="Company Profile"
-              subtitle="Download our comprehensive company profile to learn more about our capabilities, processes, and how we can support your product development goals."
-              // primary={{ label: "Start Your Project", href: "/contact" }}
-              // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
-              imageSrc="/assets/get-in-touch.png"
-              imageAlt="Glass beaker with plant"
-            />
+        kicker="Get in touch"
+        title="Company Profile"
+        subtitle="Download our comprehensive company profile to learn more about our capabilities, processes, and how we can support your product development goals."
+        // primary={{ label: "Start Your Project", href: "/contact" }}
+        // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
+        imageSrc="/assets/get-in-touch.png"
+        imageAlt="Glass beaker with plant"
+      />
     </>
   );
 }

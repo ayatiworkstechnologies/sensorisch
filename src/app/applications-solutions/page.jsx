@@ -15,7 +15,7 @@ const ranges = [
     title: "SensoBake",
     blurb:
       "Flavours that enrich cakes, cookies, pastries, and breads with oven-true performance.",
-    imageSrc: "/assets/application-1.png",
+    imageSrc: "/assets/img-1.png",
     iconSrc: "/icons/bakery.png",
     benefits: [
       {
@@ -66,7 +66,7 @@ const ranges = [
     title: "SensoTreat",
     blurb:
       "Playful and nostalgic profiles with controlled release for long-lasting flavour.",
-    imageSrc: "/assets/application-2.png",
+    imageSrc: "/assets/img-2.png",
     iconSrc: "/icons/confectionery.png",
     benefits: [
       {
@@ -111,7 +111,7 @@ const ranges = [
     title: "SensoCreme",
     blurb:
       "Creamy, authentic notes for ice creams, yoghurts, milkshakes, and cheeses with heat-stable options.",
-    imageSrc: "/assets/application-3.png",
+    imageSrc: "/assets/img-3.png",
     iconSrc: "/icons/dairy.png",
     benefits: [
       {
@@ -162,7 +162,7 @@ const ranges = [
     title: "SensoSip",
     blurb:
       "Architectures tuned for clarity, fizz stability, and shelf-life resilience across beverages.",
-    imageSrc: "/assets/application-4.png",
+    imageSrc: "/assets/img-4.png",
     iconSrc: "/icons/beverage.png",
     benefits: [
       {
@@ -213,7 +213,7 @@ const ranges = [
     title: "Senso+",
     blurb:
       "Palatable profiles for syrups and chewables with bitterness modulation and aftertaste control.",
-    imageSrc: "/assets/application-5.png",
+    imageSrc: "/assets/img-5.png",
     iconSrc: "/icons/pharma.png",
     benefits: [
       {
@@ -267,7 +267,7 @@ const ranges = [
     title: "SensoActive",
     blurb:
       "Flavours that enhance proteins, botanicals, minerals, and vitamins while masking off-notes.",
-    imageSrc: "/assets/application-6.png",
+    imageSrc: "/assets/img-6.png",
     iconSrc: "/icons/nutra.png",
     benefits: [
       {
@@ -318,7 +318,7 @@ const ranges = [
     title: "SensoSpice",
     blurb:
       "Authentic spice & herb signatures that add richness to soups, sauces, snacks, and seasonings.",
-    imageSrc: "/assets/application-7.png",
+    imageSrc: "/assets/img-7.png",
     iconSrc: "/icons/spice.png",
     benefits: [
       {
@@ -363,7 +363,7 @@ const ranges = [
     title: "SensoCare",
     blurb:
       "Cooling, refreshing notes for toothpastes, mouthwashes, and personal-care applications.",
-    imageSrc: "/assets/application-8.png",
+    imageSrc: "/assets/img-8.png",
     iconSrc: "/icons/oralcare.png",
     benefits: [
       {
@@ -411,7 +411,7 @@ const ranges = [
     title: "SensoNat",
     blurb:
       "Nature-derived flavours & colours for clean-label ambitions with extracts and distillates.",
-    imageSrc: "/assets/application-9.png",
+    imageSrc: "/assets/img-9.png",
     iconSrc: "/icons/natural.png",
     benefits: [
       {
@@ -464,24 +464,25 @@ export default function ApplicationSolutions() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/mob-banner.png",
+            src: "/banners/applications-mob.png",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/banner.png",
+            src: "/banners/applications-web.png",
             alt: "Desktop banner image",
           },
           title: "Senso Application Ranges",
-          subtitle:
-            "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
+          // subtitle:
+          //   "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
           primary: {
             label: "Start Your Project",
             href: "/contact",
           },
-          secondary: {
-            label: "View Our Portfolio",
-            href: "/portfolio",
-          },
+          titleColor : "text-primary",
+          // secondary: {
+          //   label: "View Our Portfolio",
+          //   href: "/portfolio",
+          // },
           // scrollToId: "next-section",
         }}
       />
@@ -510,6 +511,7 @@ export default function ApplicationSolutions() {
       <BespokeSolutionsSection
         onPrimaryHref="/bespoke"
         onPrimaryLabel="Discuss Your Bespoke Needs"
+        onProcessLabel="Our Development Process"
         onProcessHref="/bespoke"
       />
       {/* <ProfileCTA /> */}

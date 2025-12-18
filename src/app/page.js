@@ -2,6 +2,7 @@
 
 import HeroComponent from "./components/Hero";
 import HeroContact from "./components/HeroContact";
+import HomeHeroComponent from "./components/HomeHeroComponent";
 import ApplicationExpertise from "./components/homepage/ApplicationExpertise";
 import ApplicationExpertiseHover from "./components/homepage/ApplicationExpertiseHover";
 import BriefToScale from "./components/homepage/BriefToScale";
@@ -15,70 +16,23 @@ import WhyChooseSection from "./components/homepage/whychooseSection";
 export default function Home() {
   return (
     <>
-      {/* <HeroCompnonet
+
+      <HomeHeroComponent
         data={{
-          // eyebrow: "Flavours & Fragrances. Engineered for Impact.",
-          title: "Make Everyday Products Feel",
-          highlight: "Extraordinary",
-          blurb:
-            "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
-
-          primary: { href: "/applications-solutions", label: "Explore Solutions" },
-          secondary: { href: "/contact", label: "Request Samples" },
-
-          image: { src: "/banners/home.jpg", alt: "Lab and product banner" },
-
-          scrollToId: "why-sensorisch",
-
-          // toggles
-          enableTilt: true,
-          showUnderline: true,
-          showShimmer: true,
-          showHalo: true,
-
-          // layout
-          className: "bg-background",
-          containerClassName: "section-container py-16 md:py-24",
-        }}
-      /> */}
-
-      {/* <HeroComponent
-  data={{
-    imageMobile: { src: "/banners/home-mob.jpg", alt: "Mobile Banner" },
-    imageDesktop: { src: "/banners/banner.png", alt: "Desktop Banner" },
-
-    primary: {
-      href: "/contact",
-      label: "Book Appointment"
-    },
-
-    secondary: {
-      href: "/contact",
-      label: "Contact Us"
-    },
-
-    scrollToId: "why-sensorisch"
-  }}
-/> */}
-      <HeroComponent
-        data={{
-          imageMobile: {
-            src: "/banners/mob-banner.png",
-            alt: "Mobile banner image",
+          video: {
+            src: "/hero.mp4",
+            poster: "/images/social-poster.jpg",
           },
-          imageDesktop: {
-            src: "/banners/banner.png",
-            alt: "Desktop banner image",
-          },
-          title: "Make Everyday Products Feel Extraordinary",
-          subtitle: "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
+          title: "Where Science",
+          title1: "Meets Senses.",
+          // subtitle: "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
           primary: {
-            label: "Start Your Project",
-            href: "/contact",
+            label: "About Us",
+            href: "/about",
           },
           secondary: {
-            label: "View Portfolio",
-            href: "/portfolio",
+            label: "Contact Us",
+            href: "/contact",
           },
           // scrollToId: "next-section",
         }}

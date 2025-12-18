@@ -68,7 +68,7 @@ export default function WhyChooseSection() {
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
               className="
-                border border-black/30
+                border border-black/10
                 rounded
                 p-6
                 text-center

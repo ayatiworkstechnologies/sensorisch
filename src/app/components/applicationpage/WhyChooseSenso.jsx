@@ -104,7 +104,7 @@ export default function WhyChooseSenso() {
                   <f.icon className="h-10 w-10" />
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold leading-tight">
+                <h3 className="text-lg md:text-2xl font-semibold leading-tight">
                   {f.title}
                 </h3>
                 <p className="mt-2 section-paragraph">{f.blurb}</p>
