@@ -63,8 +63,8 @@ export default function Insights() {
             alt: "Desktop banner image",
           },
           title: "Industry Insights & Updates",
-          subtitle:
-            "From high-impact flavours to natural colours and ready-to-use systems -discover our modular portfolio built for consistent performance across every application.",
+          // subtitle:
+          //   "From high-impact flavours to natural colours and ready-to-use systems -discover our modular portfolio built for consistent performance across every application.",
           primary: {
             label: "Request Full Catalogue",
             href: "/applications-solutions",
@@ -86,7 +86,7 @@ export default function Insights() {
       <HeroContact
         kicker="Get in touch"
         title="Expert guidance, just a message away"
-        // subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
+        subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
         primary={{ label: "Start Your Project", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
         imageSrc="/assets/get-in-touch.png"
