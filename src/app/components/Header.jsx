@@ -116,13 +116,13 @@ export default function Header() {
       }}
     >
       <div className="mx-auto max-w-7xl px-6 h-30 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-56 h-30">
+        <Link href="/" className="flex items-center gap-3 justify-start">
+          <div className="relative w-36 h-30">
             <Image
               src="/head-logo-1.png"
               alt="Sensorisch"
               fill
-              style={{ objectFit: "contain" }}
+              className=""
               priority
             />
           </div>

@@ -110,7 +110,7 @@ export default function LocationsPanel() {
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-xl font-medium  hover:bg-primary/90 transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-white px-3 py-2 text-lg font-medium  hover:bg-primary/90 transition"
                 >
                   <MapPin className="h-4 w-4" />
                   Get Directions
@@ -119,7 +119,7 @@ export default function LocationsPanel() {
                 {/* Call */}
                 <Link
                   href="tel:+917397397037"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary bg-white dark:bg-white/10 px-3 py-2 text-xl font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary bg-white dark:bg-white/10 px-3 py-2 text-lg font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Phone className="h-4 w-4" />
                   Call
@@ -128,7 +128,7 @@ export default function LocationsPanel() {
                 {/* Email */}
                 <Link
                   href="mailto:info@sensorisch.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary border border-primary dark:bg-white/10 px-3 py-2 text-xl font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary border border-primary dark:bg-white/10 px-3 py-2 text-lg font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Mail className="h-4 w-4" />
                   Email

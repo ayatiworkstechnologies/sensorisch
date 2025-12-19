@@ -66,7 +66,7 @@ export default function PromoSection() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.35 }}
-                  className="mx-auto max-w-2xl text-left"
+                  className=" max-w-2xl text-left"
                 >
                   <h3 className="section-title text-left font-semibold text-gray-900 leading-tight">
                     Explore the Senso Ranges

@@ -41,29 +41,30 @@ export default function Footer() {
 
             {/* SOLUTIONS */}
             <div>
-              <h4 className="text-2xl  mb-6">Solutions</h4>
+              <h4 className="text-2xl  mb-6 mt-5">Solutions</h4>
               <ul className="space-y-2 font-secondary text-lg">
-                <li><Link href="#" className="hover:opacity-80">Senso Ranges</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Bespoke Solutions</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Flavours</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li>
+                <li><Link href="/applications-solutions" className="hover:opacity-80">Senso Ranges</Link></li>
+                <li><Link href="/bespoke" className="hover:opacity-80">Bespoke Solutions</Link></li>
+                <li><Link href="//insights" className="hover:opacity-80">Insights</Link></li>
+                {/* <li><Link href="#" className="hover:opacity-80">Flavours</Link></li>
+                <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li> */}
               </ul>
             </div>
 
             {/* COMPANY */}
             <div>
-              <h4 className="text-2xl mb-6">Company</h4>
+              <h4 className="text-2xl mb-6  mt-5">Company</h4>
               <ul className="space-y-2 font-secondary text-lg">
-                <li><Link href="#" className="hover:opacity-80">About us</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Contact</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Contact Us</Link></li>
-                <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li>
+                <li><Link href="/about" className="hover:opacity-80">About us</Link></li>
+                {/* <li><Link href="#" className="hover:opacity-80">Contact</Link></li> */}
+                <li><Link href="/contact" className="hover:opacity-80">Contact Us</Link></li>
+                {/* <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li> */}
               </ul>
             </div>
 
             {/* SUPPORT */}
             <div>
-              <h4 className="text-2xl mb-6">Support</h4>
+              <h4 className="text-2xl mb-6  mt-5">Support</h4>
               <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="#" className="hover:opacity-80">Privacy Policy</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Terms & Conditions</Link></li>

@@ -61,7 +61,7 @@ export default function MethodsSection() {
             viewport={{ once: true, amount: 0.35 }}
             className="mx-auto max-w-3xl text-center"
           >
-             <h3 className="section-title font-semibold text-gray-900 leading-tight">
+            <h3 className="section-title font-semibold text-gray-900 leading-tight">
               How Can We Help You?
             </h3>
 
@@ -92,7 +92,8 @@ export default function MethodsSection() {
               variants={fadeUp}
               whileHover={{ y: -6, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
-              className="group relative overflow-hidden rounded-2xl bg-white/70 border border-gray-200 p-6 "
+              className="group relative flex flex-col overflow-hidden rounded-2xl
+             bg-white/70 border border-gray-200 p-6"
             >
               {/* {m.tag && (
                 <span className="absolute right-3 top-3 rounded-full bg-primary/10 text-primary text-[10px] font-semibold px-2 py-1">
@@ -107,7 +108,9 @@ export default function MethodsSection() {
 
               <Link
                 href={m.href}
-                className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary font-secondary px-3.5 py-1 text-lg text-white shadow hover:bg-primary/90 transition-colors"
+                className="mt-auto inline-flex items-center gap-2 rounded-md
+             bg-primary font-secondary px-3.5 py-1 text-lg
+             text-white shadow hover:bg-primary/90 transition-colors"
               >
                 {m.cta}
                 <ArrowRight className="h-4 w-4" />

@@ -23,7 +23,7 @@ export default function HeroComponent({ data = {} }) {
   const titleClass = `text-5xl md:text-6xl font-extrabold ${titleColor}`;
 
   return (
-    <section className="relative min-h-[650px] flex items-center overflow-hidden">
+    <section className="relative min-h-[650px] flex items-start md:items-center overflow-hidden">
       {/* ================= BACKGROUND VIDEO ================= */}
       {video?.src && (
         <video
@@ -65,8 +65,9 @@ export default function HeroComponent({ data = {} }) {
       )}
 
       {/* ================= CONTENT ================= */}
-      <div className="section-container w-full relative z-10">
-        <div className="max-w-xl flex flex-col gap-4">
+      <div className="section-container w-full relative z-10 pt-30 md:pt-0">
+
+        <div className="max-w-xl flex flex-col  gap-4">
           {title && <h1 className={titleClass}>{title}</h1>}
           {title1 && <h1 className={titleClass}>{title1}</h1>}
 
