@@ -37,11 +37,11 @@ export default function AboutUS() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/about-mob.png",
+            src: "/banners/about-mob.jpg",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/about-web.png",
+            src: "/banners/about-web.jpg",
             alt: "Desktop banner image",
           },
           title: "Science - Led Innovation Meets Culinary Craft",
