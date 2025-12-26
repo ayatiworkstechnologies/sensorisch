@@ -5,6 +5,7 @@ import { useMemo, useState, Children, cloneElement } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Mail,
   Phone,
@@ -14,16 +15,15 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+
 import emailjs from "@emailjs/browser";
 
 /* ---------------- Schema ---------------- */
 const FormSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
+  fullName: z.string().min(1, "Full name is required"),
+  company: z.string().optional(),
   email: z.string().email("Enter a valid email"),
   phone: z.string().optional(),
-  company: z.string().optional(),
-  roleTitle: z.string().optional(),
   inquiryType: z.string().optional(),
   application: z.string().optional(),
   projectDetails: z.string().optional(),
@@ -78,7 +78,10 @@ export default function FormSection() {
   };
 
   return (
-    <section id="contact-form" className="section-container font-secondary text-lg py-12">
+    <section
+      id="contact-form"
+      className="section-container font-secondary text-lg py-12"
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="rounded-xl border border-black/10 bg-white p-6 md:p-8"
@@ -94,17 +97,24 @@ export default function FormSection() {
           </p>
         </div>
 
-        {/* Names */}
+        {/* First Name + Company */}
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <Field label="First Name" error={errors.firstName?.message}>
-            <Input placeholder="Enter your first name" {...register("firstName")} />
+          <Field label="Full Name" error={errors.fullName?.message}>
+            <Input
+              placeholder="Enter your full name"
+              {...register("fullName")}
+            />
           </Field>
-          <Field label="Last Name" error={errors.lastName?.message}>
-            <Input placeholder="Enter your last name" {...register("lastName")} />
+
+          <Field label="Company" icon={MapPin}>
+            <Input
+              placeholder="Enter your company name"
+              {...register("company")}
+            />
           </Field>
         </div>
 
-        {/* Contact */}
+        {/* Email + Phone */}
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <Field label="Email" icon={Mail} error={errors.email?.message}>
             <Input
@@ -112,26 +122,11 @@ export default function FormSection() {
               {...register("email")}
             />
           </Field>
+
           <Field label="Phone" icon={Phone}>
             <Input
               placeholder="Enter your phone number"
               {...register("phone")}
-            />
-          </Field>
-        </div>
-
-        {/* Company */}
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <Field label="Company" icon={MapPin}>
-            <Input
-              placeholder="Enter your company name"
-              {...register("company")}
-            />
-          </Field>
-          <Field label="Role / Title">
-            <Input
-              placeholder="Enter your role or designation"
-              {...register("roleTitle")}
             />
           </Field>
         </div>
@@ -150,6 +145,7 @@ export default function FormSection() {
               ]}
             />
           </Field>
+
           <Field label="Application Area">
             <Select
               {...register("application")}
@@ -165,7 +161,7 @@ export default function FormSection() {
           </Field>
         </div>
 
-        {/* Project details */}
+        {/* Project Details */}
         <Field className="mt-4" label="Project Details" icon={HelpCircle}>
           <TextArea
             rows={5}
@@ -178,7 +174,12 @@ export default function FormSection() {
         <div className="mt-4">
           <label className="text-lg font-medium">Attach Files</label>
           <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-lg">
-            <input type="file" multiple className="hidden" onChange={onPickFiles} />
+            <input
+              type="file"
+              multiple
+              className="hidden"
+              onChange={onPickFiles}
+            />
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-black/70">
                 <UploadCloud className="h-4 w-4" />
@@ -196,7 +197,7 @@ export default function FormSection() {
           </label>
         </div>
 
-        {/* Additional info */}
+        {/* Additional Info */}
         <Field className="mt-4" label="Additional Information">
           <TextArea
             rows={3}

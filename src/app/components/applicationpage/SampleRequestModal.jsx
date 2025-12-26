@@ -5,11 +5,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
 
-export default function SampleRequestModal({
-  open,
-  onClose,
-  subject,
-}) {
+export default function SampleRequestModal({ open, onClose, subject }) {
   const {
     register,
     handleSubmit,
@@ -29,6 +25,7 @@ export default function SampleRequestModal({
           title: subject,
           subject,
           name: data.name,
+          company: data.company, // ✅ added
           email: data.email,
           mobile: data.mobile,
           message: data.message,
@@ -122,6 +119,19 @@ export default function SampleRequestModal({
             />
             {errors.mobile && (
               <p className="text-sm text-red-500">{errors.mobile.message}</p>
+            )}
+
+            {/* Company Name */}
+            <input
+              type="text"
+              placeholder="Company Name"
+              {...register("company", {
+                required: "Company name is required",
+              })}
+              className="w-full border border-black/10 rounded-md px-4 py-3"
+            />
+            {errors.company && (
+              <p className="text-sm text-red-500">{errors.company.message}</p>
             )}
 
             {/* Message */}

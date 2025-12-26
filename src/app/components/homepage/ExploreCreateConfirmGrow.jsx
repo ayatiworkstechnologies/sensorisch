@@ -45,7 +45,7 @@ export default function ExploreCreateConfirmGrow() {
       icon: "/icons/5.svg",
       title: "Inspiration",
       desc: "Showcase Smart Innovation",
-      href: "#",
+      href: "/applications-solutions",
     },
     {
       key: "insight",
@@ -59,7 +59,7 @@ export default function ExploreCreateConfirmGrow() {
       icon: "/icons/7.svg",
       title: "Innovation",
       desc: "Shaping the next wave of innovation",
-      href: "#",
+      href: "/bespoke",
     },
   ];
 

@@ -27,7 +27,7 @@ export default function Home() {
           title1: "Meets Senses.",
           // subtitle: "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
           primary: {
-            label: "About Us",
+            label: "About Sensorisch",
             href: "/about",
           },
           secondary: {
