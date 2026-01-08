@@ -464,11 +464,11 @@ export default function ApplicationSolutions() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/applications-mob.png",
+            src: "/banners/applications-mob.jpg",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/applications-web.png",
+            src: "/banners/applications-web.jpg",
             alt: "Desktop banner image",
           },
           title: "Senso Application Ranges",

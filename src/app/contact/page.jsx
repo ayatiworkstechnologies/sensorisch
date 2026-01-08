@@ -13,11 +13,11 @@ export default function ContactUs() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/contact-mob.png",
+            src: "/banners/contact-mob.jpg",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/contact-web.png",
+            src: "/banners/contact-web.jpg",
             alt: "Desktop banner image",
           },
           titleColor : "text-primary",
