@@ -4,6 +4,34 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+/* ================= ANIMATION VARIANTS ================= */
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40, // bottom → top
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+/* ================= COMPONENT ================= */
+
 export default function HomeHeroComponent({ data = {} }) {
   const {
     imageMobile,     // { src, alt }
@@ -19,9 +47,7 @@ export default function HomeHeroComponent({ data = {} }) {
 
   return (
     <section className="relative min-h-[650px] flex items-center overflow-hidden">
-      {/* ============================
-          BACKGROUND VIDEO (PRIORITY)
-      ============================= */}
+      {/* ================= BACKGROUND VIDEO ================= */}
       {video?.src && (
         <video
           className="absolute inset-0 -z-10 w-full h-full object-cover"
@@ -34,9 +60,7 @@ export default function HomeHeroComponent({ data = {} }) {
         />
       )}
 
-      {/* ============================
-          FALLBACK IMAGE (MOBILE)
-      ============================= */}
+      {/* ================= FALLBACK IMAGE (MOBILE) ================= */}
       {!video?.src && imageMobile?.src && (
         <div className="absolute inset-0 -z-10 md:hidden">
           <Image
@@ -50,9 +74,7 @@ export default function HomeHeroComponent({ data = {} }) {
         </div>
       )}
 
-      {/* ============================
-          FALLBACK IMAGE (DESKTOP)
-      ============================= */}
+      {/* ================= FALLBACK IMAGE (DESKTOP) ================= */}
       {!video?.src && imageDesktop?.src && (
         <div className="absolute inset-0 -z-10 hidden md:block">
           <Image
@@ -66,30 +88,48 @@ export default function HomeHeroComponent({ data = {} }) {
         </div>
       )}
 
-      {/* ============================
-          CONTENT
-      ============================= */}
+      {/* ================= CONTENT ================= */}
       <div className="section-container w-full relative z-10">
-        <div className="max-w-xl flex flex-col gap-4">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="max-w-xl flex flex-col gap-4"
+        >
+          {/* Titles */}
           {title && (
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg"
+            >
               {title}
-            </h1>
-          )}
-          {title1 && (
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-              {title1}
-            </h1>
+            </motion.h1>
           )}
 
+          {title1 && (
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg"
+            >
+              {title1}
+            </motion.h1>
+          )}
+
+          {/* Subtitle */}
           {subtitle && (
-            <p className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow">
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow"
+            >
               {subtitle}
-            </p>
+            </motion.p>
           )}
 
           {/* Buttons */}
-          <div className="mt-4 flex flex-wrap gap-4">
+          <motion.div
+            variants={itemVariants}
+            className="mt-4 flex flex-wrap gap-4"
+          >
             {primary?.href && (
               <Link
                 href={primary.href}
@@ -107,13 +147,11 @@ export default function HomeHeroComponent({ data = {} }) {
                 {secondary.label}
               </Link>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* ============================
-          BOTTOM RIGHT FLOAT BUTTON
-      ============================= */}
+      {/* ================= FLOATING BUTTON ================= */}
       {floatingButton?.href && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -123,13 +161,7 @@ export default function HomeHeroComponent({ data = {} }) {
         >
           <Link
             href={floatingButton.href}
-            className="
-              px-5 py-3
-              bg-secondary text-white font-semibold
-              rounded-full shadow-xl
-              hover:bg-secondary/90
-              transition
-            "
+            className="px-5 py-3 bg-secondary text-white font-semibold rounded-full shadow-xl hover:bg-secondary/90 transition"
           >
             {floatingButton.label}
           </Link>

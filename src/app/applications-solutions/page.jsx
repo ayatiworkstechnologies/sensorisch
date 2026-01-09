@@ -5,7 +5,6 @@ import ProfileCTA from "../components/applicationpage/CTA";
 import SensoRangeHero from "../components/applicationpage/SensoRangeHero";
 import WhyChooseSenso from "../components/applicationpage/WhyChooseSenso";
 import HeroComponent from "../components/Hero";
-import HeroCompnonet from "../components/Hero";
 import HeroContact from "../components/HeroContact";
 import StickyFullpageSlides from "../components/StickyFullpageSlides";
 const ranges = [

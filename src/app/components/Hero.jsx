@@ -4,6 +4,34 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+/* ================= ANIMATION VARIANTS ================= */
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40, // bottom → top
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+/* ================= COMPONENT ================= */
+
 export default function HeroComponent({ data = {} }) {
   const {
     imageMobile,
@@ -16,7 +44,7 @@ export default function HeroComponent({ data = {} }) {
     secondary,
     floatingButton,
 
-    // ✅ NEW (reusable)
+    // reusable
     titleColor = "text-white",
   } = data;
 
@@ -66,19 +94,40 @@ export default function HeroComponent({ data = {} }) {
 
       {/* ================= CONTENT ================= */}
       <div className="section-container w-full relative z-10 pt-30 md:pt-0">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="max-w-xl flex flex-col gap-4"
+        >
+          {/* Titles */}
+          {title && (
+            <motion.h1 variants={itemVariants} className={titleClass}>
+              {title}
+            </motion.h1>
+          )}
 
-        <div className="max-w-xl flex flex-col  gap-4">
-          {title && <h1 className={titleClass}>{title}</h1>}
-          {title1 && <h1 className={titleClass}>{title1}</h1>}
+          {title1 && (
+            <motion.h1 variants={itemVariants} className={titleClass}>
+              {title1}
+            </motion.h1>
+          )}
 
+          {/* Subtitle */}
           {subtitle && (
-            <p className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow">
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow"
+            >
               {subtitle}
-            </p>
+            </motion.p>
           )}
 
           {/* Buttons */}
-          <div className="mt-4 flex flex-wrap gap-4">
+          <motion.div
+            variants={itemVariants}
+            className="mt-4 flex flex-wrap gap-4"
+          >
             {primary?.href && (
               <Link
                 href={primary.href}
@@ -96,8 +145,8 @@ export default function HeroComponent({ data = {} }) {
                 {secondary.label}
               </Link>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* ================= FLOATING BUTTON ================= */}
