@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 
 /* ================= ANIMATION VARIANTS ================= */
 
@@ -33,17 +34,28 @@ const itemVariants = {
 /* ================= COMPONENT ================= */
 
 export default function HomeHeroComponent({ data = {} }) {
+  const controls = useAnimation();
+
   const {
-    imageMobile,     // { src, alt }
-    imageDesktop,    // { src, alt }
-    video,           // { src, poster }
+    imageMobile,
+    imageDesktop,
+    video,
     title,
     title1,
     subtitle,
     primary,
     secondary,
-    floatingButton,  // { label, href }
+    floatingButton,
   } = data;
+
+  /* ================= DELAY ANIMATION (5s) ================= */
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      controls.start("show");
+    }, 3000); // ⏱️ 5 seconds
+
+    return () => clearTimeout(timer);
+  }, [controls]);
 
   return (
     <section className="relative min-h-[650px] flex items-center overflow-hidden">
@@ -93,10 +105,9 @@ export default function HomeHeroComponent({ data = {} }) {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="show"
+          animate={controls}
           className="max-w-xl flex flex-col gap-4"
         >
-          {/* Titles */}
           {title && (
             <motion.h1
               variants={itemVariants}
@@ -115,7 +126,6 @@ export default function HomeHeroComponent({ data = {} }) {
             </motion.h1>
           )}
 
-          {/* Subtitle */}
           {subtitle && (
             <motion.p
               variants={itemVariants}
@@ -125,7 +135,6 @@ export default function HomeHeroComponent({ data = {} }) {
             </motion.p>
           )}
 
-          {/* Buttons */}
           <motion.div
             variants={itemVariants}
             className="mt-4 flex flex-wrap gap-4"
@@ -156,7 +165,7 @@ export default function HomeHeroComponent({ data = {} }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 5.4 }}
           className="fixed bottom-6 right-6 z-20"
         >
           <Link
