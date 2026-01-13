@@ -45,7 +45,7 @@ export default function Footer() {
               <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="/applications-solutions" className="hover:opacity-80">Senso Ranges</Link></li>
                 <li><Link href="/bespoke" className="hover:opacity-80">Bespoke Solutions</Link></li>
-                <li><Link href="//insights" className="hover:opacity-80">Insights</Link></li>
+                <li><Link href="/insights" className="hover:opacity-80">Insights</Link></li>
                 {/* <li><Link href="#" className="hover:opacity-80">Flavours</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Natural Colours</Link></li> */}
               </ul>

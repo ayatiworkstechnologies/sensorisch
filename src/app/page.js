@@ -55,7 +55,7 @@ export default function Home() {
         title="Expert guidance, just a message away"
         subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
         primary={{ label: "Start Your Project", href: "/contact" }}
-        secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
+        secondary={{ label: "View Our Project", href: "/applications-solutions" }}
         imageSrc="/assets/get-in-touch.png"
         imageAlt="Glass beaker with plant"
       />
