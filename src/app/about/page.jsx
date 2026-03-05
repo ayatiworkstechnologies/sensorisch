@@ -85,10 +85,8 @@ export default function AboutUS() {
       <SetsUsApartAndMarkets />
       {/* <CompanyProfileCTA /> */}
       <HeroContact
-        kicker="Get in touch"
-        title="Company Profile"
-        subtitle="Download our comprehensive company profile to learn more about our capabilities, processes, and how we can support your product development goals."
-        // primary={{ label: "Start Your Project", href: "/contact" }}
+        kicker="Get in Touch"
+         primary={{ label: "Get in Touch", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
         imageSrc="/assets/get-in-touch.png"
         imageAlt="Glass beaker with plant"

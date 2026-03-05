@@ -23,7 +23,7 @@ export default function Footer() {
         
         {/* MAIN GRID */}
         <div className="max-w-6xl mx-auto px-6 py-15  border-b border-white/20">
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 items-start">
             
             {/* BRAND */}
             <div className="space-y-4">
@@ -63,14 +63,14 @@ export default function Footer() {
             </div>
 
             {/* SUPPORT */}
-            <div>
+            {/* <div>
               <h4 className="text-2xl mb-6  mt-5">Support</h4>
               <ul className="space-y-2 font-secondary text-lg">
                 <li><Link href="#" className="hover:opacity-80">Privacy Policy</Link></li>
                 <li><Link href="#" className="hover:opacity-80">Terms & Conditions</Link></li>
                 <li><Link href="#" className="hover:opacity-80">FAQ</Link></li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 

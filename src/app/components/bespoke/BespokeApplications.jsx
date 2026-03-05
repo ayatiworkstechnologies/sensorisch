@@ -36,7 +36,7 @@ const APPLICATIONS = [
   {
     title: "Dairy Innovation",
     blurb:
-      "Unique profiles for premium ice creams, specialty yogurts, and craft cheeses.",
+      "Unique profile for premium ice creams, specialty yogurt, and craft cheese.",
   },
   {
     title: "Personal Care",

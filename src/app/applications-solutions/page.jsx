@@ -109,7 +109,7 @@ const ranges = [
     badge: "Dairy",
     title: "SensoCreme",
     blurb:
-      "Creamy, authentic notes for ice creams, yoghurts, milkshakes, and cheeses with heat-stable options.",
+      "Creamy, authentic notes for ice creams, Yogurt, milkshakes, and cheeses with heat-stable options.",
     imageSrc: "/assets/img-3.png",
     iconSrc: "/icons/dairy.png",
     benefits: [
@@ -140,7 +140,7 @@ const ranges = [
     ],
     tags: [
       { t: "Ice Cream", cls: "bg-cyan-50 text-cyan-700 ring-cyan-200" },
-      { t: "Yoghurt", cls: "bg-lime-50 text-lime-700 ring-lime-200" },
+      { t: "Yogurt", cls: "bg-lime-50 text-lime-700 ring-lime-200" },
       {
         t: "Milkshakes",
         cls: "bg-fuchsia-50 text-fuchsia-700 ring-fuchsia-200",

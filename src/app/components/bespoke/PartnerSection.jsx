@@ -38,7 +38,7 @@ export default function PartnerSection() {
           className="mx-auto max-w-2xl text-center"
         >
            <h3 className="section-title font-semibold text-gray-900 leading-tight">
-            We Partner With You To
+            Why Partner with us
           </h3>
 
           {/* Underline animation – centered */}

@@ -85,7 +85,7 @@ const POSTS = [
     title: "The Rise of Functional Ingredients in Nutrition",
     image: "/assets/news-2.png",
     excerpt: "Ingredients that deliver health benefits beyond basic nutrition.",
-    href: "/news/functional-ingredients",
+    href: "#",
     date: "2024-09-12",
   },
 ];

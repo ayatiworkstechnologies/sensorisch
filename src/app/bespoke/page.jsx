@@ -51,9 +51,9 @@ export default function bespoke() {
         subtitle="Partner with Sensorisch for bespoke flavour solutions that differentiate your brand and delight your customers. Let's build something extraordinary together."
         primary={{
           label: "Start Your Custom Project",
-          href: "/applications-solutions",
+          href: "/contact",
         }}
-        secondary={{ label: "Explore Our Capabilities", href: "/contact" }}
+        secondary={{ label: "Explore Our Capabilities", href: "/applications-solutions" }}
         imageSrc="/assets/get-in-touch.png"
         imageAlt="Glass beaker with plant"
       />

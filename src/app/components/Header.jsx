@@ -102,7 +102,7 @@ export default function Header() {
           isHome
             ? scrolled
               ? "backdrop-blur-md bg-black/40 border-b border-black/10"
-              : "bg-transparent border-b border-transparent"
+              : "backdrop-blur-md bg-black/40 border-b border-black/10"
             : scrolled
             ? "bg-white/80 border-b border-black/10"
             : "bg-white/80 border-b border-black/10"
