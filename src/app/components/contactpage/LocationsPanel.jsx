@@ -63,7 +63,7 @@ export default function LocationsPanel() {
                   >
                     <Phone className="h-4 w-4 text-primary" />
                     +91 7397397037
-                    <span className="text-black/60">(customer care)</span>
+                    <span className="text-black/60">(customer support)</span>
                   </Link>
                 </li>
 

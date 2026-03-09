@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="relative w-full text-white bg-primary overflow-hidden">
-      
+
       {/* BACKGROUND IMAGE OVERLAY */}
       {/* <Image
         src="/senso.svg"
@@ -20,11 +20,11 @@ export default function Footer() {
 
       {/* CONTENT */}
       <div className="relative z-10">
-        
+
         {/* MAIN GRID */}
         <div className="max-w-6xl mx-auto px-6 py-15  border-b border-white/20">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 items-start">
-            
+
             {/* BRAND */}
             <div className="space-y-4">
               <Image
@@ -34,7 +34,7 @@ export default function Footer() {
                 height={36}
                 className="object-contain"
               />
-              <p className="text-2xl tracking-wide leading-relaxed">
+              <p className="text-2xl tracking-wide font-bold leading-relaxed">
                 Where Science<br />Meets Senses
               </p>
             </div>

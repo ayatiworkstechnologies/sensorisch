@@ -16,10 +16,8 @@ const NAV = [
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
-
 export default function Header() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   const [open, setOpen] = useState(false);
 
@@ -83,13 +81,11 @@ export default function Header() {
       : pathname === href || pathname?.startsWith(href + "/");
 
   const pillCls = (href) => {
-    const baseColor = isHome ? "text-white/90" : "text-black/90";
-
     return [
       "inline-flex items-center px-2 font-secondary py-1 text-lg font-medium transition-all",
       isActive(href)
         ? "text-primary underline underline-offset-4"
-        : `${baseColor} hover:text-primary hover:underline underline-offset-4`,
+        : "text-black/90 hover:text-primary hover:underline underline-offset-4",
     ].join(" ");
   };
 
@@ -98,22 +94,9 @@ export default function Header() {
       ref={ref}
       className={`fixed inset-x-0 top-0 z-50  transform transition-transform duration-300 ease-out
         ${hidden ? "-translate-y-[110%]" : "translate-y-0"}
-        ${
-          isHome
-            ? scrolled
-              ? "backdrop-blur-md bg-black/40 border-b border-black/10"
-              : "backdrop-blur-md bg-black/40 border-b border-black/10"
-            : scrolled
-            ? "bg-white/80 border-b border-black/10"
-            : "bg-white/80 border-b border-black/10"
-        }
-
+        bg-white/80 backdrop-blur-md border-b border-black/10
       `}
       role="banner"
-      style={{
-        WebkitBackdropFilter: isHome && scrolled ? "blur(6px)" : "none",
-        backdropFilter: isHome && scrolled ? "blur(6px)" : "none",
-      }}
     >
       <div className="mx-auto max-w-7xl px-6 h-30 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 justify-start">
@@ -140,10 +123,9 @@ export default function Header() {
         {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-2">
           <button
-            className="p-2 rounded-md hover:bg-white/10"
+            className="p-2 rounded-md hover:bg-black/5 text-black"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            style={{ color: isHome && !scrolled ? "white" : "black" }}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -152,11 +134,10 @@ export default function Header() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden transition-max-h duration-300 ease-out overflow-hidden ${
-          open ? "max-h-[500px]" : "max-h-0"
-        } border-t border-black/10 ${isHome ? "bg-black/80" : "bg-white"}`}
+        className={`md:hidden transition-max-h duration-300 ease-out overflow-hidden ${open ? "max-h-[500px]" : "max-h-0"
+          } border-t border-black/10 bg-white`}
       >
-        <div className="mx-auto max-w-7xl px-6 flex flex-col gap-4">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col gap-4 py-4">
           {NAV.map((n) => (
             <Link
               key={n.href}
@@ -166,9 +147,7 @@ export default function Header() {
                 "px-1 py-1 text-lg transition-all font-secondary",
                 isActive(n.href)
                   ? "text-primary underline underline-offset-4"
-                  : `${
-                      isHome ? "text-white/90" : "text-black/90"
-                    } hover:text-primary hover:underline underline-offset-4`,
+                  : "text-black/90 hover:text-primary hover:underline underline-offset-4",
               ].join(" ")}
             >
               {n.label}

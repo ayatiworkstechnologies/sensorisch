@@ -14,7 +14,7 @@ const POSTS = [
     id: 1,
     category: "News",
     title: "Green Chemistry Solutions for a Sustainable Future",
-    image: "/assets/news-1.png",
+    image: "/assets/news-1.jpg",
     excerpt:
       "Advancing eco-friendly chemical processes through innovation and responsibility.",
     href: "#",
@@ -24,7 +24,7 @@ const POSTS = [
     id: 2,
     category: "Trends",
     title: "Flavours Shaping Consumer Preferences in 2025",
-    image: "/assets/news-2.png",
+    image: "/assets/news-2.jpg",
     excerpt:
       "Understanding evolving taste profiles and ingredient-driven demand.",
     href: "#",
@@ -34,7 +34,7 @@ const POSTS = [
     id: 3,
     category: "News",
     title: "New R&D Breakthroughs in Natural Colour Extraction",
-    image: "/assets/news-3.png",
+    image: "/assets/news-3.jpg",
     excerpt:
       "Improving stability and vibrancy using sustainable sourcing methods.",
     href: "#",
@@ -44,7 +44,7 @@ const POSTS = [
     id: 4,
     category: "Trends",
     title: "Clean-Label Ingredients Gaining Momentum",
-    image: "/assets/news-2.png",
+    image: "/assets/news-4.jpg",
     excerpt:
       "Why transparency and simplicity are redefining product formulations.",
     href: "#",
@@ -54,40 +54,13 @@ const POSTS = [
     id: 5,
     category: "News",
     title: "Advancing Food Safety with Precision Testing",
-    image: "/assets/news-3.png",
+    image: "/assets/news-5.jpg",
     excerpt:
       "How modern lab techniques improve compliance and quality assurance.",
     href: "#",
     date: "2024-10-05",
   },
-  {
-    id: 6,
-    category: "Trends",
-    title: "The Rise of Functional Ingredients in Nutrition",
-    image: "/assets/news-1.png",
-    excerpt: "Ingredients that deliver health benefits beyond basic nutrition.",
-    href: "#",
-    date: "2024-09-12",
-  },
-  {
-    id: 7,
-    category: "News",
-    title: "Advancing Food Safety with Precision Testing",
-    image: "/assets/news-1.png",
-    excerpt:
-      "How modern lab techniques improve compliance and quality assurance.",
-    href: "#",
-    date: "2024-10-05",
-  },
-  {
-    id: 8,
-    category: "Trends",
-    title: "The Rise of Functional Ingredients in Nutrition",
-    image: "/assets/news-2.png",
-    excerpt: "Ingredients that deliver health benefits beyond basic nutrition.",
-    href: "#",
-    date: "2024-09-12",
-  },
+
 ];
 
 export default function NewsTrends() {
@@ -157,11 +130,10 @@ export default function NewsTrends() {
                   setActiveTab(tab);
                   setPage(1);
                 }}
-                className={`relative pb-1 font-secondary text-lg transition ${
-                  activeTab === tab
-                    ? "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary"
-                    : "text-gray-600 hover:text-primary"
-                }`}
+                className={`relative pb-1 font-secondary text-lg transition ${activeTab === tab
+                  ? "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary"
+                  : "text-gray-600 hover:text-primary"
+                  }`}
               >
                 {tab}
               </button>
@@ -187,11 +159,10 @@ export default function NewsTrends() {
                       setPage(1);
                       setShowFilters(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded hover:bg-gray-100 ${
-                      sortBy === s
-                        ? "text-primary font-semibold"
-                        : "text-gray-700"
-                    }`}
+                    className={`block w-full text-left px-3 py-2 rounded hover:bg-gray-100 ${sortBy === s
+                      ? "text-primary font-semibold"
+                      : "text-gray-700"
+                      }`}
                   >
                     {s}
                   </button>
@@ -264,11 +235,10 @@ export default function NewsTrends() {
               <button
                 key={i}
                 onClick={() => setPage(i + 1)}
-                className={`px-3 py-1 rounded  cursor-pointer  ${
-                  page === i + 1
-                    ? "bg-primary text-white "
-                    : "  cursor-pointer "
-                }`}
+                className={`px-3 py-1 rounded  cursor-pointer  ${page === i + 1
+                  ? "bg-primary text-white "
+                  : "  cursor-pointer "
+                  }`}
               >
                 {i + 1}
               </button>

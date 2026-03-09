@@ -58,7 +58,7 @@ export default function HomeHeroComponent({ data = {} }) {
   }, [controls]);
 
   return (
-    <section className="relative min-h-[650px] flex items-center overflow-hidden">
+    <section className="relative min-h-[650px] pt-32 flex items-center overflow-hidden">
       {/* ================= BACKGROUND VIDEO ================= */}
       {video?.src && (
         <video
@@ -111,7 +111,7 @@ export default function HomeHeroComponent({ data = {} }) {
           {title && (
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg"
+              className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-lg"
             >
               {title}
             </motion.h1>
@@ -120,7 +120,7 @@ export default function HomeHeroComponent({ data = {} }) {
           {title1 && (
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg"
+              className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-lg"
             >
               {title1}
             </motion.h1>
@@ -151,7 +151,7 @@ export default function HomeHeroComponent({ data = {} }) {
             {secondary?.href && (
               <Link
                 href={secondary.href}
-                className="px-10 py-3 border border-white/60 font-secondary text-xl bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition"
+                className="px-10 py-3 border border-white/60 font-secondary text-xl bg-white/20 backdrop-blur text-primary font-semibold rounded-lg hover:bg-white/30 transition"
               >
                 {secondary.label}
               </Link>
