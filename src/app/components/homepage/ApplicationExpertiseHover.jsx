@@ -30,16 +30,14 @@ export default function ApplicationExpertiseCarousel() {
       if (!outerRef.current) return;
 
       const w = window.innerWidth;
-      const nextPerPage =
-        w >= 1200 ? 4 : w >= 900 ? 3 : w >= 768 ? 2 : 1;
+      const nextPerPage = w >= 1200 ? 4 : w >= 900 ? 3 : w >= 768 ? 2 : 1;
 
       setPerPage(nextPerPage);
 
-      const available =
-        outerRef.current.clientWidth - BUTTON_SIZE * 2 - 32;
+      const available = outerRef.current.clientWidth - BUTTON_SIZE * 2 - 32;
 
       const width = Math.floor(
-        (available - GAP * (nextPerPage - 1)) / nextPerPage
+        (available - GAP * (nextPerPage - 1)) / nextPerPage,
       );
 
       setCardWidth(width);
@@ -130,10 +128,10 @@ export default function ApplicationExpertiseCarousel() {
                       </p>
                       <span className="mt-2 block h-[2px] w-12 bg-primary" />
                     </div>
-                    <IoChevronForward
+                    {/* <IoChevronForward
                       className="mt-1 text-primary"
                       size={18}
-                    />
+                    /> */}
                   </div>
 
                   {/* Image */}

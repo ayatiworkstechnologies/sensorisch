@@ -35,28 +35,25 @@ export default function FromBriefToScale() {
   return (
     <section className="py-5 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-title text-black">
-            From Brief to Scale
-          </h2>
+          <h2 className="section-title text-black">From Brief to Scale</h2>
           {/* Underline */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: 112 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="mx-auto mt-6 h-[2px] bg-primary"
-                  />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mx-auto mt-6 h-[2px] bg-primary"
+          />
           <p className="mt-2 text-base sm:text-lg font-secondary text-gray-500">
-            We align targets, prototype fast, validate in your market, then transfer SOPs for reliable production
+            We align targets, prototype fast, validate in your market, then
+            transfer SOPs for reliable production
           </p>
         </div>
 
         {/* Steps */}
         <div className="mt-12 relative">
-
           {/* Dotted Line (Desktop only) */}
           <div className="hidden md:block absolute left-0 right-0 top-[38px]">
             <div className="w-full border-t border-dashed border-gray-300"></div>
@@ -69,7 +66,6 @@ export default function FromBriefToScale() {
                 key={s.key}
                 className="flex flex-col items-center text-center relative"
               >
-
                 {/* Icon circle */}
                 <div className="z-10 bg-white rounded-full w-20 h-20 flex items-center justify-center border border-gray-200">
                   <Image
@@ -88,14 +84,16 @@ export default function FromBriefToScale() {
 
                 {/* Text */}
                 <div className="mt-4 px-3">
-                  <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
-                  <p className="mt-2 text-base font-secondary text-gray-500">{s.desc}</p>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-base font-secondary text-gray-500">
+                    {s.desc}
+                  </p>
                 </div>
-
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
