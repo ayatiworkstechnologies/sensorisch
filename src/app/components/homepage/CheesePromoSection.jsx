@@ -75,7 +75,7 @@ export default function PromoSection() {
 
                 <p className="section-paragraph mb-3">
                   Behind every great flavour is great science. Senso brings
-                  together expertise, innovation, and application-specific
+                  together expertise, innovation and application-specific
                   precision to fast-track your success.
                 </p>
 
