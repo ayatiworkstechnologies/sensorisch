@@ -13,7 +13,7 @@ const POSTS = [
   {
     id: 1,
     category: "News",
-    title: "Green Chemistry Solutions for a Sustainable Future",
+    title: "How Green Chemistry Is Reshaping Food Ingredient Sourcing",
     image: "/assets/news-1.jpg",
     excerpt:
       "Advancing eco-friendly chemical processes through innovation and responsibility.",
@@ -23,44 +23,46 @@ const POSTS = [
   {
     id: 2,
     category: "Trends",
-    title: "Flavours Shaping Consumer Preferences in 2025",
+    title: "The Flavour Trends Defining Consumer Choices in 2026 — and Beyond",
     image: "/assets/news-2.jpg",
     excerpt:
-      "Understanding evolving taste profiles and ingredient-driven demand.",
+      "From nostalgic comfort to global spice journeys, discover the key flavour directions shaping what consumers want to taste next.",
     href: "#",
     date: "2025-01-28",
   },
   {
     id: 3,
     category: "News",
-    title: "New R&D Breakthroughs in Natural Colour Extraction",
+    title:
+      "Sensorisch R&D: Breakthrough Advances in Natural Colour Stability and Extraction",
     image: "/assets/news-3.jpg",
     excerpt:
-      "Improving stability and vibrancy using sustainable sourcing methods.",
+      "Discover how our latest innovations in natural colour extraction are enhancing stability, vibrancy, and performance across food and beverage applications.",
     href: "#",
     date: "2024-12-10",
   },
   {
     id: 4,
     category: "Trends",
-    title: "Clean-Label Ingredients Gaining Momentum",
+    title:
+      "Why Clean-Label Is No Longer Optional — And How to Formulate for It",
     image: "/assets/news-4.jpg",
     excerpt:
-      "Why transparency and simplicity are redefining product formulations.",
+      "Discover why consumers are demanding cleaner labels — and how Sensorisch flavour systems help you meet this shift without compromising taste or performance.",
     href: "#",
     date: "2024-11-18",
   },
   {
     id: 5,
     category: "News",
-    title: "Advancing Food Safety with Precision Testing",
+    title:
+      "Precision Testing, Faster Compliance: How Modern Lab Techniques Are Changing Food Safety Standards",
     image: "/assets/news-5.jpg",
     excerpt:
-      "How modern lab techniques improve compliance and quality assurance.",
+      "Discover how advanced analytical methods are enhancing food safety, ensuring regulatory compliance, and protecting consumers with greater speed and accuracy.",
     href: "#",
     date: "2024-10-05",
   },
-
 ];
 
 export default function NewsTrends() {
@@ -88,7 +90,7 @@ export default function NewsTrends() {
 
   const paginatedPosts = processedPosts.slice(
     (page - 1) * PAGE_SIZE,
-    page * PAGE_SIZE
+    page * PAGE_SIZE,
   );
 
   return (
@@ -130,10 +132,11 @@ export default function NewsTrends() {
                   setActiveTab(tab);
                   setPage(1);
                 }}
-                className={`relative pb-1 font-secondary text-lg transition ${activeTab === tab
-                  ? "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary"
-                  : "text-gray-600 hover:text-primary"
-                  }`}
+                className={`relative pb-1 font-secondary text-lg transition ${
+                  activeTab === tab
+                    ? "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary"
+                    : "text-gray-600 hover:text-primary"
+                }`}
               >
                 {tab}
               </button>
@@ -159,10 +162,11 @@ export default function NewsTrends() {
                       setPage(1);
                       setShowFilters(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded hover:bg-gray-100 ${sortBy === s
-                      ? "text-primary font-semibold"
-                      : "text-gray-700"
-                      }`}
+                    className={`block w-full text-left px-3 py-2 rounded hover:bg-gray-100 ${
+                      sortBy === s
+                        ? "text-primary font-semibold"
+                        : "text-gray-700"
+                    }`}
                   >
                     {s}
                   </button>
@@ -235,10 +239,11 @@ export default function NewsTrends() {
               <button
                 key={i}
                 onClick={() => setPage(i + 1)}
-                className={`px-3 py-1 rounded  cursor-pointer  ${page === i + 1
-                  ? "bg-primary text-white "
-                  : "  cursor-pointer "
-                  }`}
+                className={`px-3 py-1 rounded  cursor-pointer  ${
+                  page === i + 1
+                    ? "bg-primary text-white "
+                    : "  cursor-pointer "
+                }`}
               >
                 {i + 1}
               </button>
