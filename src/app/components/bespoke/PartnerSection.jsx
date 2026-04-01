@@ -71,7 +71,7 @@ export default function PartnerSection() {
           <FeatureCard
             icon={<Sparkles className="h-7 w-7" />}
             title="Exclusive Flavour Development"
-            blurb="Develop proprietary flavour architectures that are unique to your brand — protected by NDAs, owned entirely by you, and built to deepen consumer loyalty with every purchase."
+            blurb="Develop proprietary flavour architectures that are unique to your brand - protected by NDAs, owned entirely by you, and built to deepen consumer loyalty with every purchase."
             accent="from-amber-500 to-rose-500"
             bgGlow="bg-rose-500/5"
             iconBg="bg-rose-100/80 text-rose-600"

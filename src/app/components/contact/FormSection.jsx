@@ -48,7 +48,7 @@ export default function FormSection() {
   const totalSizeMB = useMemo(
     () =>
       (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
-    [files]
+    [files],
   );
 
   const onPickFiles = (e) => {
@@ -65,7 +65,7 @@ export default function FormSection() {
         "service_658qu6f",
         "template_9l9fhel",
         data,
-        "3HrWnx7n23xp9zGfl"
+        "3HrWnx7n23xp9zGfl",
       );
       setSent(true);
       reset();
@@ -89,11 +89,11 @@ export default function FormSection() {
         {/* Header */}
         <div className="text-center">
           <h3 className="section-title font-semibold text-black">
-            Get in Touch
+            Tell Us About Your Project
           </h3>
           <div className="mx-auto mt-2 h-[2px] w-28 bg-primary rounded" />
           <p className="mt-2 text-xl text-black/70">
-            Tell us about your project and weâ€™ll get back within 24 hours.
+            We respond within one business day.
           </p>
         </div>
 

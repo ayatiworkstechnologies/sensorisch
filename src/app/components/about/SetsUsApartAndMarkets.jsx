@@ -39,7 +39,7 @@ export default function SetsUsApartAndMarkets() {
               What Sets Us Apart
             </h3>
 
-            {/* Underline animation — centered */}
+            {/* Underline animation - centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -109,7 +109,7 @@ export default function SetsUsApartAndMarkets() {
               Our Markets
             </h3>
 
-            {/* Underline animation — centered */}
+            {/* Underline animation - centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}

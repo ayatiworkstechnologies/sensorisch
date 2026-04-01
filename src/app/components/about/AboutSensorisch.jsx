@@ -147,12 +147,12 @@ export default function AboutSensorisch() {
               className="section-paragraph leading-relaxed text-xl  text-black/80"
             >
               We specialise in the R&D and manufacture of advanced flavour
-              systems — from bakery and beverages to nutraceuticals and oral
+              systems - from bakery and beverages to nutraceuticals and oral
               care. Every solution is engineered to the highest standards of
               safety, stability, and sensory performance, underpinned by global
               regulatory alignment and a clean-label-first philosophy. We don't
               just supply ingredients. We partner with brands to translate
-              consumer insights into flavour experiences that resonate — and
+              consumer insights into flavour experiences that resonate - and
               products that sell.
             </motion.p>
 

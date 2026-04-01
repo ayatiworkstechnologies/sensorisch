@@ -103,7 +103,7 @@ export default function VisionMission() {
               Our Vision
             </h3>
             <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
-              To be the most trusted partner in sensory innovation — delivering
+              To be the most trusted partner in sensory innovation - delivering
               precision flavours, colours, and ingredient systems that help
               brands create products people remember.{" "}
             </p>
@@ -122,7 +122,7 @@ export default function VisionMission() {
               Our Mission
             </h3>
             <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
-              We exist to help product creators build flavours that work —
+              We exist to help product creators build flavours that work -
               scientifically rigorous, creatively inspired, and commercially
               ready. By co-developing precision sensory solutions across bakery,
               beverage, dairy, and wellness, we ensure every product resonates:

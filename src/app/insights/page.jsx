@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Insights | Flavour Trends, R&D News & Industry Analysis — Sensorisch",
+  title: "Insights | Flavour Trends, R&D News & Industry Analysis - Sensorisch",
   description:
     "Stay ahead with the latest food and beverage formulation trends, insights, and company updates from the flavour architecture team at Sensorisch.",
 };

@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Contact Sensorisch | Let's Build Your Next Signature Product",
-  description: "Get in touch with our flavour experts. Partner with us for precision-driven, ingredient-led formulation solutions that perform at scale.",
+  title: "Contact Sensorisch | Start a Flavour Project or Request Samples",
+  description:
+    "Get in touch with our flavour experts. Partner with us for precision-driven, ingredient-led formulation solutions that perform at scale.",
 };
 
 import ContactPage from "../components/contact/ContactPage";
@@ -23,8 +24,8 @@ export default function ContactUs() {
             src: "/banners/contact-web.jpg",
             alt: "Desktop banner image",
           },
-          titleColor : "text-primary",
-          title: "Let's Create Something Extraordinary",
+          titleColor: "text-primary",
+          title: "Your Brief. Our Science. Extraordinary Results.",
           // subtitle:
           //   "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
           // primary: {
@@ -38,26 +39,6 @@ export default function ContactUs() {
           // scrollToId: "next-section",
         }}
       />
-
-      {/* <HeroComponent
-        data={{
-          imageMobile: { src: "/banners/contact-mob.jpg", alt: "Mobile Banner" },
-          imageDesktop: { src: "/banners/contact-web.jpg", alt: "Desktop Banner" },
-      
-          // primary: {
-          //   href: "/contact",
-          //   label: "Explore Solutions"
-          // },
-      
-          // secondary: {
-          //   href: "/contact",
-          //   label: "Request Samples"
-          // },
-      
-          scrollToId: "contact"
-        }}
-      /> */}
-      {/* <ContactPage /> */}
       <MethodsSection />
       <FormSection />
       <LocationsPanel />

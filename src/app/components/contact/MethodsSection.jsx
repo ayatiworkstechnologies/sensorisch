@@ -15,14 +15,16 @@ const METHODS = [
   {
     tag: "Recommended",
     title: "Start a Conversation",
-    blurb: "Discuss your requirements with our flavour experts",
+    blurb:
+      "Tell us what you're building and we'll match you with the right flavour expert within one business day.",
     cta: "Send Message",
     href: "#contact-form",
     icon: MessageSquare,
   },
   {
     title: "Book a Tasting Session",
-    blurb: "Experience our flavours firsthand at our facilities",
+    blurb:
+      "Visit our Chennai lab and taste the Senso ranges firsthand - guided by our application specialists.",
     cta: "Schedule Visit",
     href: "#contact-form",
     icon: CalendarDays,
@@ -62,7 +64,7 @@ export default function MethodsSection() {
             className="mx-auto max-w-3xl text-center"
           >
             <h3 className="section-title font-semibold text-gray-900 leading-tight">
-              How Can We Help You?
+              Choose How You'd Like to Connect
             </h3>
 
             {/* Underline animation â€“ centered */}
@@ -74,9 +76,9 @@ export default function MethodsSection() {
               className="mt-2 mx-auto h-[2px] bg-primary rounded"
             />
           </motion.div>
-          <motion.p variants={fadeUp} className="section-paragraph mt-2">
+          {/* <motion.p variants={fadeUp} className="section-paragraph mt-2">
             Choose the best way to connect with our team based on your needs
-          </motion.p>
+          </motion.p> */}
         </motion.div>
 
         <motion.ul

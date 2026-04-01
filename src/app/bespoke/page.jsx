@@ -1,6 +1,6 @@
 export const metadata = {
   title:
-    "Bespoke Flavour Development | Custom Ingredient Solutions — Sensorisch",
+    "Bespoke Flavour Development | Custom Ingredient Solutions - Sensorisch",
   description:
     "Partner with Sensorisch for custom flavour and ingredient architectures. We co-innovate scalable, precision-engineered solutions tailored to your unique product requirements.",
 };

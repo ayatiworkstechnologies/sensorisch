@@ -23,7 +23,7 @@ const POSTS = [
   {
     id: 2,
     category: "Trends",
-    title: "The Flavour Trends Defining Consumer Choices in 2026 — and Beyond",
+    title: "The Flavour Trends Defining Consumer Choices in 2026 - and Beyond",
     image: "/assets/news-2.jpg",
     excerpt:
       "From nostalgic comfort to global spice journeys, discover the key flavour directions shaping what consumers want to taste next.",
@@ -45,10 +45,10 @@ const POSTS = [
     id: 4,
     category: "Trends",
     title:
-      "Why Clean-Label Is No Longer Optional — And How to Formulate for It",
+      "Why Clean-Label Is No Longer Optional - And How to Formulate for It",
     image: "/assets/news-4.jpg",
     excerpt:
-      "Discover why consumers are demanding cleaner labels — and how Sensorisch flavour systems help you meet this shift without compromising taste or performance.",
+      "Discover why consumers are demanding cleaner labels - and how Sensorisch flavour systems help you meet this shift without compromising taste or performance.",
     href: "#",
     date: "2024-11-18",
   },

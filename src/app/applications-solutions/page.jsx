@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Senso Ranges | Application-Specific Flavour Systems — Sensorisch",
+  title: "Senso Ranges | Application-Specific Flavour Systems - Sensorisch",
   description:
     "Explore our comprehensive flavour solutions designed for bakery, beverage, dairy, and nutraceuticals. Precision-engineered for optimal performance and scale.",
 };
@@ -17,7 +17,7 @@ const ranges = [
     badge: "Bakery",
     title: "SensoBake",
     blurb:
-      "Heat-stable flavour systems designed to survive baking temperatures while delivering rich, true-to-type aroma in every finished product — from artisan sourdoughs to mass-market biscuits.",
+      "Heat-stable flavour systems designed to survive baking temperatures while delivering rich, true-to-type aroma in every finished product - from artisan sourdoughs to mass-market biscuits.",
     imageSrc: "/assets/img-1.png",
     iconSrc: "/icons/bakery.png",
     benefits: [
@@ -68,7 +68,7 @@ const ranges = [
     badge: "Confectionery",
     title: "SensoTreat",
     blurb:
-      "Flavour systems engineered for controlled release in confectionery matrices — delivering playful, nostalgic profiles that linger through every bite, from first unwrap to last chew.",
+      "Flavour systems engineered for controlled release in confectionery matrices - delivering playful, nostalgic profiles that linger through every bite, from first unwrap to last chew.",
     imageSrc: "/assets/img-2.png",
     iconSrc: "/icons/confectionery.png",
     benefits: [
@@ -113,7 +113,7 @@ const ranges = [
     badge: "Dairy",
     title: "SensoCreme",
     blurb:
-      "Dairy-forward flavour systems delivering authentic, creamy profiles in ice cream, yogurt, milkshakes, and specialty cheese — with heat-stable options for cooked and processed applications.",
+      "Dairy-forward flavour systems delivering authentic, creamy profiles in ice cream, yogurt, milkshakes, and specialty cheese - with heat-stable options for cooked and processed applications.",
     imageSrc: "/assets/img-3.png",
     iconSrc: "/icons/dairy.png",
     benefits: [
@@ -164,7 +164,7 @@ const ranges = [
     badge: "Beverages",
     title: "SensoSip",
     blurb:
-      "Flavour architectures engineered for beverage clarity, carbonation stability, and extended shelf life — performing consistently across juices, carbonated drinks, energy beverages, and craft mocktails",
+      "Flavour architectures engineered for beverage clarity, carbonation stability, and extended shelf life - performing consistently across juices, carbonated drinks, energy beverages, and craft mocktails",
     imageSrc: "/assets/img-4.png",
     iconSrc: "/icons/beverage.png",
     benefits: [
@@ -215,7 +215,7 @@ const ranges = [
     badge: "Pharmaceuticals",
     title: "Senso+",
     blurb:
-      "Precision taste-modulation systems that make pharmaceutical syrups, chewable tablets, and supplements genuinely palatable — masking bitterness and eliminating aftertaste without compromising active stability.",
+      "Precision taste-modulation systems that make pharmaceutical syrups, chewable tablets, and supplements genuinely palatable - masking bitterness and eliminating aftertaste without compromising active stability.",
     imageSrc: "/assets/img-5.png",
     iconSrc: "/icons/pharma.png",
     benefits: [
@@ -269,7 +269,7 @@ const ranges = [
     badge: "Nutraceuticals",
     title: "SensoActive",
     blurb:
-      "Nutraceutical flavour systems that amplify the appeal of protein powders, botanical supplements, and functional foods — masking off-notes from active ingredients while keeping every formulation clean-label compliant.",
+      "Nutraceutical flavour systems that amplify the appeal of protein powders, botanical supplements, and functional foods - masking off-notes from active ingredients while keeping every formulation clean-label compliant.",
     imageSrc: "/assets/img-6.png",
     iconSrc: "/icons/nutra.png",
     benefits: [
@@ -320,7 +320,7 @@ const ranges = [
     badge: "Savoury",
     title: "SensoSpice",
     blurb:
-      "True-to-origin spice and herb flavour systems — oil- and water-soluble options delivering authentic heat, depth, and complexity to savoury applications from premium sauces to snack seasonings.",
+      "True-to-origin spice and herb flavour systems - oil- and water-soluble options delivering authentic heat, depth, and complexity to savoury applications from premium sauces to snack seasonings.",
     imageSrc: "/assets/img-7.png",
     iconSrc: "/icons/spice.png",
     benefits: [
@@ -365,7 +365,7 @@ const ranges = [
     badge: "Oral & Personal Care",
     title: "SensoCare",
     blurb:
-      "Oral-safe flavour and sensation systems delivering lasting cooling freshness, controlled menthol intensity, and antimicrobial compatibility — for toothpastes, mouthwashes, and premium personal-care formulations.",
+      "Oral-safe flavour and sensation systems delivering lasting cooling freshness, controlled menthol intensity, and antimicrobial compatibility - for toothpastes, mouthwashes, and premium personal-care formulations.",
     imageSrc: "/assets/img-8.png",
     iconSrc: "/icons/oralcare.png",
     benefits: [
@@ -413,7 +413,7 @@ const ranges = [
     badge: "Natural Segment",
     title: "SensoNat",
     blurb:
-      "100% nature-derived flavours and colours — extracted, distilled, and blended to meet clean-label compliance, organic certification requirements, and the taste expectations of today's conscious consumer.",
+      "100% nature-derived flavours and colours - extracted, distilled, and blended to meet clean-label compliance, organic certification requirements, and the taste expectations of today's conscious consumer.",
     imageSrc: "/assets/img-9.png",
     iconSrc: "/icons/natural.png",
     benefits: [

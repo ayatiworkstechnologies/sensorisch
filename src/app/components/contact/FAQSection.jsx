@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 const FAQ = [
   {
     q: "How long does sample development take?",
-    a: "Initial samples are typically delivered within 5â€“7 business days for standard applications, and 10â€“14 days for complex bespoke formulations.",
+    a: "Standard application samples are typically ready within 5–7 business days. For complex bespoke formulations, allow 10–14 business days. Rush timelines may be available - ask your account contact.",
   },
   {
     q: "What information do you need for custom development?",
@@ -25,27 +25,26 @@ export default function FAQSection() {
   return (
     <section className="section">
       <div className="section-container">
-       <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
-              className="mx-auto max-w-3xl text-center"
-            >
-              <h3 className="section-title font-semibold text-gray-900 leading-tight">
-                Frequently Asked Questions
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h3 className="section-title font-semibold text-gray-900 leading-tight">
+            Frequently Asked Questions
+          </h3>
 
-              </h3>
-
-              {/* Underline animation â€“ centered */}
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 112 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mt-2 mx-auto h-[2px] bg-primary rounded"
-              />
-            </motion.div>
+          {/* Underline animation â€“ centered */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mt-2 mx-auto h-[2px] bg-primary rounded"
+          />
+        </motion.div>
 
         <div className="mx-auto mt-6 max-w-3xl">
           {FAQ.map((f, i) => {
@@ -69,7 +68,6 @@ export default function FAQSection() {
                     className="h-6 w-6 grid place-items-center rounded-full text-primary"
                   >
                     <ChevronDown />
-
                   </motion.span>
                 </button>
 
