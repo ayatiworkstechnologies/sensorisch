@@ -5,18 +5,16 @@ export const metadata = {
     "Explore our complete portfolio of flavour families, formats, natural colours, and premium ingredients. Modular solutions built for consistent formulation performance.",
 };
 
-import HeroComponent from "../components/Hero";
-import FlavourFamiliesGrid from "../components/portfolio/FlavourFamiliesGrid";
-import FinalCta from "../components/portfolio/FinalCta";
-import FormatsGrid from "../components/portfolio/FormatsGrid";
+import HeroComponent from "@/app/components/Hero";
+import FlavourFamiliesGrid from "@/app/components/portfolio/FlavourFamiliesGrid";
+import FormatsGrid from "@/app/components/portfolio/FormatsGrid";
 import {
   DecorSection,
-  DriedIngredientsSection,
   PremiumSpreadsSection,
   SystemsSection,
-} from "../components/portfolio/PortfolioSections";
-import NaturalColoursShowcase from "../components/portfolio/NaturalColoursShowcase";
-import HeroContact from "../components/HeroContact";
+} from "@/app/components/portfolio/PortfolioSections";
+import NaturalColoursShowcase from "@/app/components/portfolio/NaturalColoursShowcase";
+import HeroContact from "@/app/components/HeroContact";
 
 export default function PortfolioPage() {
   return (

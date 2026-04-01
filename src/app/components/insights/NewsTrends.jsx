@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { FiChevronRight } from "react-icons/fi";
 
 const TABS = ["View All", "News", "Trends"];
@@ -70,6 +70,11 @@ export default function NewsTrends() {
   const [sortBy, setSortBy] = useState("Newest");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const processedPosts = useMemo(() => {
     let data =
@@ -198,7 +203,9 @@ export default function NewsTrends() {
                     {post.category}
                   </span>
                   <span>|</span>
-                  <time>{new Date(post.date).toLocaleDateString()}</time>
+                  <time>
+                    {isMounted ? new Date(post.date).toLocaleDateString() : post.date}
+                  </time>
                 </div>
 
                 <h3 className="mt-2 text-xl mt-4 font-bold text-gray-900 leading-snug">

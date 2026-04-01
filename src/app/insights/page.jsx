@@ -4,10 +4,10 @@ export const metadata = {
     "Stay ahead with the latest food and beverage formulation trends, insights, and company updates from the flavour architecture team at Sensorisch.",
 };
 
-import HeroComponent from "../components/Hero";
-import HeroContact from "../components/HeroContact";
+import HeroComponent from "@/app/components/Hero";
+import HeroContact from "@/app/components/HeroContact";
 
-import NewsTrends from "../components/insights/NewsTrends";
+import NewsTrends from "@/app/components/insights/NewsTrends";
 
 export default function Insights() {
   return (
