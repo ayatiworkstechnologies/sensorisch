@@ -1,5 +1,6 @@
 export const metadata = {
-  title: "Bespoke Flavour Development | Sensorisch",
+  title:
+    "Bespoke Flavour Development | Custom Ingredient Solutions — Sensorisch",
   description:
     "Partner with Sensorisch for custom flavour and ingredient architectures. We co-innovate scalable, precision-engineered solutions tailored to your unique product requirements.",
 };
@@ -26,12 +27,12 @@ export default function bespoke() {
             src: "/banners/bespoke-web.png",
             alt: "Desktop banner image",
           },
-          title: "Tailored to Your Unique Needs",
+          title: "Your Flavour. Your Brand. Exclusively Yours.",
           // subtitle:
           //   "At Sensorisch, we know that every brand has a unique identity, and so should its flavours. Our bespoke solutions are designed to deliver exactly what your product requires from taste profile to technical format.",
           primary: {
-            label: "Start Your Project",
-            href: "/applications-solutions",
+            label: "Tell Us About Your Brief",
+            href: "/contact",
           },
           titleColor: "text-primary",
           // secondary: {
@@ -49,8 +50,8 @@ export default function bespoke() {
       {/* <CTA /> */}
       <HeroContact
         kicker="Get in touch"
-        title="Ready to Create Your Signature Flavour?"
-        subtitle="Partner with Sensorisch for bespoke flavour solutions that differentiate your brand and delight your customers. Let's build something extraordinary together."
+        title="Let's build a flavour your customers won't forget."
+        subtitle="Bespoke development with Sensorisch means exclusive formulations, full IP ownership, and a dedicated R&D team working solely on your brief. Every flavour we build is tested, validated, and ready to scale."
         primary={{
           label: "Start Your Custom Project",
           href: "/contact",
