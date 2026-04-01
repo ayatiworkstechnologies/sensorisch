@@ -1,17 +1,16 @@
 "use client";
-// app/components/SensoRangeHero.jsx
-"use client";
 
 import { useState } from "react";
 import SampleRequestModal from "./SampleRequestModal";
-
 import { motion } from "framer-motion";
 import * as Lucide from "lucide-react";
+import Button from "../ui/Button";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
+
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 // Fallbacks
@@ -21,6 +20,7 @@ const DEFAULT_BENEFITS = [
   "Wide pH tolerance",
   "Optimal baking performance",
 ];
+
 const DEFAULT_TAGS = [
   { t: "Cakes & Muffins" },
   { t: "Cookies & Biscuits" },
@@ -46,7 +46,7 @@ export default function SensoRangeHero({
   primaryLabel = "Request Sample",
   secondaryLabel = "Technical Sheet",
 }) {
-  /* Ã¢Å“â€¦ HOOKS MUST BE HERE */
+  /* ✅ HOOKS MUST BE HERE */
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSubject, setModalSubject] = useState("");
 
@@ -58,7 +58,6 @@ export default function SensoRangeHero({
       <section className="bg-background text-black">
         <div className="section-container py-16 md:py-24">
           <div className="grid items-center gap-14 md:gap-16 lg:grid-cols-2">
-
             {/* ==== CONTENT ==== */}
             <div className={`space-y-8 ${contentOrder}`}>
               <motion.div
@@ -96,8 +95,7 @@ export default function SensoRangeHero({
 
                 <div className="grid gap-5 sm:grid-cols-2">
                   {benefits.map((item, i) => {
-                    const text =
-                      typeof item === "string" ? item : item.text;
+                    const text = typeof item === "string" ? item : item.text;
 
                     return (
                       <motion.div
@@ -108,7 +106,9 @@ export default function SensoRangeHero({
                         <div className="grid h-14 w-14 place-items-center rounded-full">
                           <BenefitIcon />
                         </div>
-                        <p className="font-medium font-secondary text-lg">{text}</p>
+                        <p className="font-medium font-secondary text-lg">
+                          {text}
+                        </p>
                       </motion.div>
                     );
                   })}
@@ -127,27 +127,28 @@ export default function SensoRangeHero({
                 ))}
               </div>
 
-              {/* Ã¢Å“â€¦ CTA Ã¢â€ â€™ MODAL */}
+              {/* ✅ CTA → MODAL */}
               <div className="pt-4 flex flex-wrap gap-4">
-                <button
+                <Button
                   onClick={() => {
-                    setModalSubject(`Request Sample Ã¢â‚¬â€œ ${title}`);
+                    setModalSubject(`Request Sample - ${title}`);
                     setModalOpen(true);
                   }}
-                  className="inline-flex items-center font-secondary text-lg justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90 transition"
                 >
                   {primaryLabel}
-                </button>
+                </Button>
 
-                {/* <button
+                {/* 
+                <Button
+                  variant="outline"
                   onClick={() => {
-                    setModalSubject(`Technical Sheet Ã¢â‚¬â€œ ${title}`);
+                    setModalSubject(`Technical Sheet - ${title}`);
                     setModalOpen(true);
                   }}
-                  className="inline-flex items-center justify-center rounded-md border-2 border-primary/30 px-6 py-3 text-primary font-semibold bg-white hover:bg-primary/5 transition"
                 >
                   {secondaryLabel}
-                </button> */}
+                </Button> 
+                */}
               </div>
             </div>
 
@@ -172,7 +173,7 @@ export default function SensoRangeHero({
         </div>
       </section>
 
-      {/* Ã¢Å“â€¦ MODAL COMPONENT */}
+      {/* ✅ MODAL COMPONENT */}
       <SampleRequestModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}

@@ -1,9 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
+import { X } from "lucide-react";
+import Button from "../ui/Button";
 
 export default function SampleRequestModal({ open, onClose, subject }) {
   const {
@@ -12,6 +15,18 @@ export default function SampleRequestModal({ open, onClose, subject }) {
     reset,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  // Prevents scroll when modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   if (!open) return null;
 
@@ -25,12 +40,12 @@ export default function SampleRequestModal({ open, onClose, subject }) {
           title: subject,
           subject,
           name: data.name,
-          company: data.company, // âœ… added
+          company: data.company, // ✅ added
           email: data.email,
           mobile: data.mobile,
           message: data.message,
         },
-        "mCbYhCaGgh5O1Bjjy"
+        "mCbYhCaGgh5O1Bjjy",
       );
 
       reset();
@@ -49,106 +64,148 @@ export default function SampleRequestModal({ open, onClose, subject }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4"
+        className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center px-4"
       >
         <motion.div
-          initial={{ scale: 0.96, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.96, opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          className="bg-white w-full max-w-lg rounded-2xl p-6 relative"
+          initial={{ scale: 0.96, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.96, opacity: 0, y: 20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="bg-white w-full max-w-lg rounded-2xl p-8 relative shadow-2xl"
         >
           {/* Close */}
           <button
             onClick={onClose}
-            className="absolute right-4 top-4 text-gray-400 hover:text-black"
+            className="absolute right-5 top-5 text-black hover:text-primary transition-colors p-1 rounded-full hover:bg-primary/5"
+            aria-label="Close modal"
           >
-            âœ•
+            <X size={22} />
           </button>
 
-          <h3 className="text-2xl font-semibold mb-1">{subject}</h3>
-          <p className="text-sm text-gray-500 mb-6">
-            Please fill in your details
+          <h3 className="text-2xl  mb-1 text-primary tracking-tight">
+            {subject}
+          </h3>
+          <p className="text-sm text-black mb-8 font-secondary">
+            Provide your details below to receive product specifications.
           </p>
 
           {/* ===== FORM ===== */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {/* Hidden auto title */}
             <input type="hidden" value={subject} {...register("title")} />
 
-            {/* Name */}
-            <input
-              type="text"
-              placeholder="Name"
-              {...register("name", { required: "Name is required" })}
-              className="w-full border  border-black/10 rounded-md px-4 py-3"
-            />
-            {errors.name && (
-              <p className="text-sm text-red-500">{errors.name.message}</p>
-            )}
+            {/* Name & Email Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Name */}
+              <div>
+                <label className="block text-xs  text-black uppercase tracking-wider mb-1.5 ml-1">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. John Doe"
+                  {...register("name", { required: "Name is required" })}
+                  className="w-full border border-black/10 rounded-lg px-4 py-3 font-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50/50"
+                />
+                {errors.name && (
+                  <p className="mt-1.5 text-xs text-red-500 font-medium ml-1">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
 
-            {/* Email */}
-            <input
-              type="email"
-              placeholder="Email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              className="w-full border  border-black/10 rounded-md px-4 py-3"
-            />
-            {errors.email && (
-              <p className="text-sm text-red-500">{errors.email.message}</p>
-            )}
+              {/* Email */}
+              <div>
+                <label className="block text-xs  text-black uppercase tracking-wider mb-1.5 ml-1">
+                  Work Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="name@company.com"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
+                  className="w-full border border-black/10 rounded-lg px-4 py-3 font-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50/50"
+                />
+                {errors.email && (
+                  <p className="mt-1.5 text-xs text-red-500 font-medium ml-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+            </div>
 
-            {/* Mobile */}
-            <input
-              type="tel"
-              placeholder="Mobile Number"
-              {...register("mobile", {
-                required: "Mobile number is required",
-                minLength: {
-                  value: 10,
-                  message: "Enter valid mobile number",
-                },
-              })}
-              className="w-full border  border-black/10 rounded-md px-4 py-3"
-            />
-            {errors.mobile && (
-              <p className="text-sm text-red-500">{errors.mobile.message}</p>
-            )}
+            {/* Mobile & Company Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Mobile */}
+              <div>
+                <label className="block text-xs  text-black uppercase tracking-wider mb-1.5 ml-1">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+91 99999 99999"
+                  {...register("mobile", {
+                    required: "Mobile number is required",
+                    minLength: {
+                      value: 10,
+                      message: "Enter valid mobile number",
+                    },
+                  })}
+                  className="w-full border border-black/10 rounded-lg px-4 py-3 font-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50/50"
+                />
+                {errors.mobile && (
+                  <p className="mt-1.5 text-xs text-red-500 font-medium ml-1">
+                    {errors.mobile.message}
+                  </p>
+                )}
+              </div>
 
-            {/* Company Name */}
-            <input
-              type="text"
-              placeholder="Company Name"
-              {...register("company", {
-                required: "Company name is required",
-              })}
-              className="w-full border border-black/10 rounded-md px-4 py-3"
-            />
-            {errors.company && (
-              <p className="text-sm text-red-500">{errors.company.message}</p>
-            )}
+              {/* Company Name */}
+              <div>
+                <label className="block text-xs  text-black uppercase tracking-wider mb-1.5 ml-1">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  placeholder="Organization"
+                  {...register("company", {
+                    required: "Company name is required",
+                  })}
+                  className="w-full border border-black/10 rounded-lg px-4 py-3 font-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50/50"
+                />
+                {errors.company && (
+                  <p className="mt-1.5 text-xs text-red-500 font-medium ml-1">
+                    {errors.company.message}
+                  </p>
+                )}
+              </div>
+            </div>
 
             {/* Message */}
-            <textarea
-              rows={4}
-              placeholder="Message"
-              {...register("message")}
-              className="w-full border  border-black/10 rounded-md px-4 py-3"
-            />
+            <div>
+              <label className="block text-xs  text-black uppercase tracking-wider mb-1.5 ml-1">
+                Additional Requirements
+              </label>
+              <textarea
+                rows={3}
+                placeholder="Tell us about your application or project needs..."
+                {...register("message")}
+                className="w-full border border-black/10 rounded-lg px-4 py-3 font-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-gray-50/50 resize-none"
+              />
+            </div>
 
-            <button
+            <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full rounded-md bg-primary py-3 text-white font-semibold hover:bg-primary/90 transition disabled:opacity-60"
+              className="w-full py-4 text-sm uppercase tracking-widest shadow-xl"
             >
-              {isSubmitting ? "Sending..." : "Submit Request"}
-            </button>
+              {isSubmitting ? "Processing..." : "Submit Sample Request"}
+            </Button>
           </form>
         </motion.div>
       </motion.div>

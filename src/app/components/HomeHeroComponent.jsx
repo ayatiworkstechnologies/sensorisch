@@ -1,17 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import Link from "next/link";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import Button from "./ui/Button";
 
 /* ================= ANIMATION VARIANTS ================= */
 
 const containerVariants = {
-  hidden: {},
+  hidden: { opacity: 0 },
   show: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
+      delayChildren: 0.4,
     },
   },
 };
@@ -19,14 +20,14 @@ const containerVariants = {
 const itemVariants = {
   hidden: {
     opacity: 0,
-    y: 40, // bottom â†’ top
+    y: 24,
   },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1], // Smooth cubic bezier
     },
   },
 };
@@ -34,8 +35,6 @@ const itemVariants = {
 /* ================= COMPONENT ================= */
 
 export default function HomeHeroComponent({ data = {} }) {
-  const controls = useAnimation();
-
   const {
     imageMobile,
     imageDesktop,
@@ -48,17 +47,8 @@ export default function HomeHeroComponent({ data = {} }) {
     floatingButton,
   } = data;
 
-  /* ================= DELAY ANIMATION (5s) ================= */
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      controls.start("show");
-    }, 3000); // â±ï¸ 5 seconds
-
-    return () => clearTimeout(timer);
-  }, [controls]);
-
   return (
-    <section className="relative min-h-[650px] pt-32 flex items-center overflow-hidden">
+    <section className="relative min-h-[700px] pt-32 pb-20 flex items-center overflow-hidden">
       {/* ================= BACKGROUND VIDEO ================= */}
       {video?.src && (
         <video
@@ -100,36 +90,41 @@ export default function HomeHeroComponent({ data = {} }) {
         </div>
       )}
 
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 -z-10 bg-black/20" />
+
       {/* ================= CONTENT ================= */}
       <div className="section-container w-full relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate={controls}
-          className="max-w-xl flex flex-col gap-4"
+          animate="show"
+          className="max-w-2xl flex flex-col gap-6"
         >
-          {title && (
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-lg"
-            >
-              {title}
-            </motion.h1>
-          )}
+          <div className="space-y-4">
+            {title && (
+              <motion.h1
+                variants={itemVariants}
+                className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl leading-[1.1]"
+              >
+                {title}
+              </motion.h1>
+            )}
 
-          {title1 && (
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl md:text-6xl font-extrabold text-primary drop-shadow-lg"
-            >
-              {title1}
-            </motion.h1>
-          )}
+            {title1 && (
+              <motion.h1
+                variants={itemVariants}
+                className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl leading-[1.1]"
+              >
+                {title1}
+              </motion.h1>
+            )}
+          </div>
 
           {subtitle && (
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg font-secondary font-semibold text-white/90 max-w-md drop-shadow"
+              className="text-lg md:text-xl font-secondary font-medium text-white/90 max-w-lg drop-shadow"
             >
               {subtitle}
             </motion.p>
@@ -140,21 +135,19 @@ export default function HomeHeroComponent({ data = {} }) {
             className="mt-4 flex flex-wrap gap-4"
           >
             {primary?.href && (
-              <Link
-                href={primary.href}
-                className="px-10 py-3 bg-primary font-secondary text-xl text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition"
-              >
+              <Button href={primary.href} className="px-10 py-4 text-lg uppercase tracking-wider">
                 {primary.label}
-              </Link>
+              </Button>
             )}
 
             {secondary?.href && (
-              <Link
+              <Button
+                variant="outline"
                 href={secondary.href}
-                className="px-10 py-3 border border-white/60 font-secondary text-xl bg-white/20 backdrop-blur text-primary font-semibold rounded-lg hover:bg-white/30 transition"
+                className="px-10 py-4 text-lg uppercase tracking-wider !text-white border-white/40 bg-white/10 hover:bg-white hover:!text-primary transition-all backdrop-blur-sm"
               >
                 {secondary.label}
-              </Link>
+              </Button>
             )}
           </motion.div>
         </motion.div>
@@ -163,19 +156,22 @@ export default function HomeHeroComponent({ data = {} }) {
       {/* ================= FLOATING BUTTON ================= */}
       {floatingButton?.href && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 5.4 }}
-          className="fixed bottom-6 right-6 z-20"
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.5 }}
+          className="fixed bottom-8 right-8 z-50"
         >
-          <Link
+          <Button
             href={floatingButton.href}
-            className="px-5 py-3 bg-secondary text-white font-semibold rounded-full shadow-xl hover:bg-secondary/90 transition"
+            className="rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-black hover:bg-primary text-white border-none py-4 px-8"
           >
             {floatingButton.label}
-          </Link>
+          </Button>
         </motion.div>
       )}
+
+      {/* Decorative Gradient at bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 }

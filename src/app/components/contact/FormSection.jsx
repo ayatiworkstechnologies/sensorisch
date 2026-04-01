@@ -5,7 +5,6 @@ import { useMemo, useState, Children, cloneElement } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import {
   Mail,
   Phone,
@@ -15,8 +14,8 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
-
 import emailjs from "@emailjs/browser";
+import Button from "../ui/Button";
 
 /* ---------------- Schema ---------------- */
 const FormSchema = z.object({
@@ -173,7 +172,7 @@ export default function FormSection() {
         {/* Upload */}
         <div className="mt-4">
           <label className="text-lg font-medium">Attach Files</label>
-          <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-lg">
+          <label className="mt-2 block cursor-pointer rounded-md border border-black/10 p-4 text-lg text-black/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
             <input
               type="file"
               multiple
@@ -181,17 +180,17 @@ export default function FormSection() {
               onChange={onPickFiles}
             />
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-2 text-black/70">
+              <span className="flex items-center gap-2">
                 <UploadCloud className="h-4 w-4" />
                 Upload supporting files
               </span>
-              <span className="text-xs border border-primary px-2 py-1 rounded">
+              <span className="text-xs border border-primary px-2 py-1 rounded text-primary font-semibold">
                 Browse
               </span>
             </div>
             <p className="mt-1 text-xs text-black/60">
               {files.length
-                ? `${files.length} file(s) â€¢ ${totalSizeMB} MB`
+                ? `${files.length} file(s) • ${totalSizeMB} MB`
                 : "Optional specifications, briefs, or references"}
             </p>
           </label>
@@ -207,16 +206,15 @@ export default function FormSection() {
         </Field>
 
         {/* Submit */}
-        <div className="mt-6 flex items-center gap-3">
-          <button
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Button
             type="submit"
             disabled={submitting}
-            className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-5 py-2.5 text-lg font-semibold text-white hover:bg-primary/90 disabled:opacity-60"
           >
-            {submitting ? "Sendingâ€¦" : "Send Message"}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-          <span className="text-lg text-black/60">
+            {submitting ? "Sending..." : "Send Message"}
+            {!submitting && <ArrowRight className="ml-2 h-5 w-5" />}
+          </Button>
+          <span className="text-lg text-black/60 font-medium">
             Response within 24 hours
           </span>
         </div>
@@ -226,7 +224,7 @@ export default function FormSection() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-3 text-xs text-emerald-600 flex items-center gap-1"
+              className="mt-3 text-sm text-emerald-600 flex items-center gap-1 font-medium"
             >
               <CheckCircle2 className="h-4 w-4" />
               Message sent successfully
@@ -235,7 +233,7 @@ export default function FormSection() {
         </AnimatePresence>
 
         {serverError && (
-          <p className="mt-3 text-xs text-red-600">{serverError}</p>
+          <p className="mt-3 text-sm text-red-600 font-medium">{serverError}</p>
         )}
       </form>
     </section>
@@ -249,23 +247,23 @@ function Field({ label, icon: Icon, error, className = "", children }) {
 
   const input = cloneElement(Children.only(children), {
     className: [
-      "w-full rounded-md border border-black/20 bg-transparent py-2 text-lg outline-none",
-      "focus:border-primary focus:ring-1 focus:ring-primary/30",
+      "w-full rounded-md border border-black/10 bg-gray-50/50 py-3 text-lg outline-none transition-all",
+      "focus:border-primary focus:ring-1 focus:ring-primary/20",
       "placeholder:text-black/40",
       hasIcon ? "pl-10 pr-3" : "px-3",
     ].join(" "),
   });
 
   return (
-    <div className={`space-y-1 ${className}`}>
-      <label className="text-lg font-medium text-black">{label}</label>
+    <div className={`space-y-1.5 ${className}`}>
+      <label className="text-sm font-semibold text-gray-500 uppercase tracking-wider ml-1">{label}</label>
       <div className="relative">
         {Icon && (
           <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black/40 pointer-events-none" />
         )}
         {input}
       </div>
-      {error && <p className="text-xs text-red-600">{error}</p>}
+      {error && <p className="text-xs text-red-600 font-medium ml-1">{error}</p>}
     </div>
   );
 }
@@ -276,7 +274,7 @@ const Select = ({ options, placeholder, ...props }) => (
   <select
     {...props}
     defaultValue=""
-    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-lg text-black"
+    className="w-full rounded-md border border-black/10 bg-gray-50/50 px-3 py-3 text-lg text-black focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all font-secondary"
   >
     <option value="" disabled>
       {placeholder}
@@ -292,6 +290,6 @@ const Select = ({ options, placeholder, ...props }) => (
 const TextArea = (props) => (
   <textarea
     {...props}
-    className="w-full rounded-md border border-black/20 bg-transparent px-3 py-2 text-lg placeholder:text-black/40"
+    className="w-full rounded-md border border-black/10 bg-gray-50/50 px-3 py-3 text-lg placeholder:text-black/40 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all font-secondary"
   />
 );

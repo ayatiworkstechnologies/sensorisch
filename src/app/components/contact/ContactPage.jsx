@@ -18,7 +18,7 @@ import {
   HelpCircle,
   CheckCircle2,
 } from "lucide-react";
-import Link from "next/link";
+import Button from "../ui/Button";
 
 /* ------------------ motion helpers ------------------ */
 const fadeUp = {
@@ -68,7 +68,7 @@ const METHODS = [
 const FAQ = [
   {
     q: "How long does sample development take?",
-    a: "Initial samples are typically delivered within 5Ã¢â‚¬â€œ7 business days for standard applications, and 10Ã¢â‚¬â€œ14 days for complex bespoke formulations.",
+    a: "Initial samples are typically delivered within 5–7 business days for standard applications, and 10–14 days for complex bespoke formulations.",
   },
   {
     q: "What information do you need for custom development?",
@@ -162,13 +162,13 @@ export default function ContactPage() {
                 <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
                 <p className="mt-1 text-sm text-black/75">{m.blurb}</p>
 
-                <Link
+                <Button
                   href={m.href}
-                  className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
+                  className="mt-4"
                 >
                   {m.cta}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
 
                 {/* radial glow on hover */}
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(70%_70%_at_50%_0%,rgba(210,36,34,0.06),transparent)]" />
@@ -203,7 +203,7 @@ export default function ContactPage() {
               variants={fadeUp}
               className="text-sm text-black/70 mt-1"
             >
-              Tell us about your project and weÃ¢â‚¬â„¢ll get back to you within 24
+              Tell us about your project and we’ll get back to you within 24
               hours.
             </motion.p>
 
@@ -289,7 +289,7 @@ export default function ContactPage() {
                 </div>
                 <p className="mt-1 text-xs text-black/60">
                   {files.length
-                    ? `Selected ${files.length} file(s) Ã¢â‚¬Â¢ ${totalSizeMB} MB total`
+                    ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
                     : "Support for specifications, references, or product briefs"}
                 </p>
               </label>
@@ -306,24 +306,23 @@ export default function ContactPage() {
               variants={fadeUp}
               className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3"
             >
-              <button
+              <Button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
                 {submitting ? (
                   <span className="inline-flex items-center gap-2">
                     <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
-                    SendingÃ¢â‚¬Â¦
+                    Sending...
                   </span>
                 ) : (
                   <span className="inline-flex items-center gap-2">
                     Send Message <ArrowRight className="h-4 w-4" />
                   </span>
                 )}
-              </button>
+              </Button>
               <span className="text-xs text-black/60">
-                WeÃ¢â‚¬â„¢ll respond within 24 hours during business days
+                We’ll respond within 24 hours during business days
               </span>
             </motion.div>
 
@@ -368,27 +367,26 @@ export default function ContactPage() {
                     400001
                   </p>
                   <div className="mt-3 text-sm space-y-2">
-                    <Link
-                      href="tel:+91 22 1234
-                      5678"
+                    <a
+                      href="tel:+912212345678"
                     >
                       {" "}
                       <div className="inline-flex items-center gap-2">
                         <Phone className="h-4 w-4 text-primary" /> +91 22 1234
                         5678
                       </div>
-                    </Link>
+                    </a>
                     <br />
-                    <Link href="mailto:india@sensorisch.com">
+                    <a href="mailto:india@sensorisch.com">
                       <div className="inline-flex items-center gap-2">
                         <Mail className="h-4 w-4 text-primary" />{" "}
                         india@sensorisch.com
                       </div>
-                    </Link>
+                    </a>
                     <br />
                     <div className="inline-flex items-center gap-2 text-black/70">
-                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM Ã¢â‚¬â€œ 6:00
-                      PM IST (MonÃ¢â‚¬â€œFri)
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
+                      PM IST (Mon–Fri)
                     </div>
                   </div>
                 </article>
@@ -400,23 +398,23 @@ export default function ContactPage() {
                     Business District, Dubai, UAE
                   </p>
                   <div className="mt-3 text-sm space-y-2">
-                    <Link href="tel:+971 4 123 4567">
+                    <a href="tel:+97141234567">
                       <div className="inline-flex items-center gap-2">
                         <Phone className="h-4 w-4 text-primary" /> +971 4 123
                         4567
                       </div>
-                    </Link>
+                    </a>
                     <br />
-                    <Link href="mailto:gcc@sensorisch.com">
+                    <a href="mailto:gcc@sensorisch.com">
                       <div className="inline-flex items-center gap-2">
                         <Mail className="h-4 w-4 text-primary" />{" "}
                         gcc@sensorisch.com
                       </div>
-                    </Link>
+                    </a>
                     <br />
                     <div className="inline-flex items-center gap-2 text-black/70">
-                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM Ã¢â‚¬â€œ 6:00
-                      PM GST (SunÃ¢â‚¬â€œThu)
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
+                      PM GST (Sun–Thu)
                     </div>
                   </div>
                 </article>
@@ -435,30 +433,23 @@ export default function ContactPage() {
                     options
                   </p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    <Link
-                      className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium
-                     ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                    <Button
+                      variant="outline"
                       href="tel:+912212345678"
                     >
-                      <Phone className="h-8 w-8" /> Call Us Directly <br /> +91 22
-                      1234 5678
-                    </Link>
-                    <Link
-                      className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium
-                     ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                      <Phone className="h-5 w-5 mr-2" /> Call Us Directly
+                    </Button>
+                    <Button
+                      variant="outline"
                       href="mailto:urgent@sensorisch.com"
                     >
-                      <Mail className="h-8 w-8" /> Priority Email <br />
-                      urgent@sensorisch.com
-                    </Link>
-                    <Link
-                      className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white
-                     shadow hover:bg-primary/90 transition"
+                      <Mail className="h-5 w-5 mr-2" /> Priority Email
+                    </Button>
+                    <Button
                       href="#contact-form"
                     >
-                      <Clock className="h-8 w-8" /> Emergency Support <br /> 24/7
-                      (Clients)
-                    </Link>
+                      <Clock className="h-5 w-5 mr-2" /> Emergency Support
+                    </Button>
                   </div>
                 </motion.div>
               </div>
@@ -499,7 +490,7 @@ export default function ContactPage() {
                       animate={{ rotate: active ? 180 : 0 }}
                       className="h-6 w-6 grid place-items-center rounded-full bg-primary/10 text-primary"
                     >
-                      Ã¢â€“Â¾
+                      ▾
                     </motion.span>
                   </button>
 

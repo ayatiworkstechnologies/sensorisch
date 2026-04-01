@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Button from "./ui/Button";
 
 /* ================= ANIMATION VARIANTS ================= */
 
@@ -129,21 +130,15 @@ export default function HeroComponent({ data = {} }) {
             className="mt-4 flex flex-wrap gap-4"
           >
             {primary?.href && (
-              <Link
-                href={primary.href}
-                className="px-10 py-3 bg-primary font-secondary text-xl text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition"
-              >
+              <Button href={primary.href} className="px-10 py-3 text-xl">
                 {primary.label}
-              </Link>
+              </Button>
             )}
 
             {secondary?.href && (
-              <Link
-                href={secondary.href}
-                className="px-10 py-3 border border-white/60 font-secondary text-xl bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition"
-              >
+              <Button variant="outline" href={secondary.href} className="px-10 py-3 text-xl !text-white border-white/60 bg-white/20 hover:bg-white hover:!text-primary">
                 {secondary.label}
-              </Link>
+              </Button>
             )}
           </motion.div>
         </motion.div>
@@ -157,12 +152,9 @@ export default function HeroComponent({ data = {} }) {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="fixed bottom-6 right-6 z-20"
         >
-          <Link
-            href={floatingButton.href}
-            className="px-5 py-3 bg-secondary text-white font-semibold rounded-full shadow-xl hover:bg-secondary/90 transition"
-          >
+          <Button href={floatingButton.href} className="rounded-full shadow-xl bg-black hover:bg-primary text-white border-none">
             {floatingButton.label}
-          </Link>
+          </Button>
         </motion.div>
       )}
     </section>

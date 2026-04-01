@@ -1,7 +1,8 @@
 // app/portfolio/page.jsx
 export const metadata = {
   title: "Our Portfolio | Sensorisch",
-  description: "Explore our complete portfolio of flavour families, formats, natural colours, and premium ingredients. Modular solutions built for consistent formulation performance.",
+  description:
+    "Explore our complete portfolio of flavour families, formats, natural colours, and premium ingredients. Modular solutions built for consistent formulation performance.",
 };
 
 import HeroComponent from "../components/Hero";
@@ -38,7 +39,7 @@ export default function PortfolioPage() {
           showShimmer: true,
           showHalo: true,
           className: "",
-          containerClassName: "section-container py-16 md:py-24",
+          containerClassName: "section-container py-8 md:py-12",
         }}
       /> */}
       <HeroComponent

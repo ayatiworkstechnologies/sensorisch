@@ -54,49 +54,79 @@ export default function ApplicationExpertiseCarousel() {
   const step = cardWidth + GAP;
   const x = -(index * step);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <section className="section">
-      <div className="section-container py-10">
+    <section className="section bg-white overflow-hidden">
+      <div className="section-container py-12 md:py-18">
         {/* Heading */}
-        <div className="mb-8">
-          <h2 className="section-title text-black">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 text-center md:text-left"
+        >
+          <h2 className="section-title text-black font-bold tracking-tight">
             Our Application Expertise
           </h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-4 h-[2px] bg-primary"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-3 h-[2px] bg-primary mx-auto md:mx-0"
           />
-          <p className="mt-4 max-w-xl font-secondary text-lg text-black/80">
-            Specialized solutions across industries with deep application
-            knowledge and market-ready systems.
+          <p className="mt-6 max-w-2xl font-secondary text-lg text-black/70 leading-relaxed mx-auto md:mx-0">
+            Precision-engineered solutions across key industries, backed by
+            rigorous technical data and deep global application experience.
           </p>
-        </div>
+        </motion.div>
 
         {/* Carousel */}
-        <div ref={outerRef} className="relative flex justify-center">
-          {/* Prev */}
+        <div ref={outerRef} className="relative flex justify-center mt-12">
+          {/* Controls - Premium Styling */}
           <button
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
             disabled={index === 0}
-            className="absolute left-0 top-1/2 z-20 -translate-y-1/2
-                       grid h-12 w-12 place-items-center rounded-full
-                       border border-black/10 bg-white disabled:opacity-40"
+            className="absolute -left-4 md:-left-12 top-1/2 z-30 -translate-y-1/2
+                       grid h-14 w-14 place-items-center rounded-full
+                       bg-white border border-black/5 shadow-xl hover:bg-primary hover:text-white transition-all
+                       disabled:opacity-20 disabled:cursor-not-allowed group"
+            aria-label="Previous application"
           >
-            <IoChevronBack size={20} />
+            <IoChevronBack
+              size={24}
+              className="group-hover:scale-110 transition-transform"
+            />
           </button>
 
-          {/* Next */}
           <button
             onClick={() => setIndex((i) => Math.min(maxIndex, i + 1))}
             disabled={index === maxIndex}
-            className="absolute right-0 top-1/2 z-20 -translate-y-1/2
-                       grid h-12 w-12 place-items-center rounded-full
-                       border border-black/10 bg-white disabled:opacity-40"
+            className="absolute -right-4 md:-right-12 top-1/2 z-30 -translate-y-1/2
+                       grid h-14 w-14 place-items-center rounded-full
+                       bg-white border border-black/5 shadow-xl hover:bg-primary hover:text-white transition-all
+                       disabled:opacity-20 disabled:cursor-not-allowed group"
+            aria-label="Next application"
           >
-            <IoChevronForward size={20} />
+            <IoChevronForward
+              size={24}
+              className="group-hover:scale-110 transition-transform"
+            />
           </button>
 
           {/* Viewport */}
@@ -105,47 +135,49 @@ export default function ApplicationExpertiseCarousel() {
             style={{ width: visibleWidth || "100%" }}
           >
             <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
               className="flex"
               style={{ gap: GAP }}
               animate={{ x }}
-              transition={{ type: "spring", stiffness: 160, damping: 26 }}
+              transition={{ type: "spring", stiffness: 120, damping: 24 }}
             >
               {CARDS.map((card, i) => (
-                <article
+                <motion.article
                   key={card.title}
-                  className="flex flex-col rounded-md border border-black/10 bg-white overflow-hidden"
+                  variants={itemVariants}
+                  whileHover={{ y: -10 }}
+                  className="flex flex-col rounded-3xl border border-black/5 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all duration-500 overflow-hidden"
                   style={{
                     width: cardWidth,
                     minWidth: cardWidth,
-                    height: 360,
+                    height: 420,
                   }}
                 >
                   {/* Card Header */}
-                  <div className="flex items-start justify-between px-5 pt-5">
-                    <div>
-                      <p className="font-primary text-2xl font-semibold text-black">
-                        {card.title}
-                      </p>
-                      <span className="mt-2 block h-[2px] w-12 bg-primary" />
-                    </div>
-                    {/* <IoChevronForward
-                      className="mt-1 text-primary"
-                      size={18}
-                    /> */}
+                  <div className="px-6 pt-8 pb-4">
+                    <p className="font-primary text-2xl font-bold text-gray-900 tracking-tight">
+                      {card.title}
+                    </p>
+                    <span className="mt-3 block h-[3px] w-12 bg-primary rounded-full" />
                   </div>
 
-                  {/* Image */}
-                  <div className="relative flex-1 p-4">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-contain"
-                      draggable={false}
-                      priority={i < perPage}
-                    />
+                  {/* Image Container */}
+                  <div className="relative flex-1 p-6 group">
+                    <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-contain transition-transform duration-700 group-hover:scale-105"
+                        draggable={false}
+                        priority={i < perPage}
+                      />
+                    </div>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </motion.div>
           </div>

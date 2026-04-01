@@ -3,7 +3,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Button from "../ui/Button";
 
 export default function ProfileCTA({
   title = "Ready to Transform Your Products?",
@@ -48,35 +48,15 @@ export default function ProfileCTA({
         </motion.p>
 
         {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.45, delay: 0.1 }}
-          className="mt-7 flex flex-wrap items-center justify-center gap-3"
-        >
-          {/* Primary */}
-          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              href={primaryHref}
-              aria-label={primaryLabel}
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 hover:text-primary transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-            >
-              {primaryLabel}
-            </Link>
-          </motion.div>
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <Button href={primaryHref} aria-label={primaryLabel}>
+            {primaryLabel}
+          </Button>
 
-          {/* Secondary */}
-          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              href={secondaryHref}
-              aria-label={secondaryLabel}
-              className="inline-flex items-center gap-2 rounded-lg bg-white text-primary px-5 py-3 font-semibold  hover:bg-primary transition-colors hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-            >
-              {secondaryLabel}
-            </Link>
-          </motion.div>
-        </motion.div>
+          <Button variant="outline" href={secondaryHref} aria-label={secondaryLabel}>
+            {secondaryLabel}
+          </Button>
+        </div>
       </div>
 
       {/* Subtle bottom divider spanning the container width */}

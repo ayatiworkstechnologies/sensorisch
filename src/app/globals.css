@@ -2,7 +2,6 @@
 
 @import "tailwindcss";
 
-
 /* ================== GLOBAL FONTS ================== */
 /* @font-face {
   font-family: "boriol";
@@ -25,15 +24,14 @@
   font-style: normal;
 }
 
-
 /* ---------- Root Color Tokens ---------- */
 :root {
   --background: #ffffff;
   --black: #171717;
 
   /* 🎨 Brand Colors */
-  --primary: #D22422; 
-  --primary-light: #FBE9E9;
+  --primary: #d22422;
+  --primary-light: #fbe9e9;
   --primary-dark: #920d0b;
 
   --secondary: #0000; /* Orange */
@@ -59,9 +57,7 @@
   --font-secondary: "Manrope", sans-serif;
 }
 
-
 /* ---------- Dark Mode ---------- */
-
 
 /* html, body { cursor: none; }
 a, button, .cursor-hover, input, textarea, [contenteditable] { cursor: none; } */
@@ -73,12 +69,11 @@ body {
   font-family: var(--font-primary);
 }
 
-
 /* ---------- Reusable Section + Typography ---------- */
 @layer components {
   /* Spacing wrapper for any page section */
   .section {
-    @apply py-16 md:py-24;
+    @apply py-8 md:py-12;
   }
   /* Narrower variant */
   .section-tight {

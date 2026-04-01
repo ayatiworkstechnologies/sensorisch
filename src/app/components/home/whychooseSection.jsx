@@ -25,11 +25,21 @@ const FEATURES = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
   },
 };
 
@@ -59,45 +69,56 @@ export default function WhyChooseSection() {
         </motion.div>
 
         {/* Cards */}
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-12 grid gap-6 md:grid-cols-3"
+        >
           {FEATURES.map((f, i) => (
             <motion.article
               key={f.title}
               variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
               className="
                 border border-black/10
-                rounded
-                p-6
+                rounded-2xl
+                p-8
                 text-center
+                bg-white/50
+                backdrop-blur-sm
+                hover:shadow-xl
+                hover:border-primary/20
+                transition-all
+                duration-500
               "
             >
               {/* Icon */}
               <div className="flex justify-center">
-                <Image
-                  src={f.iconSrc}
-                  alt={f.iconAlt}
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                  priority={i === 0}
-                />
+                <div className="size-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-6">
+                  <Image
+                    src={f.iconSrc}
+                    alt={f.iconAlt}
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                    priority={i === 0}
+                  />
+                </div>
               </div>
 
               {/* Title */}
-              <h3 className="mt-4 text-2xl font-semibold text-black">
+              <h3 className="text-2xl font-semibold text-black tracking-tight">
                 {f.title}
               </h3>
 
-              {/* Description â€“ always visible */}
-              <p className="mt-5 text-lg font-secondary text-black/70 leading-relaxed">
+              {/* Description – always visible */}
+              <p className="mt-4 text-lg font-secondary text-black/70 leading-relaxed">
                 {f.desc}
               </p>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

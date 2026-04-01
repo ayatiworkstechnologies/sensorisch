@@ -1,8 +1,17 @@
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sensorisch",
+  "url": "https://www.sensorisch.com/about",
+  "logo": "https://www.sensorisch.com/web_logo.png",
+  "description": "Sensorisch is a B2B flavour and ingredient formulation house with R&D labs in India and GCC, specialising in scalable food and beverage solutions."
+};
+
 export const metadata = {
   title:
     "About Sensorisch | Science-Led Flavour Formulation House, India & GCC",
   description:
-    "Sensorisch is a science-led B2B flavour and ingredient formulation house with R&D labs in India and GCC. We specialize in precision-engineered, scalable solutions for the food, beverage, and nutraceutical industries.",
+    "Sensorisch is a B2B flavour and ingredient formulation house with R&D labs in India and GCC, specialising in scalable food and beverage solutions.",
 };
 
 import AboutSensorisch from "../components/about/AboutSensorisch";
@@ -12,10 +21,16 @@ import ValuesSection from "../components/about/ValuesSection";
 import VisionMission from "../components/about/VisionMission";
 import HeroComponent from "../components/Hero";
 import HeroContact from "../components/HeroContact";
+import TestimonialSection from "../components/about/TestimonialSection";
 
 export default function AboutUS() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       <HeroComponent
         data={{
           imageMobile: {
@@ -66,6 +81,7 @@ export default function AboutUS() {
       <ValuesSection />
       <CapabilitiesSection />
       <SetsUsApartAndMarkets />
+      <TestimonialSection />
       {/* <CompanyProfileCTA /> */}
       <HeroContact
         kicker="Partner With Us"
@@ -73,7 +89,7 @@ export default function AboutUS() {
         // subtitle="Wherever you are, our flavour architects are within reach. Partner with us for precision-driven, ingredient-led solutions that perform at scale."
         primary={{ label: "Start Your Project", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
-        imageSrc="/assets/get-in-touch.png"
+        imageSrc="/assets/our-story.png"
         imageAlt="Food scientist examining flavour extract in Sensorisch R&D lab"
       />
     </>

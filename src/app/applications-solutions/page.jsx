@@ -11,6 +11,7 @@ import WhyChooseSenso from "../components/applications/WhyChooseSenso";
 import HeroComponent from "../components/Hero";
 import HeroContact from "../components/HeroContact";
 import StickyFullpageSlides from "../components/StickyFullpageSlides";
+import ResourcesSection from "../components/applications/ResourcesSection";
 const ranges = [
   {
     reverse: false,
@@ -144,7 +145,7 @@ const ranges = [
     ],
     tags: [
       { t: "Ice Cream", cls: "bg-cyan-50 text-cyan-700 ring-cyan-200" },
-      { t: "Yogurt", cls: "bg-lime-50 text-lime-700 ring-lime-200" },
+      { t: "yogurt", cls: "bg-lime-50 text-lime-700 ring-lime-200" },
       {
         t: "Milkshakes",
         cls: "bg-fuchsia-50 text-fuchsia-700 ring-fuchsia-200",
@@ -517,6 +518,9 @@ export default function ApplicationSolutions() {
         onProcessLabel="Our Development Process"
         onProcessHref="/bespoke"
       />
+      
+      <ResourcesSection />
+
       {/* <ProfileCTA /> */}
       <HeroContact
         kicker="Get in touch"

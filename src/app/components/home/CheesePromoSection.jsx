@@ -1,23 +1,16 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, delay },
-});
+import Button from "../ui/Button";
 
 export default function PromoSection() {
   return (
     <main className="w-full bg-background text-black">
       {/* SECTION 1  -  VIDEO HERO */}
-      <section className="relative w-full h-[60vh] min-h-[360px] overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
           autoPlay
           muted
           loop
@@ -27,71 +20,75 @@ export default function PromoSection() {
           <source src="/videos/food-bg.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/5" />
       </section>
 
       {/* SECTION 2  -  OVERLAPPING CARD */}
-      <section className="relative w-full bg-gray-50">
-        <div className="section-container py-10 sm:pb-24 relative">
-          <div
+      <section className="relative w-full bg-gray-50 pb-20 sm:pb-32">
+        <div className="section-container relative">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="
               mt-6 sm:mt-0 w-full flex justify-center px-0
-              sm:absolute sm:-top-36 sm:left-1/2 sm:-translate-x-1/2
+              sm:absolute sm:-top-40 sm:left-1/2 sm:-translate-x-1/2
+              z-20
             "
           >
             <div
               className="
                 grid grid-cols-1 sm:grid-cols-12 items-stretch
-                max-w-4xl w-full sm:w-[85%] md:w-[70%]
-                rounded-lg bg-white border border-black/10
-                overflow-hidden
+                max-w-5xl w-full
+                rounded-3xl bg-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]
+                overflow-hidden border border-black/5
               "
             >
-              {/* LEFT: IMAGE (full height, no white gap) */}
-              <div className="sm:col-span-4 relative h-full">
-                <div className="relative w-full h-full min-h-[260px]">
+              {/* LEFT: IMAGE */}
+              <div className="sm:col-span-5 relative h-full group overflow-hidden">
+                <div className="relative w-full h-full min-h-[300px]">
                   <Image
                     src="/assets/home-banner-2.jpg"
-                    alt="Cheese"
+                    alt="Artisan flavour ingredients"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     priority
                   />
                 </div>
               </div>
 
               {/* RIGHT: CONTENT */}
-              <div className="sm:col-span-8 p-6 sm:p-8 flex flex-col justify-center text-center sm:text-left">
+              <div className="sm:col-span-7 p-8 sm:p-12 flex flex-col justify-center">
                 <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.35 }}
-                  className=" max-w-2xl text-left"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
                 >
-                  <h3 className="section-title text-left font-semibold text-gray-900 leading-tight">
+                  <h3 className="section-title text-left font-bold text-gray-900 tracking-tight mb-6">
                     Explore the Senso Ranges
                   </h3>
+                  
+                  <p className="text-lg font-secondary text-black/70 leading-relaxed mb-8">
+                    Behind every great flavour is great science. The Senso
+                    portfolio brings together deep application knowledge, rapid
+                    sampling, and validated formulations; so your team spends less
+                    time developing and more time launching.
+                  </p>
+
+                  <div className="flex justify-start">
+                    <Button
+                      href="/applications-solutions"
+                      className="px-8 py-4 uppercase tracking-widest text-sm"
+                    >
+                      Explore Senso Ranges
+                    </Button>
+                  </div>
                 </motion.div>
-
-                <p className="section-paragraph mb-3">
-                  Behind every great flavour is great science. The Senso
-                  portfolio brings together deep application knowledge, rapid
-                  sampling, and validated formulations; so your team spends less
-                  time developing and more time launching.
-                </p>
-
-                <div className="flex justify-center sm:justify-start">
-                  <Link
-                    href="/applications-solutions"
-                    className="px-6 py-3 rounded-lg font-secondary text-lg bg-primary text-white font-semibold hover:bg-primary/90 transition"
-                  >
-                    Explore Senso Ranges
-                  </Link>
-                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>

@@ -2,74 +2,82 @@
 
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+import Button from "./ui/Button";
 
 export default function HeroContact({
   kicker = "",
   title = "",
   subtitle = "",
-  primary ="",
+  primary = "",
   secondary = "",
   imageSrc = "/images/plant-beaker.png",
   imageAlt = "Decorative plant in beaker",
 }) {
-  const RenderAction = ({ action, primaryStyle = false }) => {
-    if (!action) return null;
-
-    const className = primaryStyle
-      ? "inline-flex items-center justify-center font-secondary px-5 py-2.5 rounded-md bg-primary text-white text-lg font-semibold shadow hover:bg-white hover:text-primary border border-primary transition"
-      : "inline-flex items-center justify-center font-secondary px-4 py-2.5 rounded-md border border-primary/60 text-lg font-semibold text-primary hover:bg-primary hover:text-white transition";
-
-    if (action.onClick) {
-      return (
-        <button type="button" onClick={action.onClick} className={className}>
-          {action.label}
-        </button>
-      );
-    }
-
-    return (
-      <a href={action.href || "#"} className={className}>
-        {action.label}
-      </a>
-    );
-  };
-
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden group">
       {/* FULL WIDTH BACKGROUND IMAGE */}
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        priority
-        className="object-cover"
-      />
+      <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
 
       {/* OVERLAY FOR READABILITY */}
-      <div className="absolute inset-0" />
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="py-14 lg:py-24">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="py-16 lg:py-28"
+        >
           <div className="max-w-4xl">
-            <p className="text-sm uppercase font-secondary font-semibold tracking-wide text-black/80 mb-2">
-              {kicker}
-            </p>
+            {kicker && (
+              <p className="text-sm uppercase font-secondary font-bold tracking-[0.2em] text-primary mb-4">
+                {kicker}
+              </p>
+            )}
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-primary font-extrabold text-black leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-primary font-black text-gray-900 leading-[1.1] tracking-tight">
               {title}
             </h1>
 
-            <p className="mt-4 text-base font-secondary sm:text-lg text-black/90">
+            <p className="mt-6 text-lg font-secondary sm:text-xl text-black/70 leading-relaxed max-w-2xl">
               {subtitle}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <RenderAction action={primary} primaryStyle />
-              <RenderAction action={secondary} />
+            <div className="mt-10 flex flex-wrap gap-4">
+              {primary && (
+                <Button 
+                  variant="primary" 
+                  href={primary.href} 
+                  onClick={primary.onClick}
+                  className="px-8 py-4 uppercase tracking-widest text-sm"
+                >
+                  {primary.label}
+                </Button>
+              )}
+              {secondary && (
+                <Button 
+                  variant="outline" 
+                  href={secondary.href} 
+                  onClick={secondary.onClick}
+                  className="px-8 py-4 uppercase tracking-widest text-sm bg-white/50 backdrop-blur-sm"
+                >
+                  {secondary.label}
+                </Button>
+              )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

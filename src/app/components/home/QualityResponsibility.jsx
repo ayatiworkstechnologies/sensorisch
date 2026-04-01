@@ -1,9 +1,6 @@
 "use client";
-// components/QualityResponsibility.jsx
-"use client";
-
 import React, { useRef } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 const pills = [
   { label: "International Standards" },
@@ -12,41 +9,43 @@ const pills = [
   { label: "Sustainable Sourcing" },
 ];
 
-// animations
 const container = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
 };
-const list = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 10, scale: 0.98 },
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { duration: 0.35, ease: "easeOut" },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
   },
 };
-const word = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+
+const pillItem = {
+  hidden: { opacity: 0, scale: 0.9, y: 10 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 export default function QualityResponsibility() {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start 70%", "end 20%"],
-  });
-  useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.3 }); // kept for potential use
 
   return (
     <section
       ref={sectionRef}
-      className="py-20 md: mt-10 relative overflow-hidden"
+      className="py-32 relative overflow-hidden bg-gray-50/50"
     >
       <motion.div
         variants={container}
@@ -56,46 +55,44 @@ export default function QualityResponsibility() {
         className="section-container text-center"
       >
         {/* Title */}
-        <motion.h2 className="section-title text-black flex items-center justify-center gap-2 flex-wrap">
-          <motion.span variants={word} className="text-black">
+        <motion.div variants={fadeUp} className="mb-12">
+          <h2 className="section-title text-black font-bold tracking-tight">
             Quality & Responsibility
-          </motion.span>
-        </motion.h2>
+          </h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            className="mx-auto mt-4 h-[3px] bg-primary rounded-full"
+          />
+        </motion.div>
 
-        {/* Underline */}
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: 112 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="mx-auto mt-6 h-[2px] bg-primary"
-        />
-
-        <p className="section-paragraph text-lg max-w-3xl mx-auto">
+        <motion.p 
+          variants={fadeUp}
+          className="text-xl font-secondary text-black/70 max-w-3xl mx-auto leading-relaxed mb-12"
+        >
           Validated clean-label guidance, multi-region regulatory compliance,
-          batch-to-batch consistency, and responsibly sourced ingredients -
-          engineered into every solution we architect.
-        </p>
+          and responsibly sourced ingredients — engineered into every solution we architect.
+        </motion.p>
 
         {/* Pills */}
         <motion.ul
-          variants={list}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+          variants={container}
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6"
         >
           {pills.map((p) => (
-            <motion.li key={p.label} variants={item}>
+            <motion.li key={p.label} variants={pillItem}>
               <motion.span
-                whileHover={{ scale: 1.06 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className={`
-                  inline-flex items-center font-secondary rounded-lg 
-                  px-4 py-2 text-lg sm:text-base
-                  bg-white text-black ring-1 ring-primary/50 
-                  transition-transform
-                `}
+                className="
+                  inline-flex items-center font-secondary font-semibold rounded-2xl 
+                  px-8 py-4 text-sm sm:text-base tracking-wide
+                  bg-white text-gray-900 shadow-[0_4px_20px_rgba(0,0,0,0.04)]
+                  border border-black/5 hover:border-primary/20 hover:text-primary
+                  transition-colors duration-300
+                "
               >
                 {p.label}
               </motion.span>
@@ -103,6 +100,9 @@ export default function QualityResponsibility() {
           ))}
         </motion.ul>
       </motion.div>
+
+      {/* Subtle Background Accent */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full -z-10 opacity-50" />
     </section>
   );
 }

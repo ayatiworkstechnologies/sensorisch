@@ -100,7 +100,7 @@ const GROUPS = [
 export default function CapabilitiesSection() {
   return (
     <section className="relative bg-background text-black">
-      <div className="section-container py-16 md:py-24">
+      <div className="section-container py-8 md:py-12">
         {/* Heading */}
 
         <motion.div
@@ -110,7 +110,7 @@ export default function CapabilitiesSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-4xl text-center"
         >
-           <h3 className="section-title font-semibold text-gray-900 leading-tight">
+          <h3 className="section-title font-semibold text-gray-900 leading-tight">
             Comprehensive facilities & expertise to bring your vision to life
           </h3>
 
@@ -164,7 +164,9 @@ export default function CapabilitiesSection() {
               /> */}
 
               {/* description */}
-              <p className="section-paragraph text-xl leading-relaxed">{g.desc}</p>
+              <p className="section-paragraph text-xl leading-relaxed">
+                {g.desc}
+              </p>
 
               {/* chips with different colors */}
               {/* SIMPLE CHIPS */}
