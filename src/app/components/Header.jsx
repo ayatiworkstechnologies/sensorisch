@@ -1,3 +1,4 @@
+"use client";
 // components/Header.jsx
 "use client";
 

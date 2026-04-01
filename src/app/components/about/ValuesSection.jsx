@@ -1,3 +1,4 @@
+"use client";
 // components/ValuesSection.jsx
 "use client";
 
@@ -6,28 +7,28 @@ import { motion } from "framer-motion";
 const values = [
   {
     title: "Science-Led Creativity",
-    desc: "Combining data-driven R&D with culinary craft to create distinctive taste experiences.",
+    desc: "Precision-engineered R&D fused with culinary craft to architect distinctive, performance-driven taste experiences.",
     icon: "/icons/icon-10.png", // replace with your asset or emoji
     hue: "from-primary/20 to-primary/0",
     line: "from-primary to-primary/60",
   },
   {
     title: "Reliability",
-    desc: "Batch-to-batch consistency with robust QA/QC processes that ensure predictable results.",
+    desc: "Validated batch-to-batch consistency with robust QA/QC protocols that guarantee predictable, scalable results.",
     icon: "/icons/icon-11.png",
     hue: "from-emerald-400/20 to-emerald-400/0",
     line: "from-emerald-500 to-emerald-400",
   },
   {
     title: "Speed with Certainty",
-    desc: "Rapid sampling and validation processes that accelerate time-to-market without compromising quality.",
+    desc: "Accelerated sampling and validation pipelines that compress time-to-market without compromising performance standards.",
     icon: "/icons/icon-12.png",
     hue: "from-amber-400/20 to-amber-400/0",
     line: "from-amber-500 to-amber-400",
   },
   {
     title: "Responsibility",
-    desc: "Thoughtful sourcing and waste-aware processes that support sustainable business practices.",
+    desc: "Full traceability, sustainable sourcing and waste-aware processes engineered into every formulation we deliver.",
     icon: "/icons/icon-8.png",
     hue: "from-sky-400/20 to-sky-400/0",
     line: "from-sky-500 to-sky-400",
@@ -57,7 +58,7 @@ export default function ValuesSection() {
             Our Values
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

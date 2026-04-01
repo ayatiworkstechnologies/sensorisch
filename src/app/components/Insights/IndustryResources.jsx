@@ -1,3 +1,4 @@
+"use client";
 // app/components/IndustryResources.jsx
 "use client";
 

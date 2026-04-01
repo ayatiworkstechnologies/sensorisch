@@ -1,5 +1,8 @@
 // app/portfolio/page.jsx
-"use client";
+export const metadata = {
+  title: "Our Portfolio | Sensorisch",
+  description: "Explore our complete portfolio of flavour families, formats, natural colours, and premium ingredients. Modular solutions built for consistent formulation performance.",
+};
 
 import HeroComponent from "../components/Hero";
 import FlavourFamiliesGrid from "../components/portfolio/FlavourFamiliesGrid";

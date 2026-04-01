@@ -28,7 +28,7 @@ const cardsWrap = {
   },
 };
 
-// Individual card animation (left → right)
+// Individual card animation (left â†’ right)
 const cardAnim = {
   hidden: { opacity: 0, x: -32 },
   show: {
@@ -44,21 +44,21 @@ export default function ExploreCreateConfirmGrow() {
       key: "inspiration",
       icon: "/icons/5.svg",
       title: "Inspiration",
-      desc: "Showcase Smart Innovation",
+      desc: "Performance-Driven Application Systems",
       href: "/applications-solutions",
     },
     {
       key: "insight",
       icon: "/icons/6.svg",
       title: "Insight",
-      desc: "Stay Ahead of the Curve",
+      desc: "Validated Trends & Market Intelligence",
       href: "/insights",
     },
     {
       key: "innovation",
       icon: "/icons/7.svg",
       title: "Innovation",
-      desc: "Shaping the next wave of innovation",
+      desc: "Co-develop bespoke ingredient solutions unique to your brand",
       href: "/bespoke",
     },
   ];
@@ -78,7 +78,7 @@ export default function ExploreCreateConfirmGrow() {
               viewport={{ once: true, amount: 0.4 }}
             >
               <h3 className="section-title font-semibold text-gray-900 leading-tight">
-                Explore, Create, Confirm, Grow
+                Explore. Innovate. Validate. Grow.
               </h3>
 
               {/* Underline */}

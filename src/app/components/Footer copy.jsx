@@ -1,3 +1,4 @@
+"use client";
 // components/Footer.jsx
 "use client";
 
@@ -149,7 +150,7 @@ export default function Footer() {
 
       {/* Copyright */}
       {/* <div className="text-center py-6 text-sm opacity-80">
-        © {year} Sensorisch. All Rights Reserved.
+        Ã‚Â© {year} Sensorisch. All Rights Reserved.
       </div> */}
       {/* Bottom Bar */}
       <div className="border-t border-white/15">
@@ -157,7 +158,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* LEFT SIDE - COPYRIGHT */}
             <p className="text-xs sm:text-sm text-white/80">
-              © {year} Sensorisch. All rights reserved.
+              Ã‚Â© {year} Sensorisch. All rights reserved.
             </p>
 
             {/* RIGHT SIDE - AYATIWORKS CREDIT */}

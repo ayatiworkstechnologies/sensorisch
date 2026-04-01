@@ -1,3 +1,4 @@
+"use client";
 // components/AboutSensorisch.jsx
 "use client";
 
@@ -41,7 +42,7 @@ export default function AboutSensorisch() {
   const glow = useTransform(
     mx,
     [-60, 60],
-    ["rgba(210,36,34,0.15)", "rgba(210,36,34,0.35)"]
+    ["rgba(210,36,34,0.15)", "rgba(210,36,34,0.35)"],
   );
 
   const onMouseMove = (e) => {
@@ -88,7 +89,7 @@ export default function AboutSensorisch() {
             >
               <img
                 src="/assets/our-story.png"
-                alt="Sensorisch R&D and application lab"
+                alt="Sensorisch food scientist at R&D bench examining amber flavour extract vial"
                 className="h-full w-full object-cover"
               />
               {/* soft inner glow following mouse */}
@@ -131,14 +132,28 @@ export default function AboutSensorisch() {
               variants={fadeUp}
               className="section-paragraph mt-5 leading-relaxed text-xl text-black/80"
             >
-             Sensorisch is a specialist B2B formulation house designed exclusively for the institutional food and beverage sector. Our precision ingredients serve the bakery, confectionery, beverage, dairy, hospitality and emerging nutraceutical industries, with a strict focus on performance, stability and clean-label integrity. At the intersection of science and sensory delight, we craft flavours that don’t just taste good, they perform.
+              Sensorisch is a specialist B2B flavour and ingredient formulation
+              house, built exclusively for the food, beverage and wellness
+              sector. We serve the bakery, confectionery, beverage, dairy,
+              hospitality and nutraceutical industries with precision ingredient
+              systems engineered for performance, stability and clean- label
+              compliance. At the intersection of rigorous science and culinary
+              craft, we create flavours that don't just taste good; they
+              perform.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="section-paragraph leading-relaxed text-xl  text-black/80"
             >
-            We specialise in the research, development and manufacture of advanced flavour systems tailored to a wide spectrum of applications, from bakery and beverages to pharmaceuticals and personal care. Driven by innovation, supported by robust technical expertise and aligned with global regulatory frameworks, our solutions are engineered to meet the highest standards of safety, stability and sensory performance. With a focus on customisation, application-specific functionality and clean-label compatibility, we partner with brands to translate consumer insights into flavourful experiences.
+              We specialise in the R&D and manufacture of advanced flavour
+              systems — from bakery and beverages to nutraceuticals and oral
+              care. Every solution is engineered to the highest standards of
+              safety, stability, and sensory performance, underpinned by global
+              regulatory alignment and a clean-label-first philosophy. We don't
+              just supply ingredients. We partner with brands to translate
+              consumer insights into flavour experiences that resonate — and
+              products that sell.
             </motion.p>
 
             {/* CTA with sheen */}

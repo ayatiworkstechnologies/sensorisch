@@ -1,3 +1,4 @@
+"use client";
 // app/components/SensoRangeHero.jsx
 "use client";
 
@@ -45,7 +46,7 @@ export default function SensoRangeHero({
   primaryLabel = "Request Sample",
   secondaryLabel = "Technical Sheet",
 }) {
-  /* ✅ HOOKS MUST BE HERE */
+  /* Ã¢Å“â€¦ HOOKS MUST BE HERE */
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSubject, setModalSubject] = useState("");
 
@@ -126,11 +127,11 @@ export default function SensoRangeHero({
                 ))}
               </div>
 
-              {/* ✅ CTA → MODAL */}
+              {/* Ã¢Å“â€¦ CTA Ã¢â€ â€™ MODAL */}
               <div className="pt-4 flex flex-wrap gap-4">
                 <button
                   onClick={() => {
-                    setModalSubject(`Request Sample – ${title}`);
+                    setModalSubject(`Request Sample Ã¢â‚¬â€œ ${title}`);
                     setModalOpen(true);
                   }}
                   className="inline-flex items-center font-secondary text-lg justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90 transition"
@@ -140,7 +141,7 @@ export default function SensoRangeHero({
 
                 {/* <button
                   onClick={() => {
-                    setModalSubject(`Technical Sheet – ${title}`);
+                    setModalSubject(`Technical Sheet Ã¢â‚¬â€œ ${title}`);
                     setModalOpen(true);
                   }}
                   className="inline-flex items-center justify-center rounded-md border-2 border-primary/30 px-6 py-3 text-primary font-semibold bg-white hover:bg-primary/5 transition"
@@ -171,7 +172,7 @@ export default function SensoRangeHero({
         </div>
       </section>
 
-      {/* ✅ MODAL COMPONENT */}
+      {/* Ã¢Å“â€¦ MODAL COMPONENT */}
       <SampleRequestModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}

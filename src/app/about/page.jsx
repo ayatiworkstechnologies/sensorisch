@@ -1,39 +1,21 @@
-"use client";
+export const metadata = {
+  title:
+    "About Sensorisch | Science-Led Flavour Formulation House, India & GCC",
+  description:
+    "Sensorisch is a science-led B2B flavour and ingredient formulation house with R&D labs in India and GCC. We specialize in precision-engineered, scalable solutions for the food, beverage, and nutraceutical industries.",
+};
 
-import AboutSensorisch from "../components/aboutpage/AboutSensorisch";
-import CapabilitiesSection from "../components/aboutpage/CapabilitiesSection";
-import CompanyProfileCTA from "../components/aboutpage/CompanyProfileCTA";
-import SetsUsApartAndMarkets from "../components/aboutpage/SetsUsApartAndMarkets";
-import ValuesSection from "../components/aboutpage/ValuesSection";
-import VisionMission from "../components/aboutpage/VisionMission";
+import AboutSensorisch from "../components/about/AboutSensorisch";
+import CapabilitiesSection from "../components/about/CapabilitiesSection";
+import SetsUsApartAndMarkets from "../components/about/SetsUsApartAndMarkets";
+import ValuesSection from "../components/about/ValuesSection";
+import VisionMission from "../components/about/VisionMission";
 import HeroComponent from "../components/Hero";
 import HeroContact from "../components/HeroContact";
 
 export default function AboutUS() {
   return (
     <>
-      {/* <HeroCompnonet
-        data={{
-          eyebrow: "About Sensorisch",
-          title: "Science - Led Innovation Meets",
-          highlight: "Culinary Craft",
-          blurb:
-            "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
-          image: { src: "/banners/about.jpg", alt: "Lab and product banner" },
-
-          scrollToId: "our-story",
-
-          // toggles
-          enableTilt: true,
-          showUnderline: true,
-          showShimmer: true,
-          showHalo: true,
-
-          // layout
-          className: "bg-background",
-          containerClassName: "section-container py-16 md:py-24",
-        }}
-      /> */}
       <HeroComponent
         data={{
           imageMobile: {
@@ -44,14 +26,15 @@ export default function AboutUS() {
             src: "/banners/about-web.jpg",
             alt: "Desktop banner image",
           },
-          title: "Science - Led Innovation Meets Culinary Craft",
+          title:
+            "Science-Led Innovation. Culinary Craft. Market-Ready Results.",
           // subtitle:
           //   "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
           primary: {
             label: "Start Your Project",
             href: "/contact",
           },
-          titleColor : "text-primary",
+          titleColor: "text-primary",
           // secondary: {
           //   label: "View Our Portfolio",
           //   href: "/portfolio",
@@ -77,7 +60,7 @@ export default function AboutUS() {
           scrollToId: "our-story"
         }}
       /> */}
-      {/* <HeroSection /> */}
+
       <AboutSensorisch />
       <VisionMission />
       <ValuesSection />
@@ -85,11 +68,13 @@ export default function AboutUS() {
       <SetsUsApartAndMarkets />
       {/* <CompanyProfileCTA /> */}
       <HeroContact
-        kicker="Get in Touch"
-         primary={{ label: "Get in Touch", href: "/contact" }}
+        kicker="Partner With Us"
+        title="Ready to bring your next flavour to life?"
+        // subtitle="Wherever you are, our flavour architects are within reach. Partner with us for precision-driven, ingredient-led solutions that perform at scale."
+        primary={{ label: "Start Your Project", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
         imageSrc="/assets/get-in-touch.png"
-        imageAlt="Glass beaker with plant"
+        imageAlt="Food scientist examining flavour extract in Sensorisch R&D lab"
       />
     </>
   );

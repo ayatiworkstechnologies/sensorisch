@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 const FEATURES = [
   {
     iconSrc: "/icons/icon-1.png",
-    iconAlt: "Innovation icon",
+    iconAlt: "Precision flavour engineering icon",
     title: "Multi-Sensory Innovation",
-    desc: "Science-led creativity combining data-driven R&D with culinary craft for distinctive taste experiences.",
+    desc: "Our R&D teams blend rigorous data science with culinary expertise to create flavour systems that are not just distinctive; they are reproducible, stable, and scale-ready.",
   },
   {
     iconSrc: "/icons/icon-2.png",
-    iconAlt: "Nutrition & Wellness icon",
+    iconAlt: "Bitterness masking and palatability icon",
     title: "Nutrition & Wellness",
-    desc: "Specialized solutions for health-focused applications with effective masking and enhanced palatability.",
+    desc: "Purpose-built ingredient systems for health and wellness applications; delivering effective bitterness masking, off-note reduction, and palatability that make functional products consumers actually enjoy.",
   },
   {
     iconSrc: "/icons/icon-3.png",
-    iconAlt: "Sustainability icon",
+    iconAlt: "Sustainable ingredient sourcing icon",
     title: "Sustainability Focus",
-    desc: "Responsible sourcing and waste-aware processes for clean-label and environmentally conscious solutions.",
+    desc: "Our supply chain is built on responsible sourcing, waste-minimising processes, and full traceability; so you can meet clean-label demands and sustainability targets without compromise.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function WhyChooseSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h3 className="section-title font-semibold text-black">
-            Why Choose Sensorisch
+            Built for Food & Beverage Innovation - From Lab to Launch
           </h3>
 
           <motion.div
@@ -91,7 +91,7 @@ export default function WhyChooseSection() {
                 {f.title}
               </h3>
 
-              {/* Description – always visible */}
+              {/* Description â€“ always visible */}
               <p className="mt-5 text-lg font-secondary text-black/70 leading-relaxed">
                 {f.desc}
               </p>

@@ -1,3 +1,4 @@
+"use client";
 // components/HeroComponent.jsx
 "use client";
 

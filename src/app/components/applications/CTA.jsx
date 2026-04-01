@@ -1,3 +1,4 @@
+"use client";
 // components/CompanyProfileCTA.jsx
 "use client";
 

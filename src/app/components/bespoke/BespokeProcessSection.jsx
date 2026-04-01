@@ -1,3 +1,4 @@
+"use client";
 // app/components/BespokeProcessSection.jsx
 "use client";
 
@@ -56,7 +57,7 @@ export default function BespokeProcessSection() {
             Our Bespoke Development Process
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

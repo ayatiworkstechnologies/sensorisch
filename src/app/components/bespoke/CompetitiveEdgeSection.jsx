@@ -1,3 +1,4 @@
+"use client";
 // app/components/CompetitiveEdgeSection.jsx
 "use client";
 
@@ -66,7 +67,7 @@ export default function CompetitiveEdgeSection() {
                 Your Competitive Edge
               </h3>
 
-              {/* Underline animation – centered */}
+              {/* Underline animation Ã¢â‚¬â€œ centered */}
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 112 }}

@@ -1,3 +1,4 @@
+"use client";
 // app/components/BriefToScale.tsx
 "use client";
 

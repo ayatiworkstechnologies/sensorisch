@@ -65,7 +65,7 @@ export default function MethodsSection() {
               How Can We Help You?
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation â€“ centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}

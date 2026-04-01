@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 const FAQ = [
   {
     q: "How long does sample development take?",
-    a: "Initial samples are typically delivered within 5–7 business days for standard applications, and 10–14 days for complex bespoke formulations.",
+    a: "Initial samples are typically delivered within 5â€“7 business days for standard applications, and 10â€“14 days for complex bespoke formulations.",
   },
   {
     q: "What information do you need for custom development?",
@@ -37,7 +37,7 @@ export default function FAQSection() {
 
               </h3>
 
-              {/* Underline animation – centered */}
+              {/* Underline animation â€“ centered */}
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 112 }}

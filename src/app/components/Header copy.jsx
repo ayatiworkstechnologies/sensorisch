@@ -1,3 +1,4 @@
+"use client";
 // components/Header.jsx
 "use client";
 
@@ -25,7 +26,7 @@ export default function Header() {
       ? pathname === "/"
       : pathname === href || pathname.startsWith(href + "/");
 
-  // 🔥 Clean underline-only nav style
+  // Ã°Å¸â€Â¥ Clean underline-only nav style
   const pillCls = (href) =>
     [
       "inline-flex items-center px-2 py-1 text-sm font-medium transition-all",

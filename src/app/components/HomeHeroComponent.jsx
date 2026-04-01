@@ -19,7 +19,7 @@ const containerVariants = {
 const itemVariants = {
   hidden: {
     opacity: 0,
-    y: 40, // bottom → top
+    y: 40, // bottom â†’ top
   },
   show: {
     opacity: 1,
@@ -52,7 +52,7 @@ export default function HomeHeroComponent({ data = {} }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       controls.start("show");
-    }, 3000); // ⏱️ 5 seconds
+    }, 3000); // â±ï¸ 5 seconds
 
     return () => clearTimeout(timer);
   }, [controls]);

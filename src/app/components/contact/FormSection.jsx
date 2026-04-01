@@ -93,7 +93,7 @@ export default function FormSection() {
           </h3>
           <div className="mx-auto mt-2 h-[2px] w-28 bg-primary rounded" />
           <p className="mt-2 text-xl text-black/70">
-            Tell us about your project and we’ll get back within 24 hours.
+            Tell us about your project and weâ€™ll get back within 24 hours.
           </p>
         </div>
 
@@ -191,7 +191,7 @@ export default function FormSection() {
             </div>
             <p className="mt-1 text-xs text-black/60">
               {files.length
-                ? `${files.length} file(s) • ${totalSizeMB} MB`
+                ? `${files.length} file(s) â€¢ ${totalSizeMB} MB`
                 : "Optional specifications, briefs, or references"}
             </p>
           </label>
@@ -213,7 +213,7 @@ export default function FormSection() {
             disabled={submitting}
             className="inline-flex items-center gap-2 rounded-md border border-primary bg-primary px-5 py-2.5 text-lg font-semibold text-white hover:bg-primary/90 disabled:opacity-60"
           >
-            {submitting ? "Sending…" : "Send Message"}
+            {submitting ? "Sendingâ€¦" : "Send Message"}
             <ArrowRight className="h-4 w-4" />
           </button>
           <span className="text-lg text-black/60">

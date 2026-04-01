@@ -1,4 +1,8 @@
-"use client";
+export const metadata = {
+  title: "Bespoke Flavour Development | Sensorisch",
+  description:
+    "Partner with Sensorisch for custom flavour and ingredient architectures. We co-innovate scalable, precision-engineered solutions tailored to your unique product requirements.",
+};
 
 import BespokeApplications from "../components/bespoke/BespokeApplications";
 import BespokeProcessSection from "../components/bespoke/BespokeProcessSection";
@@ -7,13 +11,11 @@ import CTA from "../components/bespoke/cta";
 import PartnerSection from "../components/bespoke/PartnerSection";
 import QualityComplianceSection from "../components/bespoke/QualityComplianceSection";
 import HeroComponent from "../components/Hero";
-import HeroCompnonet from "../components/Hero";
 import HeroContact from "../components/HeroContact";
 
 export default function bespoke() {
   return (
     <>
-     
       <HeroComponent
         data={{
           imageMobile: {
@@ -31,7 +33,7 @@ export default function bespoke() {
             label: "Start Your Project",
             href: "/applications-solutions",
           },
-          titleColor : "text-primary",
+          titleColor: "text-primary",
           // secondary: {
           //   label: "View Our Portfolio",
           //   href: "/portfolio",
@@ -53,7 +55,10 @@ export default function bespoke() {
           label: "Start Your Custom Project",
           href: "/contact",
         }}
-        secondary={{ label: "Explore Our Capabilities", href: "/applications-solutions" }}
+        secondary={{
+          label: "Explore Our Capabilities",
+          href: "/applications-solutions",
+        }}
         imageSrc="/assets/get-in-touch.png"
         imageAlt="Glass beaker with plant"
       />

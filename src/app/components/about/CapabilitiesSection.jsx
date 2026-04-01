@@ -1,3 +1,4 @@
+"use client";
 // components/CapabilitiesSection.jsx
 "use client";
 
@@ -9,7 +10,7 @@ const fadeUp = {
 };
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
-/* 🎨 Chip palette (light + dark) */
+/* Ã°Å¸Å½Â¨ Chip palette (light + dark) */
 const CHIP_STYLES = [
   {
     light: "bg-rose-100 text-rose-700 ring-rose-200",
@@ -113,7 +114,7 @@ export default function CapabilitiesSection() {
             Comprehensive facilities & expertise to bring your vision to life
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

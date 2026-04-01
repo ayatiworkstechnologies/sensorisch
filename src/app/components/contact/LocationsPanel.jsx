@@ -1,3 +1,4 @@
+"use client";
 // components/LocationsPanel.jsx
 "use client";
 
@@ -31,7 +32,7 @@ export default function LocationsPanel() {
                 Our Location
               </h3>
 
-              {/* Underline animation – centered */}
+              {/* Underline animation Ã¢â‚¬â€œ centered */}
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 112 }}
@@ -99,13 +100,13 @@ export default function LocationsPanel() {
 
                 <li className="inline-flex items-center gap-2 text-black/70">
                   <Clock className="h-4 w-4 text-primary" />
-                  9:00 AM – 6:00 PM IST (Mon–Fri)
+                  9:00 AM Ã¢â‚¬â€œ 6:00 PM IST (MonÃ¢â‚¬â€œFri)
                 </li>
               </ul>
 
               {/* ACTION BUTTONS */}
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {/* Google Maps → External */}
+                {/* Google Maps Ã¢â€ â€™ External */}
                 <Link
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"

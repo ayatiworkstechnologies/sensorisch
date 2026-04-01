@@ -1,3 +1,4 @@
+"use client";
 // app/components/InsightsExplorer.jsx
 "use client";
 
@@ -130,7 +131,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search topics, tags, keywords…"
+            placeholder="Search topics, tags, keywordsÃ¢â‚¬Â¦"
             className="w-full rounded-xl border border-black/10 bg-white/60 backdrop-blur pl-10 pr-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30"
           />
         </label>
@@ -224,7 +225,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                     </span>
                     <span className="inline-flex items-center gap-1">
                       <Clock className="h-3.5 w-3.5" />
-                      {p.date} • {p.read}
+                      {p.date} Ã¢â‚¬Â¢ {p.read}
                     </span>
                   </div>
 

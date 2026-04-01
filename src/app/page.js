@@ -1,17 +1,20 @@
-"use client";
+export const metadata = {
+  title: "Sensorisch | Science-Led Flavour & Ingredient Solutions for Food & Beverage",
+  description: "Sensorisch is a specialist B2B formulation house - flavour and ingredient architects dedicated exclusively to the institutional food and beverage sector. Our precision-engineered ingredients serve the bakery, confectionery, beverage, dairy, hospitality and emerging nutraceutical industries, with an unwavering focus on performance, stability and clean-label integrity.",
+};
 
 import HeroComponent from "./components/Hero";
 import HeroContact from "./components/HeroContact";
 import HomeHeroComponent from "./components/HomeHeroComponent";
-import ApplicationExpertise from "./components/homepage/ApplicationExpertise";
-import ApplicationExpertiseHover from "./components/homepage/ApplicationExpertiseHover";
-import BriefToScale from "./components/homepage/BriefToScale";
-import PromoSection from "./components/homepage/CheesePromoSection";
-import CTAWideBanner from "./components/homepage/CTAWideBanner";
-import ExploreCreateConfirmGrow from "./components/homepage/ExploreCreateConfirmGrow";
-import FromBriefToScale from "./components/homepage/FromBriefToScale";
-import QualityResponsibility from "./components/homepage/QualityResponsibility";
-import WhyChooseSection from "./components/homepage/whychooseSection";
+import ApplicationExpertise from "./components/home/ApplicationExpertise";
+import ApplicationExpertiseHover from "./components/home/ApplicationExpertiseHover";
+import BriefToScale from "./components/home/BriefToScale";
+import PromoSection from "./components/home/CheesePromoSection";
+import CTAWideBanner from "./components/home/CTAWideBanner";
+import ExploreCreateConfirmGrow from "./components/home/ExploreCreateConfirmGrow";
+import FromBriefToScale from "./components/home/FromBriefToScale";
+import QualityResponsibility from "./components/home/QualityResponsibility";
+import WhyChooseSection from "./components/home/whychooseSection";
 
 export default function Home() {
   return (
@@ -23,16 +26,15 @@ export default function Home() {
             src: "/hero.mp4",
             poster: "/images/social-poster.jpg",
           },
-          title: "Where Science",
-          title1: "Meets Senses.",
-          // subtitle: "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
+          title: "Where Science Meets Senses - Precision Flavours Engineered for Performance. ",
+          // subtitle: "Precision Flavours Engineered for Performance",
           primary: {
-            label: "About Sensorisch",
-            href: "/about",
+            label: "Start a Project",
+            href: "/contact",
           },
           secondary: {
-            label: "Contact Us",
-            href: "/contact",
+            label: "Explore Our Solutions",
+            href: "/applications-solutions",
           },
           // scrollToId: "next-section",
         }}
@@ -51,13 +53,13 @@ export default function Home() {
       <ExploreCreateConfirmGrow />
       {/* <CTAWideBanner /> */}
       <HeroContact
-        kicker="Get in touch"
-        title="Expert guidance, just a message away"
-        subtitle="No matter your location, our experts are within reach. Get in touch for sustainable, ingredient-driven solutions."
+        kicker="Let's Build Together"
+        title="Your next breakthrough flavour is one conversation away."
+        subtitle="Wherever you are, our flavour architects are within reach. Partner with us for precision-driven, ingredient-led solutions that perform at scale."
         primary={{ label: "Start Your Project", href: "/contact" }}
-        secondary={{ label: "View Our Project", href: "/applications-solutions" }}
+        secondary={{ label: "View Our Projects", href: "/applications-solutions" }}
         imageSrc="/assets/get-in-touch.png"
-        imageAlt="Glass beaker with plant"
+        imageAlt="Sensorisch flavour formulation lab with botanical extracts"
       />
     </>
   );

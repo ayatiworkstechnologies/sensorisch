@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export default function SensorischLogoLoader({
-  logoSrc = "/sensorisch-logo.png",      // 👉 set your logo path
+  logoSrc = "/sensorisch-logo.png",      // ðŸ‘‰ set your logo path
   alt = "Brand logo",
   width = 200,                       // logo width (px)
   height = 400,                      // logo height (px)

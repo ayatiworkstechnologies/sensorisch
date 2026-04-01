@@ -78,7 +78,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-6 pb-6">
           <div className="flex flex-col sm:flex-row items-center font-secondary text-xl justify-between gap-4">
             <p className="opacity-80">
-              © {year} Sensorisch. All rights reserved.
+              Â© {year} Sensorisch. All rights reserved.
             </p>
 
             <Link

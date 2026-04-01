@@ -1,3 +1,4 @@
+"use client";
 
 "use client";
 
@@ -149,7 +150,7 @@ export default function FormSection() {
               />
             </motion.h3>
             <motion.p variants={fadeUp} className="section-paragraph mt-1">
-              Tell us about your project and we’ll get back to you within 24 hours.
+              Tell us about your project and weÃ¢â‚¬â„¢ll get back to you within 24 hours.
             </motion.p>
           </div>
 
@@ -222,7 +223,7 @@ export default function FormSection() {
                 </span>
               </div>
               <p className="mt-1 text-xs text-black/60">
-                {files.length ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total` : "Support for specifications, references, or product briefs"}
+                {files.length ? `Selected ${files.length} file(s) Ã¢â‚¬Â¢ ${totalSizeMB} MB total` : "Support for specifications, references, or product briefs"}
               </p>
             </label>
           </motion.div>
@@ -251,7 +252,7 @@ export default function FormSection() {
               {submitting ? (
                 <span className="inline-flex items-center gap-2">
                   <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
-                  Sending…
+                  SendingÃ¢â‚¬Â¦
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-2">
@@ -259,7 +260,7 @@ export default function FormSection() {
                 </span>
               )}
             </button>
-            <span className="text-xs text-black/60">We’ll respond within 24 hours during business days</span>
+            <span className="text-xs text-black/60">WeÃ¢â‚¬â„¢ll respond within 24 hours during business days</span>
           </motion.div>
 
           <AnimatePresence>
@@ -460,7 +461,7 @@ export default function FormSection() {
               />
             </motion.h3>
             <motion.p variants={fadeUp} className="section-paragraph mt-1">
-              Tell us about your project and we’ll get back to you within 24 hours.
+              Tell us about your project and weÃ¢â‚¬â„¢ll get back to you within 24 hours.
             </motion.p>
           </div>
 
@@ -584,7 +585,7 @@ export default function FormSection() {
               </div>
               <p className="mt-1 text-xs text-black/60">
                 {files.length
-                  ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
+                  ? `Selected ${files.length} file(s) Ã¢â‚¬Â¢ ${totalSizeMB} MB total`
                   : "Support for specifications, references, or product briefs"}
               </p>
             </label>
@@ -612,7 +613,7 @@ export default function FormSection() {
               {submitting ? (
                 <span className="inline-flex items-center gap-2">
                   <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
-                  Sending…
+                  SendingÃ¢â‚¬Â¦
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-2">
@@ -621,7 +622,7 @@ export default function FormSection() {
               )}
             </button>
             <span className="text-xs text-black/60">
-              We’ll respond within 24 hours during business days
+              WeÃ¢â‚¬â„¢ll respond within 24 hours during business days
             </span>
           </motion.div>
 

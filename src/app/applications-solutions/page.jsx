@@ -1,9 +1,12 @@
-"use client";
+export const metadata = {
+  title: "Applications & Solutions | Sensorisch Flavour Systems",
+  description: "Explore our comprehensive flavour solutions designed for bakery, beverage, dairy, and nutraceuticals. Precision-engineered for optimal performance and scale.",
+};
 
-import BespokeSolutionsSection from "../components/applicationpage/BespokeSolutionsSection";
-import ProfileCTA from "../components/applicationpage/CTA";
-import SensoRangeHero from "../components/applicationpage/SensoRangeHero";
-import WhyChooseSenso from "../components/applicationpage/WhyChooseSenso";
+import BespokeSolutionsSection from "../components/applications/BespokeSolutionsSection";
+import ProfileCTA from "../components/applications/CTA";
+import SensoRangeHero from "../components/applications/SensoRangeHero";
+import WhyChooseSenso from "../components/applications/WhyChooseSenso";
 import HeroComponent from "../components/Hero";
 import HeroContact from "../components/HeroContact";
 import StickyFullpageSlides from "../components/StickyFullpageSlides";

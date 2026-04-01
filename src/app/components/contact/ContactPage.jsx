@@ -1,3 +1,4 @@
+"use client";
 // app/components/ContactPage.jsx
 "use client";
 
@@ -67,7 +68,7 @@ const METHODS = [
 const FAQ = [
   {
     q: "How long does sample development take?",
-    a: "Initial samples are typically delivered within 5–7 business days for standard applications, and 10–14 days for complex bespoke formulations.",
+    a: "Initial samples are typically delivered within 5Ã¢â‚¬â€œ7 business days for standard applications, and 10Ã¢â‚¬â€œ14 days for complex bespoke formulations.",
   },
   {
     q: "What information do you need for custom development?",
@@ -202,7 +203,7 @@ export default function ContactPage() {
               variants={fadeUp}
               className="text-sm text-black/70 mt-1"
             >
-              Tell us about your project and we’ll get back to you within 24
+              Tell us about your project and weÃ¢â‚¬â„¢ll get back to you within 24
               hours.
             </motion.p>
 
@@ -288,7 +289,7 @@ export default function ContactPage() {
                 </div>
                 <p className="mt-1 text-xs text-black/60">
                   {files.length
-                    ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
+                    ? `Selected ${files.length} file(s) Ã¢â‚¬Â¢ ${totalSizeMB} MB total`
                     : "Support for specifications, references, or product briefs"}
                 </p>
               </label>
@@ -313,7 +314,7 @@ export default function ContactPage() {
                 {submitting ? (
                   <span className="inline-flex items-center gap-2">
                     <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
-                    Sending…
+                    SendingÃ¢â‚¬Â¦
                   </span>
                 ) : (
                   <span className="inline-flex items-center gap-2">
@@ -322,7 +323,7 @@ export default function ContactPage() {
                 )}
               </button>
               <span className="text-xs text-black/60">
-                We’ll respond within 24 hours during business days
+                WeÃ¢â‚¬â„¢ll respond within 24 hours during business days
               </span>
             </motion.div>
 
@@ -386,8 +387,8 @@ export default function ContactPage() {
                     </Link>
                     <br />
                     <div className="inline-flex items-center gap-2 text-black/70">
-                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
-                      PM IST (Mon–Fri)
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM Ã¢â‚¬â€œ 6:00
+                      PM IST (MonÃ¢â‚¬â€œFri)
                     </div>
                   </div>
                 </article>
@@ -414,8 +415,8 @@ export default function ContactPage() {
                     </Link>
                     <br />
                     <div className="inline-flex items-center gap-2 text-black/70">
-                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
-                      PM GST (Sun–Thu)
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM Ã¢â‚¬â€œ 6:00
+                      PM GST (SunÃ¢â‚¬â€œThu)
                     </div>
                   </div>
                 </article>
@@ -498,7 +499,7 @@ export default function ContactPage() {
                       animate={{ rotate: active ? 180 : 0 }}
                       className="h-6 w-6 grid place-items-center rounded-full bg-primary/10 text-primary"
                     >
-                      ▾
+                      Ã¢â€“Â¾
                     </motion.span>
                   </button>
 

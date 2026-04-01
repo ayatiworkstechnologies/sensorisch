@@ -28,7 +28,7 @@ export default function FromBriefToScale() {
       key: "scale",
       icon: "/icons/4.svg",
       title: "Scale",
-      desc: "QAPQC & production ready",
+      desc: "QA/QC sign-off & production-ready documentation",
     },
   ];
 
@@ -37,7 +37,9 @@ export default function FromBriefToScale() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="section-title text-black">From Brief to Scale</h2>
+          <h2 className="section-title text-black">
+            From Brief to Shelf - Our Structured Development Process
+          </h2>
           {/* Underline */}
           <motion.div
             initial={{ width: 0 }}
@@ -47,8 +49,9 @@ export default function FromBriefToScale() {
             className="mx-auto mt-6 h-[2px] bg-primary"
           />
           <p className="mt-2 text-base sm:text-lg font-secondary text-gray-500">
-            We align targets, prototype fast, validate in your market, then
-            transfer SOPs for reliable production
+            We align on your brief, prototype rapidly, validate with your target
+            market, then hand over complete production documentation - so your
+            team can scale with confidence.
           </p>
         </div>
 

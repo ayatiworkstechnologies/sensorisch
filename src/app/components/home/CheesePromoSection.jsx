@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -74,9 +75,10 @@ export default function PromoSection() {
                 </motion.div>
 
                 <p className="section-paragraph mb-3">
-                  Behind every great flavour is great science. Senso brings
-                  together expertise, innovation and application-specific
-                  precision to fast-track your success.
+                  Behind every great flavour is great science. The Senso
+                  portfolio brings together deep application knowledge, rapid
+                  sampling, and validated formulations; so your team spends less
+                  time developing and more time launching.
                 </p>
 
                 <div className="flex justify-center sm:justify-start">
@@ -84,7 +86,7 @@ export default function PromoSection() {
                     href="/applications-solutions"
                     className="px-6 py-3 rounded-lg font-secondary text-lg bg-primary text-white font-semibold hover:bg-primary/90 transition"
                   >
-                    Start Production
+                    Explore Senso Ranges
                   </Link>
                 </div>
               </div>

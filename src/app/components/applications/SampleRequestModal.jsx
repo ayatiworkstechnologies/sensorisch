@@ -25,7 +25,7 @@ export default function SampleRequestModal({ open, onClose, subject }) {
           title: subject,
           subject,
           name: data.name,
-          company: data.company, // ✅ added
+          company: data.company, // âœ… added
           email: data.email,
           mobile: data.mobile,
           message: data.message,
@@ -63,7 +63,7 @@ export default function SampleRequestModal({ open, onClose, subject }) {
             onClick={onClose}
             className="absolute right-4 top-4 text-gray-400 hover:text-black"
           >
-            ✕
+            âœ•
           </button>
 
           <h3 className="text-2xl font-semibold mb-1">{subject}</h3>

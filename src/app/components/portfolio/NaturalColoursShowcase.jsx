@@ -1,3 +1,4 @@
+"use client";
 // app/components/NaturalColoursShowcase_v2.jsx
 "use client";
 
@@ -94,7 +95,7 @@ export default function NaturalColoursShowcase({
             Natural Colours
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

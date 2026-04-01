@@ -1,19 +1,21 @@
-"use client";
+export const metadata = {
+  title: "Industry Insights & Updates | Sensorisch",
+  description: "Stay ahead with the latest food and beverage formulation trends, insights, and company updates from the flavour architecture team at Sensorisch.",
+};
 
 import HeroComponent from "../components/Hero";
-import HeroCompnonet from "../components/Hero";
 import HeroContact from "../components/HeroContact";
-import CTA from "../components/Insights/FinalCta";
-import IndustryResources from "../components/Insights/IndustryResources";
-import InsightsExplorer from "../components/Insights/InsightsExplorer";
-import LatestInsights from "../components/Insights/LatestInsights";
-import NewsTrends from "../components/Insights/NewsTrends";
-import PressUpdates from "../components/Insights/PressUpdates";
+import CTA from "../components/insights/FinalCta";
+import IndustryResources from "../components/insights/IndustryResources";
+import InsightsExplorer from "../components/insights/InsightsExplorer";
+import LatestInsights from "../components/insights/LatestInsights";
+import NewsTrends from "../components/insights/NewsTrends";
+import PressUpdates from "../components/insights/PressUpdates";
 
 export default function Insights() {
   return (
     <>
-      {/* <HeroCompnonet
+      {/* <HeroComponent
         data={{
           eyebrow: "News & Trends",
           title: "Industry ",

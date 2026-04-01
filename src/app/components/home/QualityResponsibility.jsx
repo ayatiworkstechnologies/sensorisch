@@ -1,3 +1,4 @@
+"use client";
 // components/QualityResponsibility.jsx
 "use client";
 
@@ -43,7 +44,10 @@ export default function QualityResponsibility() {
   useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.3 }); // kept for potential use
 
   return (
-    <section ref={sectionRef} className="py-20 md: mt-10 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-20 md: mt-10 relative overflow-hidden"
+    >
       <motion.div
         variants={container}
         initial="hidden"
@@ -53,7 +57,6 @@ export default function QualityResponsibility() {
       >
         {/* Title */}
         <motion.h2 className="section-title text-black flex items-center justify-center gap-2 flex-wrap">
-          
           <motion.span variants={word} className="text-black">
             Quality & Responsibility
           </motion.span>
@@ -69,8 +72,9 @@ export default function QualityResponsibility() {
         />
 
         <p className="section-paragraph text-lg max-w-3xl mx-auto">
-          Clean-label guidance, regional compliance, batch consistency, and
-          responsible sourcing built into every solution we deliver.
+          Validated clean-label guidance, multi-region regulatory compliance,
+          batch-to-batch consistency, and responsibly sourced ingredients -
+          engineered into every solution we architect.
         </p>
 
         {/* Pills */}

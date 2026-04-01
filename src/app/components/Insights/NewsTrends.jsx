@@ -146,7 +146,7 @@ export default function NewsTrends() {
               onClick={() => setShowFilters(!showFilters)}
               className=" text-gray-600 hover:text-primary font-secondary text-lg flex items-center gap-1"
             >
-              Show Filters <span className="text-base">▼</span>
+              Show Filters <span className="text-base">â–¼</span>
             </button>
 
             {showFilters && (

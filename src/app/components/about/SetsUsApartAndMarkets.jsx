@@ -1,5 +1,5 @@
-// components/SetsUsApartAndMarkets.jsx
 "use client";
+// components/SetsUsApartAndMarkets.jsx
 
 import { motion } from "framer-motion";
 
@@ -39,7 +39,7 @@ export default function SetsUsApartAndMarkets() {
               What Sets Us Apart
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation — centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -50,8 +50,9 @@ export default function SetsUsApartAndMarkets() {
           </motion.div>
 
           <p className="mt-3 section-paragraph text-xl max-w-2xl mx-auto">
-            Science-led development, pre-validated systems, and rigorous quality
-            – built for scale.
+            Application-specific expertise, pre-validated Senso systems, and
+            rigorous QA/QC, built for brands that cannot afford to fail at
+            scale.
           </p>
         </motion.div>
 
@@ -108,7 +109,7 @@ export default function SetsUsApartAndMarkets() {
               Our Markets
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation — centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -176,7 +177,6 @@ function MarketCard({ heading, blurb }) {
   return (
     <motion.article
       variants={fadeUp}
-      
       className="rounded-2xl bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-6 md:p-8"
     >
       <h3 className="text-lg md:text-2xl font-semibold">{heading}</h3>

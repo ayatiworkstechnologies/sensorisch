@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function SensorischVideoLoader({
-  videoSrc = "/loader.mp4", // 👈 your video
+  videoSrc = "/loader.mp4", // ðŸ‘ˆ your video
   poster = "/videos/loader-poster.jpg",        // optional
   width = 260,
   height = 260,

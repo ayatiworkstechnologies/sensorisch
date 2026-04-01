@@ -1,3 +1,4 @@
+"use client";
 // components/VisionMission.jsx
 "use client";
 
@@ -77,7 +78,7 @@ export default function VisionMission() {
             Our Vision & Mission
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
@@ -102,10 +103,9 @@ export default function VisionMission() {
               Our Vision
             </h3>
             <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
-              To be the most trusted global partner for sensory innovation,
-              delivering precision-driven flavours, colours and ingredient
-              solutions that inspire product excellence and meaningful consumer
-              connections.{" "}
+              To be the most trusted partner in sensory innovation — delivering
+              precision flavours, colours, and ingredient systems that help
+              brands create products people remember.{" "}
             </p>
           </motion.article>
 
@@ -122,12 +122,11 @@ export default function VisionMission() {
               Our Mission
             </h3>
             <p className="mt-3 section-paragraph leading-relaxed text-lg sm:text-xl">
-              Sensorisch is committed to empowering creators in the bakery,
-              beverage, dairy, culinary and wellness industries by co-developing
-              sensory solutions that are scientifically advanced, creatively
-              inspired and commercially scalable. We exist to ensure every
-              product resonates with its audience, not just in taste but in
-              experience.{" "}
+              We exist to help product creators build flavours that work —
+              scientifically rigorous, creatively inspired, and commercially
+              ready. By co-developing precision sensory solutions across bakery,
+              beverage, dairy, and wellness, we ensure every product resonates:
+              not just in taste, but in the full sensory experience.{" "}
             </p>
           </motion.article>
         </div>

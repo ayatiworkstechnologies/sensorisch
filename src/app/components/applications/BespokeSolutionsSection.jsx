@@ -1,3 +1,4 @@
+"use client";
 // app/components/BespokeSolutionsSection.jsx
 "use client";
 
@@ -109,7 +110,7 @@ export function BespokeSolutionsIntro({
               Tailored to Your Needs
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation Ã¢â‚¬â€œ centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -228,7 +229,7 @@ export function DevelopmentProcessSection() {
               Our Development Process
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation Ã¢â‚¬â€œ centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}

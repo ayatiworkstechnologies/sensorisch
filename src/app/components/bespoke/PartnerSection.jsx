@@ -1,3 +1,4 @@
+"use client";
 // app/components/PartnerSection.jsx
 "use client";
 
@@ -41,7 +42,7 @@ export default function PartnerSection() {
             Why Partner with us
           </h3>
 
-          {/* Underline animation – centered */}
+          {/* Underline animation Ã¢â‚¬â€œ centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

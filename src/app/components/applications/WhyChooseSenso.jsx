@@ -1,3 +1,4 @@
+"use client";
 // app/components/WhyChooseSenso.jsx
 "use client";
 
@@ -62,7 +63,7 @@ export default function WhyChooseSenso() {
               Why Choose Senso Ranges?
             </h3>
 
-            {/* Underline animation – centered */}
+            {/* Underline animation Ã¢â‚¬â€œ centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}

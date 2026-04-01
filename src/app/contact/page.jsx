@@ -1,10 +1,13 @@
-"use client";
+export const metadata = {
+  title: "Contact Sensorisch | Let's Build Your Next Signature Product",
+  description: "Get in touch with our flavour experts. Partner with us for precision-driven, ingredient-led formulation solutions that perform at scale.",
+};
 
-import ContactPage from "../components/contactpage/ContactPage";
-import FAQSection from "../components/contactpage/FAQSection";
-import FormSection from "../components/contactpage/FormSection";
-import LocationsPanel from "../components/contactpage/LocationsPanel";
-import MethodsSection from "../components/contactpage/MethodsSection";
+import ContactPage from "../components/contact/ContactPage";
+import FAQSection from "../components/contact/FAQSection";
+import FormSection from "../components/contact/FormSection";
+import LocationsPanel from "../components/contact/LocationsPanel";
+import MethodsSection from "../components/contact/MethodsSection";
 import HeroComponent from "../components/Hero";
 
 export default function ContactUs() {
