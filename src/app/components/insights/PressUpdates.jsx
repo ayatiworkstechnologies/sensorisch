@@ -21,7 +21,7 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 const DEFAULT_ITEMS = [
   {
     id: "senso-pharma-expansion",
-    title: "Sensorisch Expands SensoÃ¢â€žÂ¢ Range with New Pharmaceutical Solutions",
+    title: "Sensorisch Expands Senso™ Range with New Pharmaceutical Solutions",
     tag: "Product Launch",
     date: "March 12, 2024",
     href: "#",

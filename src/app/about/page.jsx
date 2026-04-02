@@ -89,7 +89,7 @@ export default function AboutUS() {
         // subtitle="Wherever you are, our flavour architects are within reach. Partner with us for precision-driven, ingredient-led solutions that perform at scale."
         primary={{ label: "Start Your Project", href: "/contact" }}
         // secondary={{ label: "View Our Portfolio", href: "/portfolio" }}
-        imageSrc="/assets/our-story.png"
+        imageSrc="/assets/get-in-touch.png"
         imageAlt="Food scientist examining flavour extract in Sensorisch R&D lab"
       />
     </>

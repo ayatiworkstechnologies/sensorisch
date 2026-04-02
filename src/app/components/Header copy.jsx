@@ -26,7 +26,7 @@ export default function Header() {
       ? pathname === "/"
       : pathname === href || pathname.startsWith(href + "/");
 
-  // Ã°Å¸â€Â¥ Clean underline-only nav style
+  // 🔥 Clean underline-only nav style
   const pillCls = (href) =>
     [
       "inline-flex items-center px-2 py-1 text-sm font-medium transition-all",
@@ -49,7 +49,6 @@ export default function Header() {
               {n.label}
             </Link>
           ))}
-
           <Link
             href="/contact"
             className="ml-4 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold shadow hover:bg-primary/90 transition-colors"
@@ -57,7 +56,6 @@ export default function Header() {
             Request Samples
           </Link>
         </nav>
-
         {/* Mobile toggle */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10"
@@ -67,7 +65,6 @@ export default function Header() {
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-
       {/* Mobile drawer */}
       {open && (
         <nav className="md:hidden border-t border-black/5 dark:border-white/10 bg-background/95 backdrop-blur">
@@ -87,7 +84,6 @@ export default function Header() {
                 {n.label}
               </Link>
             ))}
-
             <Link
               href="/contact"
               className="mt-2 inline-flex items-center justify-center font-secondary rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"

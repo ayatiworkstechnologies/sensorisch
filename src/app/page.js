@@ -66,7 +66,7 @@ export default function Home() {
         subtitle="Wherever you are, our flavour architects are within reach. Partner with us for precision-driven, ingredient-led solutions that perform at scale."
         primary={{ label: "Start Your Project", href: "/contact" }}
         secondary={{ label: "View Our Projects", href: "/applications-solutions" }}
-        imageSrc="/assets/home-banner-1.jpg"
+        imageSrc="/assets/get-in-touch.png"
         imageAlt="Sensorisch flavour formulation lab with botanical extracts"
       />
     </>

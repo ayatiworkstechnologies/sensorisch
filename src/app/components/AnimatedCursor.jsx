@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-/** Ã°Å¸Å½Â¨ Color palette (use CSS vars + brand-friendly hues) */
+/** 🎨 Color palette (use CSS vars + brand-friendly hues) */
 const PALETTE = [
   "var(--primary)",         // brand red
   "#FF7A00",                // orange
@@ -104,7 +104,7 @@ export default function AnimatedCursor({ cycleMs = 1600, enableCycle = true }) {
 
   return (
     <>
-      {/* Ã°Å¸Å’Â« Soft glow (uses current color) */}
+      {/* 🌫️ Soft glow (uses current color) */}
       <motion.div
         className="fixed top-0 left-0 z-[9998] pointer-events-none"
         style={{ x: glowX, y: glowY }}
@@ -124,7 +124,7 @@ export default function AnimatedCursor({ cycleMs = 1600, enableCycle = true }) {
         />
       </motion.div>
 
-      {/* Ã°Å¸Å¸Â  Trailing orbs (each with offset color) */}
+      {/* 🟠 Trailing orbs (each with offset color) */}
       {trail.map(({ x, y, size, op }, i) => {
         const c = colorFor(i + 1);
         return (
@@ -148,7 +148,7 @@ export default function AnimatedCursor({ cycleMs = 1600, enableCycle = true }) {
         );
       })}
 
-      {/* Ã°Å¸â€Âµ Main ring */}
+      {/* 🔵 Main ring */}
       <motion.div
         className="fixed top-0 left-0 z-[10000] pointer-events-none"
         style={{ x: ringX, y: ringY }}
@@ -169,7 +169,7 @@ export default function AnimatedCursor({ cycleMs = 1600, enableCycle = true }) {
         />
       </motion.div>
 
-      {/* Ã¢Å¡Âª Core (dot or I-beam) */}
+      {/* ⚪ Core (dot or I-beam) */}
       <motion.div
         className="fixed top-0 left-0 z-[10000] pointer-events-none"
         style={{ x: mx, y: my }}
@@ -203,7 +203,7 @@ export default function AnimatedCursor({ cycleMs = 1600, enableCycle = true }) {
         )}
       </motion.div>
 
-      {/* Ã°Å¸â€™Â¥ Click ripple (uses current color) */}
+      {/* 💥 Click ripple (uses current color) */}
       <Ripple key={clickKey} x={mx} y={my} color={current} />
     </>
   );

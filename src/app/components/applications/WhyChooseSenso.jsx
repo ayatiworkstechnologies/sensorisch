@@ -63,7 +63,7 @@ export default function WhyChooseSenso() {
               Why Choose Senso Ranges?
             </h3>
 
-            {/* Underline animation Ã¢â‚¬â€œ centered */}
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}

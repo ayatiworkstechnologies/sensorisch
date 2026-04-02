@@ -20,11 +20,11 @@ export default function bespoke() {
       <HeroComponent
         data={{
           imageMobile: {
-            src: "/banners/bespoke-mob.png",
+            src: "/banners/bespoke-mob.jpg",
             alt: "Mobile banner image",
           },
           imageDesktop: {
-            src: "/banners/bespoke-web.png",
+            src: "/banners/bespoke-web.jpg",
             alt: "Desktop banner image",
           },
           title: "Your Flavour. Your Brand. Exclusively Yours.",

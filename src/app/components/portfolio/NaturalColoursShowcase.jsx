@@ -95,7 +95,7 @@ export default function NaturalColoursShowcase({
             Natural Colours
           </h3>
 
-          {/* Underline animation Ã¢â‚¬â€œ centered */}
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

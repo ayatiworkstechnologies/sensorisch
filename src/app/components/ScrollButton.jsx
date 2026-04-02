@@ -7,7 +7,7 @@ import { useMemo } from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 export default function ScrollCircleTopBottom() {
-  // 0 Ã¢â€ â€™ 1 across the whole page
+  // 0 → 1 across the whole page
   const { scrollYProgress } = useScroll();
 
   // Smooth it out

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp } from "./motionHelpers";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function LocationsPanel() {
   return (
@@ -32,7 +33,7 @@ export default function LocationsPanel() {
                 Our Location
               </h3>
 
-              {/* Underline animation Ã¢â‚¬â€œ centered */}
+              {/* Underline animation – centered */}
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 112 }}
@@ -100,13 +101,13 @@ export default function LocationsPanel() {
 
                 <li className="inline-flex items-center gap-2 text-black/70">
                   <Clock className="h-4 w-4 text-primary" />
-                  9:00 AM Ã¢â‚¬â€œ 6:00 PM IST (MonÃ¢â‚¬â€œFri)
+                  9:00 AM – 6:00 PM IST (Mon–Fri)
                 </li>
               </ul>
 
               {/* ACTION BUTTONS */}
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {/* Google Maps Ã¢â€ â€™ External */}
+                {/* Google Maps → External */}
                 <Link
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"
@@ -138,18 +139,19 @@ export default function LocationsPanel() {
             </motion.article>
           </div>
 
-          {/* RIGHT SIDE - MAP IFRAME */}
+          {/* RIGHT SIDE - LOCATION IMAGE */}
           <motion.div
             variants={fadeUp}
-            className="w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white"
+            className="group relative w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-xl"
           >
-            <iframe
-              title="Sensorisch Location Map"
-              src="https://www.google.com/maps?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049&output=embed"
-              className="w-full h-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <Image
+              src="/assets/contact-location.jpg"
+              alt="Sensorisch Formulation Lab Exterior"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Subtle overlay for premium feel */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
           </motion.div>
         </motion.div>
       </div>

@@ -183,7 +183,7 @@ export function PremiumSpreadsSection() {
             Premium Spreads
           </h3>
 
-          {/* Underline animation Ã¢â‚¬â€œ centered */}
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
@@ -285,7 +285,7 @@ export function PremiumSpreadsSection() {
               Key Banefits
             </h3>
 
-            {/* Underline animation Ã¢â‚¬â€œ centered */}
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -306,7 +306,7 @@ export function PremiumSpreadsSection() {
               transition={{ delay: i * 0.04 }}
               className="rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur ring-1 ring-black/5 dark:ring-white/10 px-4 py-3"
             >
-              <div className="section-subtitle">Ã¢Å“â€œ {b.k}</div>
+              <div className="section-subtitle">✓ {b.k}</div>
               <p className="section-paragraph">{b.sub}</p>
             </motion.div>
           ))}
@@ -341,7 +341,7 @@ export function DecorSection() {
             Cake Dust & Decor
           </h3>
 
-          {/* Underline animation Ã¢â‚¬â€œ centered */}
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}
@@ -412,7 +412,7 @@ export function DecorSection() {
               Professinal Benefits
             </h3>
 
-            {/* Underline animation Ã¢â‚¬â€œ centered */}
+            {/* Underline animation – centered */}
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 112 }}
@@ -467,7 +467,7 @@ export function SystemsSection() {
             Ingredient & Delivery Systems
           </h3>
 
-          {/* Underline animation Ã¢â‚¬â€œ centered */}
+          {/* Underline animation – centered */}
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 112 }}

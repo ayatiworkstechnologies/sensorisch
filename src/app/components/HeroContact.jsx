@@ -11,7 +11,7 @@ export default function HeroContact({
   subtitle = "",
   primary = "",
   secondary = "",
-  imageSrc = "/images/plant-beaker.png",
+  imageSrc = "/assets/get-in-touch.png",
   imageAlt = "Decorative plant in beaker",
 }) {
   return (
@@ -28,7 +28,7 @@ export default function HeroContact({
       </div>
 
       {/* OVERLAY FOR READABILITY */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-white/10" />
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">

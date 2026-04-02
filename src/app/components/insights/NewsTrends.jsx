@@ -14,7 +14,7 @@ const POSTS = [
     id: 1,
     category: "News",
     title: "How Green Chemistry Is Reshaping Food Ingredient Sourcing",
-    image: "/assets/news-1.jpg",
+    image: "/assets/in-1.jpg",
     excerpt:
       "Advancing eco-friendly chemical processes through innovation and responsibility.",
     href: "#",
@@ -24,7 +24,7 @@ const POSTS = [
     id: 2,
     category: "Trends",
     title: "The Flavour Trends Defining Consumer Choices in 2026 - and Beyond",
-    image: "/assets/news-2.jpg",
+    image: "/assets/in-2.jpg",
     excerpt:
       "From nostalgic comfort to global spice journeys, discover the key flavour directions shaping what consumers want to taste next.",
     href: "#",
@@ -35,7 +35,7 @@ const POSTS = [
     category: "News",
     title:
       "Sensorisch R&D: Breakthrough Advances in Natural Colour Stability and Extraction",
-    image: "/assets/news-3.jpg",
+    image: "/assets/in-3.jpg",
     excerpt:
       "Discover how our latest innovations in natural colour extraction are enhancing stability, vibrancy, and performance across food and beverage applications.",
     href: "#",
@@ -46,7 +46,7 @@ const POSTS = [
     category: "Trends",
     title:
       "Why Clean-Label Is No Longer Optional - And How to Formulate for It",
-    image: "/assets/news-4.jpg",
+    image: "/assets/in-4.jpg",
     excerpt:
       "Discover why consumers are demanding cleaner labels - and how Sensorisch flavour systems help you meet this shift without compromising taste or performance.",
     href: "#",
@@ -57,7 +57,7 @@ const POSTS = [
     category: "News",
     title:
       "Precision Testing, Faster Compliance: How Modern Lab Techniques Are Changing Food Safety Standards",
-    image: "/assets/news-5.jpg",
+    image: "/assets/in-5.jpg",
     excerpt:
       "Discover how advanced analytical methods are enhancing food safety, ensuring regulatory compliance, and protecting consumers with greater speed and accuracy.",
     href: "#",
@@ -204,7 +204,9 @@ export default function NewsTrends() {
                   </span>
                   <span>|</span>
                   <time>
-                    {isMounted ? new Date(post.date).toLocaleDateString() : post.date}
+                    {isMounted
+                      ? new Date(post.date).toLocaleDateString()
+                      : post.date}
                   </time>
                 </div>
 

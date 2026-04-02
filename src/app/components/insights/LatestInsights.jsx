@@ -178,7 +178,7 @@ function HeaderMeta({ category, date }) {
       </span>
 
       {/* Separator */}
-      <span aria-hidden className="text-black/20 select-none">Ã¢â‚¬Â¢</span>
+      <span aria-hidden className="text-black/20 select-none">•</span>
 
       {/* Date */}
       <span className="inline-flex items-center gap-1.5">
